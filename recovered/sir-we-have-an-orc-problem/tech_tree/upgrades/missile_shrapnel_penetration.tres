@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dxpsruthqiy02"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"missile_shrapnel_penetration"
+name = "Shrapnel Penetration"
+icon = null
+description = "+{x} penetration"
+value = 1.0
+value_display_type = 1
+max_level = 2
+cost = 400

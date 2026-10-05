@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://byciykyyvpkkh"]
+
+[ext_resource type="Script" uid="uid://bpxw6r35wshyg" path="res://towers/gunner/gunner.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cnhpn4earcml8" path="res://towers/move_indicator.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://v78k55ho2l1h" path="res://towers/target.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dlkd3ui7lfy2r" path="res://towers/gunner/gunner_base.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bxo5ff1osu46n" path="res://towers/gunner/gunner.png" id="5"]
+[ext_resource type="SpriteFrames" uid="uid://ckd2q5m15je1n" path="res://towers/gunner/gunner_muzzle_flash.tres" id="6"]
+[ext_resource type="Script" uid="uid://ck1cs85cr8tb8" path="res://audio/tower_audio_player.gd" id="7"]
+[ext_resource type="AudioStream" uid="uid://brrg8e2sgpvve" path="res://towers/gunner/gun_10_rps.wav" id="8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4n4l4"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rec6"]
+radius = 12.0
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_1rec6"]
+
+[node name="Gunner" type="Node2D" unique_id=1707147116 node_paths=PackedStringArray("rotatable", "spawn_pos_base", "muzzle_flash", "target")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1")
+rotatable = NodePath("Rotatable")
+spawn_pos_base = NodePath("Rotatable/SpawnPosMarker2D")
+muzzle_flash = NodePath("Rotatable/SpawnPosMarker2D/MuzzleFlashAnimatedSprite2D")
+target = NodePath("Target")
+
+[node name="MoveIndicatorSprite" type="Sprite2D" parent="." unique_id=1230328039]
+visible = false
+texture = ExtResource("2")
+
+[node name="Target" type="Area2D" parent="." unique_id=614112870]
+position = Vector2(68, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target" unique_id=736150275]
+shape = SubResource("CircleShape2D_4n4l4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Target" unique_id=1966297791]
+texture = ExtResource("3")
+
+[node name="MoveIndicatorSprite" type="Sprite2D" parent="Target" unique_id=1377868903]
+visible = false
+texture = ExtResource("2")
+
+[node name="SpreadPreview" type="Line2D" parent="." unique_id=1343422239]
+unique_name_in_owner = true
+closed = true
+width = 2.0
+joint_mode = 2
+
+[node name="TowerBaseSprite" type="Sprite2D" parent="." unique_id=1993926398]
+texture = ExtResource("4")
+
+[node name="Rotatable" type="Node2D" parent="." unique_id=218672470]
+
+[node name="TowerSprite" type="Sprite2D" parent="Rotatable" unique_id=1593412286]
+texture = ExtResource("5")
+
+[node name="SpawnPosMarker2D" type="Marker2D" parent="Rotatable" unique_id=542076194]
+position = Vector2(15, 0)
+
+[node name="MuzzleFlashAnimatedSprite2D" type="AnimatedSprite2D" parent="Rotatable/SpawnPosMarker2D" unique_id=1428108227]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+position = Vector2(3, 0)
+sprite_frames = ExtResource("6")
+
+[node name="BuildArea" type="Area2D" parent="." unique_id=1088959373]
+unique_name_in_owner = true
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildArea" unique_id=2122677870]
+shape = SubResource("CircleShape2D_1rec6")
+
+[node name="AudioPlayerPoly" type="AudioStreamPlayer2D" parent="." unique_id=53630894]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamPolyphonic_1rec6")
+autoplay = true
+max_distance = 250.0
+max_polyphony = 16
+bus = &"Gunner"
+script = ExtResource("7")
+
+[node name="AudioPlayerSingle" type="AudioStreamPlayer2D" parent="." unique_id=1825054649]
+unique_name_in_owner = true
+stream = ExtResource("8")
+max_distance = 250.0
+bus = &"Gunner"

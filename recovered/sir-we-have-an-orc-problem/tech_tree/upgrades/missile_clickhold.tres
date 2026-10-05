@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dxvxvdwcnqhcq"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"missile_clickhold"
+name = "Automatic Missile"
+icon = null
+description = "Missiles are now fired continuously. Click once to toggle firing on and off."
+cost = 50
+cost_change = 0.0

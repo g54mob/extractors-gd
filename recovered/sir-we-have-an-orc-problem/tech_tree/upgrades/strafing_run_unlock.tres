@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bs35o0f7v53jj"]
+
+[ext_resource type="Resource" uid="uid://b5xtjceg87o0c" path="res://tech_tree/upgrades/strafing_run_damage.tres" id="1"]
+[ext_resource type="Resource" uid="uid://tpribkcxx422" path="res://tech_tree/upgrades/strafing_run_width.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"strafing_run_unlock"
+name = "Strafing Run"
+icon = null
+description = "Active ability: Call in an airstrike on a designated area. Can be used once per battle."
+value_display_type = 1
+currency = 2
+cost_change = 0.0
+children = [ExtResource("1"), ExtResource("2")]

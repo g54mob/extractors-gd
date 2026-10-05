@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://o2smuy248qb1"]
+
+[ext_resource type="Script" uid="uid://bpiq2kvfwrt1g" path="res://towers/laser/laser.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cnhpn4earcml8" path="res://towers/move_indicator.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://v78k55ho2l1h" path="res://towers/target.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://xeypgbcphi4l" path="res://towers/laser/laser_base.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://ctb0xor332b1c" path="res://towers/laser/laser.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://sv1pbr1b6o6h" path="res://towers/laser/laser.ogg" id="6"]
+[ext_resource type="Script" uid="uid://ck1cs85cr8tb8" path="res://audio/tower_audio_player.gd" id="7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yr7ah"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mfbnl"]
+radius = 7.0
+
+[sub_resource type="Gradient" id="Gradient_l8e12"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lr8vb"]
+gradient = SubResource("Gradient_l8e12")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[node name="Laser" type="Node2D" unique_id=2077713855 node_paths=PackedStringArray("rotatable", "spawn_pos_base", "target")]
+script = ExtResource("1")
+rotatable = NodePath("Rotatable")
+spawn_pos_base = NodePath("Rotatable/SpawnPosMarker2D")
+target = NodePath("Target")
+
+[node name="MoveIndicatorSprite" type="Sprite2D" parent="." unique_id=405281817]
+visible = false
+texture = ExtResource("2")
+
+[node name="Target" type="Area2D" parent="." unique_id=1984140983]
+position = Vector2(68, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target" unique_id=131306632]
+shape = SubResource("CircleShape2D_yr7ah")
+
+[node name="Sprite2D" type="Sprite2D" parent="Target" unique_id=897144962]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3")
+
+[node name="MoveIndicatorSprite" type="Sprite2D" parent="Target" unique_id=206891650]
+visible = false
+texture = ExtResource("2")
+
+[node name="SpreadPreview" type="Line2D" parent="." unique_id=163669826]
+unique_name_in_owner = true
+closed = true
+width = 2.0
+joint_mode = 2
+
+[node name="TowerBaseSprite" type="Sprite2D" parent="." unique_id=951641659]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4")
+
+[node name="Rotatable" type="Node2D" parent="." unique_id=2098057258]
+
+[node name="TowerSprite" type="Sprite2D" parent="Rotatable" unique_id=951984566]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5")
+
+[node name="SpawnPosMarker2D" type="Marker2D" parent="Rotatable" unique_id=1184002670]
+position = Vector2(14, -1)
+
+[node name="BuildArea" type="Area2D" parent="." unique_id=526284941]
+unique_name_in_owner = true
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildArea" unique_id=1200986230]
+shape = SubResource("CircleShape2D_mfbnl")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1864942619]
+unique_name_in_owner = true
+stream = ExtResource("6")
+volume_db = 5.0
+max_distance = 250.0
+bus = &"Battle"
+script = ExtResource("7")
+
+[node name="LaserLine" type="Line2D" parent="." unique_id=1262110615]
+unique_name_in_owner = true
+width = 2.0
+default_color = Color(3.2944162, 0, 0, 1)
+texture = SubResource("GradientTexture2D_lr8vb")
+texture_mode = 2
+end_cap_mode = 2

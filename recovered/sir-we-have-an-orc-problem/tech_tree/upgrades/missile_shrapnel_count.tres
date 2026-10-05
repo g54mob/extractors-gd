@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://sla3dwttc2xx"]
+
+[ext_resource type="Resource" uid="uid://b0yupf83603ky" path="res://tech_tree/upgrades/missile_shrapnel_count_2.tres" id="1"]
+[ext_resource type="Resource" uid="uid://bita442gbyfa6" path="res://tech_tree/upgrades/missile_shrapnel_slow_duration.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"missile_shrapnel_count"
+name = "Missile Shrapnels"
+icon = null
+description = "Missile explosions shoot out {x} shrapnels that deal damage and slow orcs."
+value = 2.0
+value_display_type = 1
+currency = 2
+children = [ExtResource("1"), ExtResource("2")]

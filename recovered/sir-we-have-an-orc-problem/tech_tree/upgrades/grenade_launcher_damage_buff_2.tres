@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://07m0yml2iisp"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"grenade_launcher_damage_buff_2"
+name = "Corrosive Fumes"
+icon = null
+description = "+{x}% damage"
+value = 5.0
+value_display_type = 1
+max_level = 5
+cost = 750

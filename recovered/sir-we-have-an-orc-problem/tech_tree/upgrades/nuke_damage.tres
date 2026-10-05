@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://c86p88rn8mi56"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"nuke_damage"
+name = "Nuke Explosion Damage"
+icon = null
+description = "+{x} damage"
+value = 20.0
+value_display_type = 1
+max_level = 7
+cost = 135
+cost_change = 1.95

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://ckhvy2ybg7f1m"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"fire_free_penetration_2"
+name = "Free Penetration Chance"
+icon = null
+description = "+{x}% chance"
+value = 5.0
+max_level = 8
+cost = 150
+cost_change = 1.9

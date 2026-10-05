@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bc0hc7k7n6iga"
+path="res://.godot/imported/draw_lightnings.glsl-ccf9373bb151ddee884354f6c69e1633.res"
+
+[deps]
+
+source_file="res://shaders/other/draw_lightnings.glsl"
+dest_files=["res://.godot/imported/draw_lightnings.glsl-ccf9373bb151ddee884354f6c69e1633.res"]
+
+[params]
+

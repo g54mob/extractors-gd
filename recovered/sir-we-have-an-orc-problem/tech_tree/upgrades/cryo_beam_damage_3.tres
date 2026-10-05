@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bvg62jo6kk0tu"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"cryo_beam_damage_3"
+name = "Cryo Beam Damage"
+icon = null
+description = "+{x} damage"
+value = 10.0
+max_level = 3
+cost = 1800
+cost_change = 2.5

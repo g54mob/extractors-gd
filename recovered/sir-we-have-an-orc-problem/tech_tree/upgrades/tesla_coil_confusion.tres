@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bt4rrk0x2eifx"]
+
+[ext_resource type="Resource" uid="uid://cchkl4mhkxute" path="res://tech_tree/upgrades/tesla_coil_shock_duration.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"tesla_coil_confusion"
+name = "Tesla Coil Confusion"
+icon = null
+description = "Shocked enemies will run in the wrong direction for {x} second."
+value = 1.0
+currency = 2
+cost_change = 1.0
+children = [ExtResource("1")]

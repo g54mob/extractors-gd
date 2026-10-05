@@ -1,0 +1,1298 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 15:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 3.15.2\n"
+
+#: menu/menu.tscn
+msgid "Continue"
+msgstr "繼續"
+
+#: menu/menu.tscn
+msgid "Resume"
+msgstr "繼續遊戲"
+
+#: menu/menu.tscn
+msgid "Surrender"
+msgstr "投降"
+
+#: menu/menu.tscn
+msgid "New Game"
+msgstr "新遊戲"
+
+#: menu/menu.tscn
+msgid "Load Game"
+msgstr "載入遊戲"
+
+#: menu/menu.tscn options/options_menu.tscn
+msgid "Options"
+msgstr "選項"
+
+#: menu/menu.tscn menu/quit_popup.tscn
+msgid "Quit"
+msgstr "離開"
+
+#: menu/menu.tscn
+msgid "Join Our Discord to give feedback and report bugs"
+msgstr "加入我們的 Discord，回報問題與分享建議"
+
+#: menu/menu.tscn
+msgid ""
+"You're a Creator?\n"
+"Here's our Press-Kit with Artworks + Logos"
+msgstr ""
+"你是創作者嗎？\n"
+"這裡有完整的媒體素材包，包含美術圖與 Logo"
+
+#: menu/quit_popup.tscn
+msgid ""
+"Yep, that's us: Laurin and Stephan.\n"
+"\n"
+"If you had fun, please don't forget to wishlist. It helps us so much and you won't miss the release once we launch the full game!"
+msgstr ""
+"沒錯，我們就是 Laurin 和 Stephan。\n"
+"\n"
+"如果你玩得開心，別忘了把遊戲加入願望清單！這對我們真的是很大的支持，正式版上線時你也不會錯過通知。"
+
+#: menu/quit_popup.tscn options/options_menu.tscn tech_tree/tech_tree.tscn
+#: menu/save_slot_selection/save_slot_selection.tscn
+msgid "Back"
+msgstr "返回"
+
+#: menu/quit_popup.tscn
+msgid "Wishlist"
+msgstr "加入願望清單"
+
+#: options/options_menu.tscn
+msgid "Language"
+msgstr "語言"
+
+#: options/options_menu.tscn
+msgid "Sound"
+msgstr "音效"
+
+#: options/options_menu.tscn
+msgid "Music"
+msgstr "音樂"
+
+#: options/options_menu.tscn
+msgid "Fullscreen"
+msgstr "全螢幕"
+
+#: options/options_menu.tscn
+msgid "CRT Effect"
+msgstr "CRT 螢幕效果"
+
+#: options/options_menu.tscn
+msgid "Edge Scrolling"
+msgstr "邊緣捲動"
+
+#: options/options_menu.tscn
+msgid "Supporter Pack"
+msgstr "贊助者禮包"
+
+#: options/options_menu.tscn
+msgid "Can be bought separately in the [url={\"a\": \"b\"}]Steam Store[/url]."
+msgstr "可於 [url={\"a\": \"b\"}]Steam 商店[/url]單獨購買。"
+
+#: options/options_menu.tscn
+msgid "Blue Flames"
+msgstr "藍色火焰"
+
+#: options/options_menu.tscn
+msgid "Space Orcs"
+msgstr "太空獸人"
+
+#: options/options_menu.tscn
+msgid "Space Background"
+msgstr "太空背景"
+
+#: battle/battle.tscn
+msgid "Start Battle"
+msgstr "開始戰鬥"
+
+#: battle/battle.tscn battle/ui.gd:313
+msgid "Hide Results"
+msgstr "隱藏結算"
+
+#: battle/battle.tscn
+msgid "Click to Select Tower"
+msgstr "點擊選擇防禦塔"
+
+#: battle/battle.tscn
+msgid "Drag to Move Tower or Target"
+msgstr "拖曳以移動防禦塔或變更目標"
+
+#: battle/battle.tscn
+msgid ""
+"Remove Tower\n"
+"(hold SHIFT to remove all of the same type)"
+msgstr ""
+"移除防禦塔\n"
+"（按住 SHIFT 可移除所有同類型）"
+
+#: battle/battle.tscn
+msgid "Remove all Towers"
+msgstr "移除所有防禦塔"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+msgid "Pan Camera"
+msgstr "平移視角"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+msgid "Zoom"
+msgstr "縮放"
+
+#: battle/battle.tscn
+msgid "Health"
+msgstr "生命值"
+
+#: battle/battle.tscn
+msgid "Enemies waiting"
+msgstr "敵人等待中"
+
+#: battle/battle.tscn
+msgid "Enemies alive"
+msgstr "剩餘敵人"
+
+#: battle/battle.tscn
+msgid "Enemies killed"
+msgstr "已擊殺敵人"
+
+#: battle/battle.tscn
+msgid "BUILD PHASE"
+msgstr "建造階段"
+
+#: battle/battle.tscn
+msgid "Press SPACE to start battle"
+msgstr "按下空白鍵開始戰鬥"
+
+#: battle/battle.tscn
+msgid "PAUSED"
+msgstr "暫停中"
+
+#: battle/battle.tscn
+msgid "Press SPACE to unpause"
+msgstr "按下空白鍵繼續遊戲"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/gunner_unlock.tres
+msgid "Gunner"
+msgstr "槍手"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/mortar_unlock.tres
+msgid "Mortar"
+msgstr "迫擊砲"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/cannon_unlock.tres
+msgid "Cannon"
+msgstr "加農砲"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/flamethrower_unlock.tres
+msgid "Flamethrower"
+msgstr "火焰噴射器"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/tesla_coil_unlock.tres
+msgid "Tesla Coil"
+msgstr "特斯拉線圈"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/grenade_launcher_unlock.tres
+msgid "Grenade Launcher"
+msgstr "榴彈發射器"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/laser_unlock.tres
+msgid "Laser"
+msgstr "雷射"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+msgid "Missile"
+msgstr "飛彈"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/strafing_run_unlock.tres
+msgid "Strafing Run"
+msgstr "對地掃射"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/nuke_unlock.tres
+msgid "Nuke"
+msgstr "核彈"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/cryo_beam_unlock.tres
+msgid "Orbital Cryo Beam"
+msgstr "軌道冷凍光束"
+
+#: battle/battle.tscn battle/ui.gd:123
+msgid "Survived"
+msgstr "成功存活"
+
+#: battle/battle.tscn battle/ui.gd:125
+msgid "Kills ({x})"
+msgstr "擊殺數 ({x})"
+
+#: battle/battle.tscn battle/ui.gd:130
+msgid "Silver Orcs ({x})"
+msgstr "白銀獸人 ({x})"
+
+#: battle/battle.tscn
+msgid "Bonus"
+msgstr "加成"
+
+#: battle/battle.tscn battle/ui.gd:146
+msgid "Bonus ({x}%)"
+msgstr "加成 ({x}%)"
+
+#: battle/battle.tscn
+msgid "Level Bonus"
+msgstr "關卡獎勵"
+
+#: battle/battle.tscn
+msgid "All Orcs Killed"
+msgstr "擊敗所有獸人"
+
+#: battle/battle.tscn
+msgid "Total"
+msgstr "總計"
+
+#: battle/battle.tscn
+msgid "Upgrades"
+msgstr "升級"
+
+#: battle/battle.tscn
+msgid "Play Again"
+msgstr "再玩一次"
+
+#: startup_scene/startup.tscn
+msgid "Loading..."
+msgstr "載入中……"
+
+#: tech_tree/tech_tree.tscn
+msgid "Levels"
+msgstr "關卡"
+
+#: tutorial/battle_tutorial_1.tscn
+msgid ""
+"- Left click {MOUSE_LEFT} to shoot missiles {MISSILE}\n"
+"- Press {KEY_SPACE} to start the battle"
+msgstr ""
+"- 點擊滑鼠左鍵 {MOUSE_LEFT} 發射飛彈 {MISSILE}\n"
+"- 按下 {KEY_SPACE} 開始戰鬥"
+
+#: tutorial/battle_tutorial_2.tscn
+msgid ""
+"- Select the Gunner {GUNNER} from the bottom menu (or press {KEY_ONE})\n"
+"- Place it by clicking and holding the left mouse button {MOUSE_LEFT}\n"
+"- Press {KEY_SPACE} to start the battle"
+msgstr ""
+"- 從下方選單選擇槍手 {GUNNER}（或按 {KEY_ONE}）\n"
+"- 按住滑鼠左鍵 {MOUSE_LEFT} 放置\n"
+"- 按下 {KEY_SPACE} 開始戰鬥"
+
+#: tutorial/tech_tree_tutorial.tscn
+msgid ""
+"This is the tech tree where you can buy upgrades.\n"
+"\n"
+"Unlock the Gunner tower to continue."
+msgstr ""
+"這是科技樹，你可以在這裡購買各種升級。\n"
+"\n"
+"先解鎖槍手塔再繼續吧。"
+
+#: battle/ui.gd:123
+msgid "Lost"
+msgstr "戰敗"
+
+#: battle/ui.gd:315
+msgid "Show Results"
+msgstr "顯示結算"
+
+#: tech_tree/hud/level_panel.tscn tech_tree/hud/currency_ui/currency_ui.tscn
+msgid "Earn this resource by surviving the level."
+msgstr "存活通關即可獲得此資源。"
+
+#: tech_tree/hud/level_panel.tscn tech_tree/hud/currency_ui/currency_ui.tscn
+msgid "Earn this resource by killing all orcs in the level."
+msgstr "擊殺關卡內所有獸人才能獲得此資源。"
+
+#: tech_tree/hud/level_panel.tscn
+msgid "Number of Enemies"
+msgstr "敵人數量"
+
+#: tech_tree/hud/level_panel.tscn
+msgid "Enemy Healthpoints"
+msgstr "敵人生命值"
+
+#: tech_tree/hud/tech_tree_hud.tscn
+msgid "Play"
+msgstr "遊玩"
+
+#: tech_tree/hud/tech_tree_hud.tscn
+msgid "Buy Upgrades"
+msgstr "購買升級"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:161
+#: tech_tree/hud/tower_stats/tower_stats.gd:171
+#: tech_tree/hud/tower_stats/tower_stats.gd:185
+#: tech_tree/hud/tower_stats/tower_stats.gd:194
+#: tech_tree/hud/tower_stats/tower_stats.gd:203
+#: tech_tree/hud/tower_stats/tower_stats.gd:263
+msgid "{x} / s"
+msgstr "{x} / 秒"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:163
+#: tech_tree/hud/tower_stats/tower_stats.gd:173
+#: tech_tree/hud/tower_stats/tower_stats.gd:187
+#: tech_tree/hud/tower_stats/tower_stats.gd:192
+#: tech_tree/hud/tower_stats/tower_stats.gd:205
+#: tech_tree/hud/tower_stats/tower_stats.gd:214
+#: tech_tree/hud/tower_stats/tower_stats.gd:232
+#: tech_tree/hud/tower_stats/tower_stats.gd:233
+#: tech_tree/hud/tower_stats/tower_stats.gd:234
+#: tech_tree/hud/tower_stats/tower_stats.gd:240
+#: tech_tree/hud/tower_stats/tower_stats.gd:247
+#: tech_tree/hud/tower_stats/tower_stats.gd:251
+#: tech_tree/hud/tower_stats/tower_stats.gd:265
+#: tech_tree/hud/tower_stats/tower_stats.gd:270
+msgid "{x} m"
+msgstr "{x} 公尺"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:193
+#: tech_tree/hud/tower_stats/tower_stats.gd:215
+#: tech_tree/hud/tower_stats/tower_stats.gd:220
+#: tech_tree/hud/tower_stats/tower_stats.gd:245
+#: tech_tree/hud/tower_stats/tower_stats.gd:246
+#: tech_tree/hud/tower_stats/tower_stats.gd:249
+#: tech_tree/hud/tower_stats/tower_stats.gd:269
+#: tech_tree/hud/tower_stats/tower_stats.gd:271
+msgid "{x} s"
+msgstr "{x} 秒"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:196
+#: tech_tree/hud/tower_stats/tower_stats.gd:219
+#: tech_tree/hud/tower_stats/tower_stats.gd:248
+#: tech_tree/hud/tower_stats/tower_stats.gd:252
+msgid "{x}%"
+msgstr "{x}%"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:278
+msgid "Available Towers"
+msgstr "可用防禦塔"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:279
+msgid "Fire Rate"
+msgstr "射速"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:280
+msgid "Damage"
+msgstr "傷害"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:281
+msgid "Range"
+msgstr "射程"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:282
+msgid "Penetration"
+msgstr "穿透"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:283
+msgid "Radius"
+msgstr "範圍"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:284
+msgid "Shrapnel"
+msgstr "破片"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:285
+#: tech_tree/upgrades/missile_shrapnel_damage.tres
+msgid "Shrapnel Damage"
+msgstr "破片傷害"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:286
+#: tech_tree/upgrades/missile_shrapnel_penetration.tres
+msgid "Shrapnel Penetration"
+msgstr "破片穿透"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:287
+#: tech_tree/upgrades/flamethrower_fire_duration.tres
+msgid "Burn Duration"
+msgstr "燃燒持續時間"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:288
+#: tech_tree/upgrades/fire_tick_rate.tres
+msgid "Burn Tick Rate"
+msgstr "燃燒傷害頻率"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:289
+msgid "Burn Tick Damage"
+msgstr "單次燃燒傷害"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:290
+msgid "Cooldown"
+msgstr "冷卻時間"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:291
+msgid "Area Width"
+msgstr "範圍寬度"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:292
+msgid "Bullets"
+msgstr "子彈數量"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:293
+msgid "Shock Duration"
+msgstr "感電持續時間"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:294
+msgid "Bonus Damage"
+msgstr "額外傷害"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:295
+msgid "Chain Jumps"
+msgstr "連鎖彈跳"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:296
+#: tech_tree/upgrades/grenade_launcher_volley.tres
+msgid "Volley Size"
+msgstr "齊射數量"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:297
+msgid "Reload Time"
+msgstr "裝填時間"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:298
+msgid "Slow Strength"
+msgstr "緩速強度"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:299
+msgid "Slow Duration"
+msgstr "緩速持續時間"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:300
+msgid "Available Planes"
+msgstr "可用戰機"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:301
+msgid "Available Bombs"
+msgstr "可用炸彈"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:302
+msgid "Explosion Radius"
+msgstr "爆炸範圍"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:303
+msgid "Max Bounces"
+msgstr "最大反彈次數"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:304
+msgid "Fuel Tank"
+msgstr "燃料槽"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:305
+msgid "Freeze Duration"
+msgstr "凍結持續時間"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:306
+msgid "Area Length"
+msgstr "區域長度"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:307
+msgid "Explosion Damage"
+msgstr "爆炸傷害"
+
+#: tech_tree/upgrades/base_hp.tres tech_tree/upgrades/base_hp_2.tres
+msgid "More Health Points"
+msgstr "增加生命值"
+
+#: tech_tree/upgrades/base_hp.tres tech_tree/upgrades/base_hp_2.tres
+msgid "+{x} health points"
+msgstr "+{x} 點生命值"
+
+#: tech_tree/upgrades/cannon_count.tres tech_tree/upgrades/cannon_count_2.tres
+#: tech_tree/upgrades/cannon_count_3.tres
+msgid "More Cannons"
+msgstr "更多加農砲"
+
+#: tech_tree/upgrades/cannon_count.tres tech_tree/upgrades/cannon_count_2.tres
+#: tech_tree/upgrades/cannon_count_3.tres
+msgid "+{x} Cannon tower"
+msgstr "+{x} 座加農砲塔"
+
+#: tech_tree/upgrades/cannon_damage.tres
+#: tech_tree/upgrades/cannon_damage_2.tres
+#: tech_tree/upgrades/cannon_damage_3.tres
+msgid "Cannon Damage"
+msgstr "加農砲傷害"
+
+#: tech_tree/upgrades/cannon_damage.tres
+#: tech_tree/upgrades/cannon_damage_2.tres
+#: tech_tree/upgrades/cannon_damage_3.tres
+#: tech_tree/upgrades/gunner_damage.tres
+#: tech_tree/upgrades/gunner_damage_2.tres
+#: tech_tree/upgrades/missile_damage.tres
+#: tech_tree/upgrades/missile_damage_2.tres
+#: tech_tree/upgrades/missile_damage_3.tres
+#: tech_tree/upgrades/mortar_explosion_damage.tres
+#: tech_tree/upgrades/mortar_explosion_damage_2.tres
+#: tech_tree/upgrades/mortar_fragment_damage.tres
+#: tech_tree/upgrades/strafing_run_damage.tres
+#: tech_tree/upgrades/strafing_run_damage_2.tres
+#: tech_tree/upgrades/tesla_coil_damage.tres
+#: tech_tree/upgrades/explosive_orcs_damage.tres
+#: tech_tree/upgrades/grenade_launcher_explosion_damage.tres
+#: tech_tree/upgrades/grenade_launcher_explosion_damage_2.tres
+#: tech_tree/upgrades/gunner_damage_3.tres
+#: tech_tree/upgrades/missile_damage_4.tres
+#: tech_tree/upgrades/missile_shrapnel_damage.tres
+#: tech_tree/upgrades/nuke_damage.tres
+#: tech_tree/upgrades/tesla_coil_damage_2.tres
+#: tech_tree/upgrades/tesla_coil_damage_3.tres
+#: tech_tree/upgrades/laser_damage.tres tech_tree/upgrades/laser_damage_2.tres
+#: tech_tree/upgrades/laser_damage_3.tres
+#: tech_tree/upgrades/cryo_beam_damage_2.tres
+#: tech_tree/upgrades/cryo_beam_damage_3.tres
+#: tech_tree/upgrades/laser_damage_4.tres
+msgid "+{x} damage"
+msgstr "+{x} 點傷害"
+
+#: tech_tree/upgrades/cannon_firerate.tres
+#: tech_tree/upgrades/cannon_firerate_2.tres
+#: tech_tree/upgrades/cannon_firerate_3.tres
+msgid "Cannon Firerate"
+msgstr "加農砲射速"
+
+#: tech_tree/upgrades/cannon_firerate.tres
+#: tech_tree/upgrades/cannon_firerate_2.tres
+#: tech_tree/upgrades/cannon_firerate_3.tres
+#: tech_tree/upgrades/gunner_firerate.tres
+#: tech_tree/upgrades/gunner_firerate_2.tres
+#: tech_tree/upgrades/gunner_firerate_3.tres
+#: tech_tree/upgrades/gunner_firerate_4.tres
+#: tech_tree/upgrades/mortar_firerate.tres
+#: tech_tree/upgrades/tesla_coil_firerate.tres
+#: tech_tree/upgrades/tesla_coil_firerate_2.tres
+#: tech_tree/upgrades/laser_firerate.tres
+#: tech_tree/upgrades/laser_firerate_2.tres
+msgid "+{x} shots / second"
+msgstr "+{x} 發 / 秒"
+
+#: tech_tree/upgrades/cannon_penetration.tres
+#: tech_tree/upgrades/cannon_penetration_2.tres
+#: tech_tree/upgrades/cannon_penetration_3.tres
+msgid "Cannon Penetration"
+msgstr "加農砲穿透"
+
+#: tech_tree/upgrades/cannon_penetration.tres
+#: tech_tree/upgrades/cannon_penetration_2.tres
+#: tech_tree/upgrades/cannon_penetration_3.tres
+#: tech_tree/upgrades/gunner_penetration.tres
+#: tech_tree/upgrades/mortar_fragment_penetration.tres
+#: tech_tree/upgrades/gunner_penetration_2.tres
+#: tech_tree/upgrades/missile_shrapnel_penetration.tres
+msgid "+{x} penetration"
+msgstr "+{x} 點穿透"
+
+#: tech_tree/upgrades/cannon_range.tres
+msgid "Cannon Range"
+msgstr "加農砲射程"
+
+#: tech_tree/upgrades/cannon_range.tres
+#: tech_tree/upgrades/flamethrower_range.tres
+#: tech_tree/upgrades/gunner_range.tres tech_tree/upgrades/missile_radius.tres
+#: tech_tree/upgrades/missile_radius_2.tres
+#: tech_tree/upgrades/mortar_explosion_radius.tres
+#: tech_tree/upgrades/strafing_run_radius.tres
+#: tech_tree/upgrades/tesla_coil_range.tres
+#: tech_tree/upgrades/explosive_orcs_radius.tres
+#: tech_tree/upgrades/grenade_launcher_explosion_radius.tres
+#: tech_tree/upgrades/grenade_launcher_radius.tres
+#: tech_tree/upgrades/nuke_radius.tres tech_tree/upgrades/cryo_beam_radius.tres
+#: tech_tree/upgrades/cryo_beam_radius_2.tres
+#: tech_tree/upgrades/laser_range.tres tech_tree/upgrades/laser_range_2.tres
+#: tech_tree/upgrades/laser_range_3.tres
+msgid "+{x} meter"
+msgstr "+{x} 公尺"
+
+#: tech_tree/upgrades/cannon_unlock.tres
+msgid "Low fire rate but high damage. Projectiles penetrate through multiple orcs."
+msgstr "射速慢但傷害高，砲彈可穿透多隻獸人。"
+
+#: tech_tree/upgrades/explosive_orcs_chance.tres
+msgid "Explosive Orcs Chance"
+msgstr "炸彈獸人機率"
+
+#: tech_tree/upgrades/explosive_orcs_chance.tres
+#: tech_tree/upgrades/golden_orcs_chance.tres
+#: tech_tree/upgrades/fire_free_penetration_2.tres
+#: tech_tree/upgrades/golden_orcs_chance_2.tres
+msgid "+{x}% chance"
+msgstr "+{x}% 機率"
+
+#: tech_tree/upgrades/fire_tick_damage.tres
+msgid "Burn Damage"
+msgstr "燃燒傷害"
+
+#: tech_tree/upgrades/fire_tick_damage.tres
+msgid "+{x} damage per tick"
+msgstr "+{x} 點單次跳傷"
+
+#: tech_tree/upgrades/fire_tick_rate.tres
+msgid "+{x} ticks / second"
+msgstr "每秒燃燒頻率 +{x} 次"
+
+#: tech_tree/upgrades/flamethrower_count.tres
+#: tech_tree/upgrades/flamethrower_count_2.tres
+#: tech_tree/upgrades/flamethrower_count_3.tres
+msgid "More Flamethrowers"
+msgstr "更多火焰噴射器"
+
+#: tech_tree/upgrades/flamethrower_count.tres
+#: tech_tree/upgrades/flamethrower_count_2.tres
+#: tech_tree/upgrades/flamethrower_count_3.tres
+msgid "+{x} Flamethrower tower"
+msgstr "+{x} 座火焰噴射器"
+
+#: tech_tree/upgrades/flamethrower_fire_duration.tres
+#: tech_tree/upgrades/grenade_launcher_lifetime.tres
+#: tech_tree/upgrades/grenade_launcher_slow_duration.tres
+#: tech_tree/upgrades/missile_shrapnel_slow_duration.tres
+#: tech_tree/upgrades/tesla_coil_shock_duration.tres
+#: tech_tree/upgrades/cryo_beam_duration.tres
+#: tech_tree/upgrades/cryo_beam_duration_2.tres
+#: tech_tree/upgrades/cryo_beam_fuel.tres
+#: tech_tree/upgrades/cryo_beam_fuel_2.tres
+msgid "+{x} seconds"
+msgstr "+{x} 秒"
+
+#: tech_tree/upgrades/flamethrower_range.tres
+msgid "Flamethrower Range"
+msgstr "火焰噴射器射程"
+
+#: tech_tree/upgrades/flamethrower_unlock.tres
+msgid "Unleashes a continuous stream of flames that sets enemy orcs ablaze. Burning orcs take periodic damage."
+msgstr "噴出連續火焰，點燃敵方獸人。燃燒中的獸人會持續受到傷害。"
+
+#: tech_tree/upgrades/golden_orcs.tres
+msgid "Silver Orcs"
+msgstr "白銀獸人"
+
+#: tech_tree/upgrades/golden_orcs.tres
+msgid "Adds a {x}% chance that an orc becomes silver after spawning. Killing silver orcs grants {x} additional {upgrade_mark}."
+msgstr "獸人出現時有 {x}% 機率成為白銀獸人。擊敗白銀獸人可額外獲得 {x} 個{upgrade_mark}。"
+
+#: tech_tree/upgrades/golden_orcs_chance.tres
+#: tech_tree/upgrades/golden_orcs_chance_2.tres
+msgid "Silver Orcs Chance"
+msgstr "白銀獸人機率"
+
+#: tech_tree/upgrades/golden_orcs_money.tres
+msgid "Silver Orcs Value"
+msgstr "白銀獸人收益"
+
+#: tech_tree/upgrades/golden_orcs_money.tres
+msgid "+{x} {upgrade_mark}"
+msgstr "+{x} 個{upgrade_mark}"
+
+#: tech_tree/upgrades/gunner_count.tres tech_tree/upgrades/gunner_count_2.tres
+#: tech_tree/upgrades/gunner_count_3.tres
+#: tech_tree/upgrades/gunner_count_4.tres
+msgid "More Gunners"
+msgstr "更多槍手"
+
+#: tech_tree/upgrades/gunner_count.tres tech_tree/upgrades/gunner_count_2.tres
+#: tech_tree/upgrades/gunner_count_3.tres
+#: tech_tree/upgrades/gunner_count_4.tres
+msgid "+{x} Gunner tower"
+msgstr "+{x} 座槍手塔"
+
+#: tech_tree/upgrades/gunner_damage.tres
+#: tech_tree/upgrades/gunner_damage_2.tres
+#: tech_tree/upgrades/gunner_damage_3.tres
+msgid "Gunner Damage"
+msgstr "槍手傷害"
+
+#: tech_tree/upgrades/gunner_firerate.tres
+#: tech_tree/upgrades/gunner_firerate_2.tres
+#: tech_tree/upgrades/gunner_firerate_4.tres
+msgid "Gunner Firerate"
+msgstr "槍手射速"
+
+#: tech_tree/upgrades/gunner_firerate_3.tres
+msgid "Rapid Fire"
+msgstr "快速射擊"
+
+#: tech_tree/upgrades/gunner_penetration.tres
+#: tech_tree/upgrades/gunner_penetration_2.tres
+msgid "Gunner Penetration"
+msgstr "槍手穿透"
+
+#: tech_tree/upgrades/gunner_range.tres
+msgid "Gunner Range"
+msgstr "槍手射程"
+
+#: tech_tree/upgrades/gunner_unlock.tres
+msgid "Simple machine gun with high firerate."
+msgstr "射速極快的基礎機關槍。"
+
+#: tech_tree/upgrades/marks_bonus.tres
+msgid "Bonus Resources"
+msgstr "額外資源"
+
+#: tech_tree/upgrades/marks_bonus.tres
+msgid "Gain +{x}{upgrade_mark} at the end of a battle."
+msgstr "戰鬥結束時獲得 +{x}{upgrade_mark}。"
+
+#: tech_tree/upgrades/marks_percentage.tres
+msgid "Bonus Resources 2"
+msgstr "額外資源 2"
+
+#: tech_tree/upgrades/marks_percentage.tres
+msgid "Gain +{x}% {upgrade_mark} at the end of a battle."
+msgstr "戰鬥結束時獲得 +{x}% {upgrade_mark}。"
+
+#: tech_tree/upgrades/missile_clickhold.tres
+msgid "Automatic Missile"
+msgstr "自動飛彈"
+
+#: tech_tree/upgrades/missile_clickhold.tres
+msgid "Missiles are now fired continuously. Click once to toggle firing on and off."
+msgstr "飛彈將持續自動發射。點擊一次可切換開啟或關閉。"
+
+#: tech_tree/upgrades/missile_cooldown.tres
+#: tech_tree/upgrades/missile_cooldown_2.tres
+msgid "Missile Cooldown"
+msgstr "飛彈冷卻時間"
+
+#: tech_tree/upgrades/missile_cooldown.tres
+#: tech_tree/upgrades/missile_cooldown_2.tres
+msgid "{x} seconds"
+msgstr "{x} 秒"
+
+#: tech_tree/upgrades/missile_damage.tres
+#: tech_tree/upgrades/missile_damage_2.tres
+#: tech_tree/upgrades/missile_damage_3.tres
+#: tech_tree/upgrades/missile_damage_4.tres
+msgid "Missile Damage"
+msgstr "飛彈傷害"
+
+#: tech_tree/upgrades/missile_radius.tres
+#: tech_tree/upgrades/missile_radius_2.tres
+msgid "Missile Explosion Radius"
+msgstr "飛彈爆炸範圍"
+
+#: tech_tree/upgrades/mortar_count.tres tech_tree/upgrades/mortar_count_2.tres
+#: tech_tree/upgrades/mortar_count_3.tres
+msgid "More Mortars"
+msgstr "更多迫擊砲"
+
+#: tech_tree/upgrades/mortar_count.tres tech_tree/upgrades/mortar_count_2.tres
+#: tech_tree/upgrades/mortar_count_3.tres
+msgid "+{x} Mortar tower"
+msgstr "+{x} 座迫擊砲塔"
+
+#: tech_tree/upgrades/mortar_explosion_damage.tres
+#: tech_tree/upgrades/mortar_explosion_damage_2.tres
+msgid "Mortar Explosion Damage"
+msgstr "迫擊砲爆炸傷害"
+
+#: tech_tree/upgrades/mortar_explosion_radius.tres
+msgid "Mortar Explosion Radius"
+msgstr "迫擊砲爆炸範圍"
+
+#: tech_tree/upgrades/mortar_firerate.tres
+msgid "Mortar Fire Rate"
+msgstr "迫擊砲射速"
+
+#: tech_tree/upgrades/mortar_fragment_count.tres
+msgid "Mortar Shrapnels"
+msgstr "迫擊砲彈片"
+
+#: tech_tree/upgrades/mortar_fragment_count.tres
+msgid "Mortar shell explosions shoot out {x} shrapnels that deal damage."
+msgstr "迫擊砲彈爆炸時會散射出 {x} 個彈片造成傷害。"
+
+#: tech_tree/upgrades/mortar_fragment_damage.tres
+msgid "Mortar Shrapnel Damage"
+msgstr "迫擊砲彈片傷害"
+
+#: tech_tree/upgrades/mortar_fragment_penetration.tres
+msgid "Mortar Shrapnel Penetration"
+msgstr "迫擊砲破片穿透"
+
+#: tech_tree/upgrades/mortar_unlock.tres
+msgid "Launches explosive shells that deal heavy area damage to all enemy orcs within the blast radius."
+msgstr "發射爆裂彈，對爆炸範圍內的所有敵方獸人造成大量範圍傷害。"
+
+#: tech_tree/upgrades/strafing_run_bullet_count.tres
+msgid "Strafing Run Bullet Count"
+msgstr "對地掃射子彈數量"
+
+#: tech_tree/upgrades/strafing_run_bullet_count.tres
+msgid "+{x} bullets"
+msgstr "+{x} 發子彈"
+
+#: tech_tree/upgrades/strafing_run_damage.tres
+#: tech_tree/upgrades/strafing_run_damage_2.tres
+msgid "Strafing Run Damage"
+msgstr "對地掃射傷害"
+
+#: tech_tree/upgrades/strafing_run_radius.tres
+msgid "Strafing Run Explosion Radius"
+msgstr "對地掃射爆炸範圍"
+
+#: tech_tree/upgrades/strafing_run_unlock.tres
+msgid "Active ability: Call in an airstrike on a designated area. Can be used once per battle."
+msgstr "主動技能：對指定區域呼叫空襲。每場戰鬥限用一次。"
+
+#: tech_tree/upgrades/strafing_run_width.tres
+msgid "Strafing Run Area"
+msgstr "對地掃射區域"
+
+#: tech_tree/upgrades/strafing_run_width.tres
+msgid "+{x} meter width and +{straf_len} meter length"
+msgstr "寬度 +{x} 公尺，長度 +{straf_len} 公尺"
+
+#: tech_tree/upgrades/laser_unlock.tres
+msgid "Fires a laser beam that bounces off walls, striking enemies from unexpected angles."
+msgstr "發射一道可在牆壁間反彈的雷射光束，從出其不意的角度打擊敵人。"
+
+#: tech_tree/upgrades/nuke_unlock.tres
+msgid "Active ability: Drop a nuclear bomb. Can be used once per battle."
+msgstr "主動技能：投下核彈。每場戰鬥限用一次。"
+
+#: tech_tree/upgrades/headhunter.tres
+msgid "Headhunter"
+msgstr "賞金獵人"
+
+#: tech_tree/upgrades/headhunter.tres
+msgid "Reduce the number of kills needed to earn 1 {upgrade_mark} by {x}."
+msgstr "將獲得1個{upgrade_mark}所需的擊殺數減少{x}。"
+
+#: tech_tree/upgrades/dmg_stats.tres
+msgid "Damage Statistics"
+msgstr "傷害統計"
+
+#: tech_tree/upgrades/dmg_stats.tres
+msgid "Unlock tower damage stats."
+msgstr "解鎖防禦塔傷害統計。"
+
+#: tech_tree/upgrades/cannon_big_boy.tres
+msgid "Power Shot"
+msgstr "強力射擊"
+
+#: tech_tree/upgrades/cannon_big_boy.tres
+msgid "Every 5th shot of the cannon is bigger and has more penetration."
+msgstr "砲台每第5次射擊更大，穿透力更強。"
+
+#: tech_tree/hud/currency_ui/currency_ui.tscn
+msgid "Earn this resource by killing orcs."
+msgstr "每擊殺一隻獸人都會獲得此資源。"
+
+#: tech_tree/upgrades/tesla_coil_unlock.tres
+msgid "Fires bolts of electricity that arc between nearby enemy orcs."
+msgstr "發射會在附近獸人敵軍間連鎖彈跳的閃電。"
+
+#: tech_tree/upgrades/tesla_coil_count.tres
+#: tech_tree/upgrades/tesla_coil_count_2.tres
+#: tech_tree/upgrades/tesla_coil_count_3.tres
+msgid "More Tesla Coils"
+msgstr "更多特斯拉線圈"
+
+#: tech_tree/upgrades/tesla_coil_count.tres
+#: tech_tree/upgrades/tesla_coil_count_2.tres
+#: tech_tree/upgrades/tesla_coil_count_3.tres
+msgid "+{x} Tesla Coil tower"
+msgstr "+{x} 座特斯拉線圈塔"
+
+#: tech_tree/upgrades/tesla_coil_damage.tres
+#: tech_tree/upgrades/tesla_coil_damage_2.tres
+#: tech_tree/upgrades/tesla_coil_damage_3.tres
+msgid "Tesla Coil Damage"
+msgstr "特斯拉線圈傷害"
+
+#: tech_tree/upgrades/tesla_coil_firerate.tres
+#: tech_tree/upgrades/tesla_coil_firerate_2.tres
+msgid "Tesla Coil Firerate"
+msgstr "特斯拉線圈射速"
+
+#: tech_tree/upgrades/tesla_coil_range.tres
+msgid "Tesla Coil Range"
+msgstr "特斯拉線圈射程"
+
+#: menu/save_slot_selection/new_game_dialog.tscn
+#: menu/save_slot_selection/new_game_dialog.gd:8
+msgid "Are you sure you want to overwrite slot #{x} and start a new game?"
+msgstr "確定要覆蓋欄位 #{x} 並開始新遊戲嗎？"
+
+#: menu/save_slot_selection/new_game_dialog.tscn
+msgid "No"
+msgstr "否"
+
+#: menu/save_slot_selection/new_game_dialog.tscn
+msgid "Yes"
+msgstr "是"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Current Level"
+msgstr "目前關卡"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Earned"
+msgstr "累積獲得"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Last Played"
+msgstr "上次遊玩"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Active"
+msgstr "進行中"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Empty"
+msgstr "空白"
+
+#: menu/save_slot_selection/save_slot_selection.tscn
+msgid "Choose one to overwrite"
+msgstr "請選擇要覆蓋的欄位"
+
+#: menu/save_slot_selection/save_slot.gd:18
+msgid "Slot #{x}"
+msgstr "欄位 #{x}"
+
+#: tech_tree/upgrades/explosive_orcs_damage.tres
+msgid "Explosive Orcs Damage"
+msgstr "獸人爆炸傷害"
+
+#: tech_tree/upgrades/explosive_orcs_radius.tres
+msgid "Explosive Orcs Radius"
+msgstr "獸人爆炸範圍"
+
+#: tech_tree/upgrades/explosive_orcs_unlock.tres
+msgid "Explosive Orcs"
+msgstr "炸彈獸人"
+
+#: tech_tree/upgrades/explosive_orcs_unlock.tres
+msgid "Adds a {x}% chance that orcs carry explosives which detonate upon death and damage nearby orcs."
+msgstr "獸人有 {x}% 機率攜帶炸藥，死亡時會引爆並對附近獸人造成傷害。"
+
+#: tech_tree/upgrades/fire_damage_buff.tres
+#: tech_tree/upgrades/fire_damage_buff_2.tres
+msgid "Scorched Armor"
+msgstr "焦灼護甲"
+
+#: tech_tree/upgrades/fire_damage_buff.tres
+msgid "Increase all damage to burning orcs by {x}%."
+msgstr "對燃燒狀態的獸人造成的傷害提升 {x}%。"
+
+#: tech_tree/upgrades/fire_damage_buff_2.tres
+#: tech_tree/upgrades/grenade_launcher_damage_buff_2.tres
+msgid "+{x}% damage"
+msgstr "+{x}% 傷害"
+
+#: tech_tree/upgrades/fire_free_penetration.tres
+msgid "Free Penetration"
+msgstr "無消耗穿透"
+
+#: tech_tree/upgrades/fire_free_penetration.tres
+msgid "Bullets have a {x}% chance to penetrate burning enemies without consuming penetration."
+msgstr "子彈有 {x}% 機率穿透燃燒狀態的敵人，且不消耗穿透。"
+
+#: tech_tree/upgrades/fire_free_penetration_2.tres
+msgid "Free Penetration Chance"
+msgstr "無消耗穿透機率"
+
+#: tech_tree/upgrades/grenade_launcher_count.tres
+#: tech_tree/upgrades/grenade_launcher_count_2.tres
+msgid "More Grenade Launchers"
+msgstr "更多榴彈發射器"
+
+#: tech_tree/upgrades/grenade_launcher_count.tres
+#: tech_tree/upgrades/grenade_launcher_count_2.tres
+msgid "+{x} Grenade Launcher tower"
+msgstr "+{x} 座榴彈發射器"
+
+#: tech_tree/upgrades/grenade_launcher_damage_buff.tres
+#: tech_tree/upgrades/grenade_launcher_damage_buff_2.tres
+msgid "Corrosive Fumes"
+msgstr "腐蝕毒霧"
+
+#: tech_tree/upgrades/grenade_launcher_damage_buff.tres
+msgid "Increase all damage to slowed orcs by {x}%."
+msgstr "對受到緩速的獸人造成的傷害提升 {x}%。"
+
+#: tech_tree/upgrades/grenade_launcher_explosion_damage.tres
+#: tech_tree/upgrades/grenade_launcher_explosion_damage_2.tres
+msgid "Grenade Explosion Damage"
+msgstr "榴彈爆炸傷害"
+
+#: tech_tree/upgrades/grenade_launcher_explosion_radius.tres
+msgid "Grenade Explosion Radius"
+msgstr "榴彈爆炸範圍"
+
+#: tech_tree/upgrades/grenade_launcher_explosive.tres
+msgid "Explosive Grenades"
+msgstr "高爆榴彈"
+
+#: tech_tree/upgrades/grenade_launcher_explosive.tres
+msgid "Grenades explode when their duration expires."
+msgstr "榴彈會在持續時間結束時爆炸。"
+
+#: tech_tree/upgrades/grenade_launcher_lifetime.tres
+msgid "Grenade Duration"
+msgstr "榴彈持續時間"
+
+#: tech_tree/upgrades/grenade_launcher_radius.tres
+msgid "Grenade Effect Radius"
+msgstr "榴彈效果範圍"
+
+#: tech_tree/upgrades/grenade_launcher_slow_duration.tres
+msgid "Grenade Slow Duration"
+msgstr "榴彈緩速持續時間"
+
+#: tech_tree/upgrades/grenade_launcher_slow_strength.tres
+#: tech_tree/upgrades/grenade_launcher_slow_strength_2.tres
+msgid "Grenade Slow Strength"
+msgstr "榴彈緩速強度"
+
+#: tech_tree/upgrades/grenade_launcher_slow_strength.tres
+#: tech_tree/upgrades/grenade_launcher_slow_strength_2.tres
+#: tech_tree/upgrades/missile_shrapnel_slow_strength.tres
+msgid "+{x}% slow strength"
+msgstr "+{x}% 緩速強度"
+
+#: tech_tree/upgrades/grenade_launcher_unlock.tres
+msgid "Fires gas grenades that create lingering clouds, slowing enemy orcs caught within them."
+msgstr "發射毒氣榴彈，留下持續的毒氣雲，使範圍內的獸人敵軍受到緩速。"
+
+#: tech_tree/upgrades/grenade_launcher_volley.tres
+msgid "+{x} grenade per volley"
+msgstr "每次齊射 +{x} 發榴彈"
+
+#: tech_tree/upgrades/missile_shrapnel_count.tres
+msgid "Missile Shrapnels"
+msgstr "飛彈彈片"
+
+#: tech_tree/upgrades/missile_shrapnel_count.tres
+msgid "Missile explosions shoot out {x} shrapnels that deal damage and slow orcs."
+msgstr "飛彈爆炸時會散射出 {x} 個彈片，對獸人造成傷害並附加緩速。"
+
+#: tech_tree/upgrades/missile_shrapnel_count_2.tres
+msgid "Shrapnel Count"
+msgstr "彈片數量"
+
+#: tech_tree/upgrades/missile_shrapnel_count_2.tres
+msgid "+{x} shrapnels"
+msgstr "+{x} 個彈片"
+
+#: tech_tree/upgrades/missile_shrapnel_slow_duration.tres
+msgid "Shrapnel Slow Duration"
+msgstr "彈片緩速持續時間"
+
+#: tech_tree/upgrades/missile_shrapnel_slow_strength.tres
+msgid "Shrapnel Slow Strength"
+msgstr "彈片緩速強度"
+
+#: tech_tree/upgrades/mortar_fragment_count_2.tres
+msgid "Mortar Shrapnel Count"
+msgstr "迫擊砲破片數量"
+
+#: tech_tree/upgrades/mortar_fragment_count_2.tres
+msgid "+{x} shrapnel"
+msgstr "+{x} 個彈片"
+
+#: tech_tree/upgrades/nuke_count.tres
+msgid "More Nukes"
+msgstr "更多核彈"
+
+#: tech_tree/upgrades/nuke_count.tres
+msgid "+{x} nuke bomb use"
+msgstr "+{x} 次核彈使用次數"
+
+#: tech_tree/upgrades/nuke_damage.tres
+msgid "Nuke Explosion Damage"
+msgstr "核彈爆炸傷害"
+
+#: tech_tree/upgrades/nuke_radius.tres
+msgid "Nuke Explosion Radius"
+msgstr "核彈爆炸範圍"
+
+#: tech_tree/upgrades/strafing_run_count.tres
+msgid "More Runs"
+msgstr "增加空襲次數"
+
+#: tech_tree/upgrades/strafing_run_count.tres
+msgid "+{x} strafing run use"
+msgstr "+{x} 次空襲使用次數"
+
+#: tech_tree/upgrades/tesla_coil_chaining.tres
+#: tech_tree/upgrades/tesla_coil_chaining_2.tres
+msgid "Tesla Coil Chain Jumps"
+msgstr "特斯拉線圈連鎖彈跳"
+
+#: tech_tree/upgrades/tesla_coil_chaining.tres
+#: tech_tree/upgrades/tesla_coil_chaining_2.tres
+msgid "+{x} jump"
+msgstr "+{x} 次彈跳"
+
+#: tech_tree/upgrades/tesla_coil_confusion.tres
+msgid "Tesla Coil Confusion"
+msgstr "特斯拉線圈混亂"
+
+#: tech_tree/upgrades/tesla_coil_confusion.tres
+msgid "Shocked enemies will run in the wrong direction for {x} second."
+msgstr "感電狀態的敵人將往反方向移動 {x} 秒。"
+
+#: tech_tree/upgrades/tesla_coil_shock_duration.tres
+msgid "Tesla Coil Shock Duration"
+msgstr "特斯拉線圈感電持續時間"
+
+#: tech_tree/upgrades/marks_bonus_2.tres
+msgid "Bonus Resources 3"
+msgstr "額外資源3"
+
+#: tech_tree/upgrades/marks_bonus_2.tres
+msgid "Gain +{x}{upgrade_mark} at the end of a battle when playing level 3.1 or higher."
+msgstr "遊玩 3.1 或更高等級關卡時，戰鬥結束時獲得 +{x}{upgrade_mark}。"
+
+#: menu/save_slot_selection/save_slot_selection.gd:27
+msgid "Choose a save slot"
+msgstr "選擇存檔欄位"
+
+#: tech_tree/hud/level_panel.gd:45
+msgid "Attempts:"
+msgstr "挑戰次數："
+
+#: tech_tree/hud/level_panel.gd:46
+msgid "Survivals:"
+msgstr "存活次數："
+
+#: tech_tree/hud/level_panel.gd:47
+msgid "All orcs killed:"
+msgstr "擊敗所有獸人："
+
+#: tech_tree/hud/level_panel.gd:48
+msgid "First attempt:"
+msgstr "首次挑戰："
+
+#: tech_tree/hud/level_panel.gd:49
+msgid "First survival:"
+msgstr "首次存活："
+
+#: tech_tree/hud/level_panel.gd:50
+msgid "First all orcs killed:"
+msgstr "首次擊敗所有獸人："
+
+#: tech_tree/hud/level_panel.gd:51
+msgid "Total earned:"
+msgstr "總計獲得："
+
+#: tech_tree/upgrades/cryo_beam_duration.tres
+#: tech_tree/upgrades/cryo_beam_duration_2.tres
+msgid "Cryo Beam Duration"
+msgstr "冷凍光束持續時間"
+
+#: tech_tree/upgrades/cryo_beam_fuel.tres
+#: tech_tree/upgrades/cryo_beam_fuel_2.tres
+msgid "Cryo Beam Fuel"
+msgstr "冷凍光束燃料"
+
+#: tech_tree/upgrades/cryo_beam_radius.tres
+#: tech_tree/upgrades/cryo_beam_radius_2.tres
+msgid "Cryo Beam Radius"
+msgstr "冷凍光束範圍"
+
+#: tech_tree/upgrades/cryo_beam_unlock.tres
+msgid "Active ability: Call down an orbital cryo beam that freezes all orcs in its path."
+msgstr "主動技能：呼叫軌道冷凍光束，將路徑上的所有獸人全數凍結。"
+
+#: tech_tree/upgrades/laser_bounces.tres
+#: tech_tree/upgrades/laser_bounces_2.tres
+msgid "Laser Bounces"
+msgstr "雷射反彈"
+
+#: tech_tree/upgrades/laser_bounces.tres
+msgid "+{x} bounces"
+msgstr "+{x} 次反彈"
+
+#: tech_tree/upgrades/laser_bounces_2.tres
+msgid "+{x} bounce"
+msgstr "+{x} 次反彈"
+
+#: tech_tree/upgrades/laser_count.tres tech_tree/upgrades/laser_count_2.tres
+#: tech_tree/upgrades/laser_count_3.tres
+msgid "More Lasers"
+msgstr "更多雷射"
+
+#: tech_tree/upgrades/laser_count.tres tech_tree/upgrades/laser_count_2.tres
+#: tech_tree/upgrades/laser_count_3.tres
+msgid "+{x} Laser tower"
+msgstr "+{x} 座雷射塔"
+
+#: tech_tree/upgrades/laser_damage.tres tech_tree/upgrades/laser_damage_2.tres
+#: tech_tree/upgrades/laser_damage_3.tres
+#: tech_tree/upgrades/laser_damage_4.tres
+msgid "Laser Damage"
+msgstr "雷射傷害"
+
+#: tech_tree/upgrades/laser_firerate.tres
+#: tech_tree/upgrades/laser_firerate_2.tres
+msgid "Laser Firerate"
+msgstr "雷射射速"
+
+#: tech_tree/upgrades/laser_range.tres tech_tree/upgrades/laser_range_2.tres
+#: tech_tree/upgrades/laser_range_3.tres
+msgid "Laser Range"
+msgstr "雷射射程"
+
+#: globals/game_manager.gd:86 globals/game_manager.gd:87
+#: globals/game_manager.gd:88 globals/game_manager.gd:89
+#: globals/game_manager.gd:90 globals/game_manager.gd:91
+#: globals/game_manager.gd:92 globals/game_manager.gd:93
+#: globals/game_manager.gd:94 globals/game_manager.gd:95
+#: globals/game_manager.gd:96 globals/game_manager.gd:97
+msgid "Level"
+msgstr "關卡"
+
+#: tech_tree/upgrades/buy_pink.tres
+msgid "Emergency Supplies"
+msgstr "緊急物資"
+
+#: tech_tree/upgrades/buy_pink.tres
+msgid "+{x} {pink_upgrade}"
+msgstr "+{x} {pink_upgrade}"
+
+#: tech_tree/upgrades/cryo_beam_damage.tres
+#: tech_tree/upgrades/cryo_beam_damage_2.tres
+#: tech_tree/upgrades/cryo_beam_damage_3.tres
+msgid "Cryo Beam Damage"
+msgstr "冷凍光束傷害"
+
+#: tech_tree/upgrades/cryo_beam_damage.tres
+msgid "Enemies take {x} damage upon unfreezing."
+msgstr "敵人解凍時受到 {x} 點傷害。"
+
+#: tech_tree/upgrades/marks_bonus_4.tres
+msgid "Bonus Resources 4"
+msgstr "額外資源4"
+
+#: tech_tree/upgrades/marks_bonus_4.tres
+msgid "Gain +{x}{upgrade_mark} at the end of a battle when playing level 4.1 or higher."
+msgstr "遊玩 4.1 或更高等級關卡時，戰鬥結束時獲得 +{x}{upgrade_mark}。"
+
+msgid "Sir, We Have an Orc Problem"
+msgstr "Sir, We Have an Orc Problem"

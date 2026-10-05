@@ -1,0 +1,1298 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 15:33+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 3.15.2\n"
+
+#: menu/menu.tscn
+msgid "Continue"
+msgstr "Continuar"
+
+#: menu/menu.tscn
+msgid "Resume"
+msgstr "Reanudar"
+
+#: menu/menu.tscn
+msgid "Surrender"
+msgstr "Rendirse"
+
+#: menu/menu.tscn
+msgid "New Game"
+msgstr "Nueva partida"
+
+#: menu/menu.tscn
+msgid "Load Game"
+msgstr "Cargar partida"
+
+#: menu/menu.tscn options/options_menu.tscn
+msgid "Options"
+msgstr "Opciones"
+
+#: menu/menu.tscn menu/quit_popup.tscn
+msgid "Quit"
+msgstr "Salir"
+
+#: menu/menu.tscn
+msgid "Join Our Discord to give feedback and report bugs"
+msgstr "Únete a nuestro Discord para compartir tu opinión e informar de los errores."
+
+#: menu/menu.tscn
+msgid ""
+"You're a Creator?\n"
+"Here's our Press-Kit with Artworks + Logos"
+msgstr ""
+"¿Eres creador de contenido?\n"
+"Aquí tienes nuestro dosier de prensa con los diseños y logotipos."
+
+#: menu/quit_popup.tscn
+msgid ""
+"Yep, that's us: Laurin and Stephan.\n"
+"\n"
+"If you had fun, please don't forget to wishlist. It helps us so much and you won't miss the release once we launch the full game!"
+msgstr ""
+"Sí, estos somos nosotros: Laurin y Stephan.\n"
+"\n"
+"Si te has divertido, no te olvides de añadirlo a tu lista de deseados. Nos ayudaría muchísimo y así no te perderías el lanzamiento cuando saquemos el juego completo."
+
+#: menu/quit_popup.tscn options/options_menu.tscn tech_tree/tech_tree.tscn
+#: menu/save_slot_selection/save_slot_selection.tscn
+msgid "Back"
+msgstr "Volver"
+
+#: menu/quit_popup.tscn
+msgid "Wishlist"
+msgstr "Lista de deseados"
+
+#: options/options_menu.tscn
+msgid "Language"
+msgstr "Idioma"
+
+#: options/options_menu.tscn
+msgid "Sound"
+msgstr "Sonido"
+
+#: options/options_menu.tscn
+msgid "Music"
+msgstr "Música"
+
+#: options/options_menu.tscn
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+#: options/options_menu.tscn
+msgid "CRT Effect"
+msgstr "Efecto TRC"
+
+#: options/options_menu.tscn
+msgid "Edge Scrolling"
+msgstr "Desplazamiento por los bordes"
+
+#: options/options_menu.tscn
+msgid "Supporter Pack"
+msgstr "Paquete de apoyo"
+
+#: options/options_menu.tscn
+msgid "Can be bought separately in the [url={\"a\": \"b\"}]Steam Store[/url]."
+msgstr "Se puede comprar por separado en la [url={\"a\": \"b\"}]Steam Store[/url]."
+
+#: options/options_menu.tscn
+msgid "Blue Flames"
+msgstr "Llamas azules"
+
+#: options/options_menu.tscn
+msgid "Space Orcs"
+msgstr "Orcos espaciales"
+
+#: options/options_menu.tscn
+msgid "Space Background"
+msgstr "Fondo espacial"
+
+#: battle/battle.tscn
+msgid "Start Battle"
+msgstr "Comenzar la batalla"
+
+#: battle/battle.tscn battle/ui.gd:313
+msgid "Hide Results"
+msgstr "Ocultar resultados"
+
+#: battle/battle.tscn
+msgid "Click to Select Tower"
+msgstr "Haz clic para elegir la torre"
+
+#: battle/battle.tscn
+msgid "Drag to Move Tower or Target"
+msgstr "Arrastra para mover la torre o el objetivo"
+
+#: battle/battle.tscn
+msgid ""
+"Remove Tower\n"
+"(hold SHIFT to remove all of the same type)"
+msgstr ""
+"Quitar torre\n"
+"(mantén pulsada la tecla MAYÚS para quitar todas las del mismo tipo)."
+
+#: battle/battle.tscn
+msgid "Remove all Towers"
+msgstr "Quitar todas las torres"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+msgid "Pan Camera"
+msgstr "Mover la cámara"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+msgid "Zoom"
+msgstr "Zoom"
+
+#: battle/battle.tscn
+msgid "Health"
+msgstr "Salud"
+
+#: battle/battle.tscn
+msgid "Enemies waiting"
+msgstr "Enemigos esperando"
+
+#: battle/battle.tscn
+msgid "Enemies alive"
+msgstr "Enemigos vivos"
+
+#: battle/battle.tscn
+msgid "Enemies killed"
+msgstr "Enemigos eliminados"
+
+#: battle/battle.tscn
+msgid "BUILD PHASE"
+msgstr "FASE DE CONSTRUCCIÓN"
+
+#: battle/battle.tscn
+msgid "Press SPACE to start battle"
+msgstr "Pulsa ESPACIO para comenzar la batalla"
+
+#: battle/battle.tscn
+msgid "PAUSED"
+msgstr "EN PAUSA"
+
+#: battle/battle.tscn
+msgid "Press SPACE to unpause"
+msgstr "Pulsa ESPACIO para reanudar"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/gunner_unlock.tres
+msgid "Gunner"
+msgstr "Torre artillera"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/mortar_unlock.tres
+msgid "Mortar"
+msgstr "Torre mortero"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/cannon_unlock.tres
+msgid "Cannon"
+msgstr "Cañón"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/flamethrower_unlock.tres
+msgid "Flamethrower"
+msgstr "Lanzallamas"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/tesla_coil_unlock.tres
+msgid "Tesla Coil"
+msgstr "Bobina de Tesla"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/grenade_launcher_unlock.tres
+msgid "Grenade Launcher"
+msgstr "Lanzagranadas"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/laser_unlock.tres
+msgid "Laser"
+msgstr "Láser"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+msgid "Missile"
+msgstr "Misil"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/strafing_run_unlock.tres
+msgid "Strafing Run"
+msgstr "Bombardeo"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/nuke_unlock.tres
+msgid "Nuke"
+msgstr "Bomba atómica"
+
+#: battle/battle.tscn tech_tree/hud/tech_tree_hud.tscn
+#: tech_tree/upgrades/cryo_beam_unlock.tres
+msgid "Orbital Cryo Beam"
+msgstr "Rayo criogénico orbital"
+
+#: battle/battle.tscn battle/ui.gd:123
+msgid "Survived"
+msgstr "Has sobrevivido"
+
+#: battle/battle.tscn battle/ui.gd:125
+msgid "Kills ({x})"
+msgstr "Eliminaciones ({x})"
+
+#: battle/battle.tscn battle/ui.gd:130
+msgid "Silver Orcs ({x})"
+msgstr "Orcos plateados ({x})"
+
+#: battle/battle.tscn
+msgid "Bonus"
+msgstr "Bonificación"
+
+#: battle/battle.tscn battle/ui.gd:146
+msgid "Bonus ({x}%)"
+msgstr "Bonificación ({x} %)"
+
+#: battle/battle.tscn
+msgid "Level Bonus"
+msgstr "Bonificación de nivel"
+
+#: battle/battle.tscn
+msgid "All Orcs Killed"
+msgstr "Todos los orcos eliminados"
+
+#: battle/battle.tscn
+msgid "Total"
+msgstr "Total"
+
+#: battle/battle.tscn
+msgid "Upgrades"
+msgstr "Mejoras"
+
+#: battle/battle.tscn
+msgid "Play Again"
+msgstr "Volver a jugar"
+
+#: startup_scene/startup.tscn
+msgid "Loading..."
+msgstr "Cargando…"
+
+#: tech_tree/tech_tree.tscn
+msgid "Levels"
+msgstr "Niveles"
+
+#: tutorial/battle_tutorial_1.tscn
+msgid ""
+"- Left click {MOUSE_LEFT} to shoot missiles {MISSILE}\n"
+"- Press {KEY_SPACE} to start the battle"
+msgstr ""
+"— Haz clic izquierdo {MOUSE_LEFT} para disparar misiles {MISSILE}.\n"
+"— Pulsa {KEY_SPACE} para comenzar la batalla."
+
+#: tutorial/battle_tutorial_2.tscn
+msgid ""
+"- Select the Gunner {GUNNER} from the bottom menu (or press {KEY_ONE})\n"
+"- Place it by clicking and holding the left mouse button {MOUSE_LEFT}\n"
+"- Press {KEY_SPACE} to start the battle"
+msgstr ""
+"— Selecciona la torre artillera {GUNNER} en el menú inferior (o pulsa {KEY_ONE}).\n"
+"— Mantén pulsado el botón izquierdo del ratón {MOUSE_LEFT} para colocarla.\n"
+"— Pulsa {KEY_SPACE} para comenzar la batalla."
+
+#: tutorial/tech_tree_tutorial.tscn
+msgid ""
+"This is the tech tree where you can buy upgrades.\n"
+"\n"
+"Unlock the Gunner tower to continue."
+msgstr ""
+"Este es el árbol tecnológico, desde donde puedes comprar mejoras.\n"
+"\n"
+"Desbloquea la torre artillera para continuar."
+
+#: battle/ui.gd:123
+msgid "Lost"
+msgstr "Derrota"
+
+#: battle/ui.gd:315
+msgid "Show Results"
+msgstr "Mostrar resultados"
+
+#: tech_tree/hud/level_panel.tscn tech_tree/hud/currency_ui/currency_ui.tscn
+msgid "Earn this resource by surviving the level."
+msgstr "Sobrevive al nivel para obtener este recurso."
+
+#: tech_tree/hud/level_panel.tscn tech_tree/hud/currency_ui/currency_ui.tscn
+msgid "Earn this resource by killing all orcs in the level."
+msgstr "Mata a todos los orcos del nivel para obtener este recurso."
+
+#: tech_tree/hud/level_panel.tscn
+msgid "Number of Enemies"
+msgstr "Número de enemigos"
+
+#: tech_tree/hud/level_panel.tscn
+msgid "Enemy Healthpoints"
+msgstr "Puntos de vida del enemigo"
+
+#: tech_tree/hud/tech_tree_hud.tscn
+msgid "Play"
+msgstr "Jugar"
+
+#: tech_tree/hud/tech_tree_hud.tscn
+msgid "Buy Upgrades"
+msgstr "Comprar mejoras"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:161
+#: tech_tree/hud/tower_stats/tower_stats.gd:171
+#: tech_tree/hud/tower_stats/tower_stats.gd:185
+#: tech_tree/hud/tower_stats/tower_stats.gd:194
+#: tech_tree/hud/tower_stats/tower_stats.gd:203
+#: tech_tree/hud/tower_stats/tower_stats.gd:263
+msgid "{x} / s"
+msgstr "{x}/s"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:163
+#: tech_tree/hud/tower_stats/tower_stats.gd:173
+#: tech_tree/hud/tower_stats/tower_stats.gd:187
+#: tech_tree/hud/tower_stats/tower_stats.gd:192
+#: tech_tree/hud/tower_stats/tower_stats.gd:205
+#: tech_tree/hud/tower_stats/tower_stats.gd:214
+#: tech_tree/hud/tower_stats/tower_stats.gd:232
+#: tech_tree/hud/tower_stats/tower_stats.gd:233
+#: tech_tree/hud/tower_stats/tower_stats.gd:234
+#: tech_tree/hud/tower_stats/tower_stats.gd:240
+#: tech_tree/hud/tower_stats/tower_stats.gd:247
+#: tech_tree/hud/tower_stats/tower_stats.gd:251
+#: tech_tree/hud/tower_stats/tower_stats.gd:265
+#: tech_tree/hud/tower_stats/tower_stats.gd:270
+msgid "{x} m"
+msgstr "{x} m"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:193
+#: tech_tree/hud/tower_stats/tower_stats.gd:215
+#: tech_tree/hud/tower_stats/tower_stats.gd:220
+#: tech_tree/hud/tower_stats/tower_stats.gd:245
+#: tech_tree/hud/tower_stats/tower_stats.gd:246
+#: tech_tree/hud/tower_stats/tower_stats.gd:249
+#: tech_tree/hud/tower_stats/tower_stats.gd:269
+#: tech_tree/hud/tower_stats/tower_stats.gd:271
+msgid "{x} s"
+msgstr "{x} s"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:196
+#: tech_tree/hud/tower_stats/tower_stats.gd:219
+#: tech_tree/hud/tower_stats/tower_stats.gd:248
+#: tech_tree/hud/tower_stats/tower_stats.gd:252
+msgid "{x}%"
+msgstr "{x} %"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:278
+msgid "Available Towers"
+msgstr "Torres disponibles"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:279
+msgid "Fire Rate"
+msgstr "Cadencia de tiro"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:280
+msgid "Damage"
+msgstr "Daño"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:281
+msgid "Range"
+msgstr "Alcance"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:282
+msgid "Penetration"
+msgstr "Penetración"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:283
+msgid "Radius"
+msgstr "Radio"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:284
+msgid "Shrapnel"
+msgstr "Metralla"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:285
+#: tech_tree/upgrades/missile_shrapnel_damage.tres
+msgid "Shrapnel Damage"
+msgstr "Daño por metralla"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:286
+#: tech_tree/upgrades/missile_shrapnel_penetration.tres
+msgid "Shrapnel Penetration"
+msgstr "Penetración de metralla"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:287
+#: tech_tree/upgrades/flamethrower_fire_duration.tres
+msgid "Burn Duration"
+msgstr "Duración de la quemadura"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:288
+#: tech_tree/upgrades/fire_tick_rate.tres
+msgid "Burn Tick Rate"
+msgstr "Velocidad del intervalo de quemadura"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:289
+msgid "Burn Tick Damage"
+msgstr "Daño del intervalo de quemadura"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:290
+msgid "Cooldown"
+msgstr "Tiempo de recarga"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:291
+msgid "Area Width"
+msgstr "Ancho de la zona"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:292
+msgid "Bullets"
+msgstr "Balas"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:293
+msgid "Shock Duration"
+msgstr "Duración de electrocución"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:294
+msgid "Bonus Damage"
+msgstr "Daño adicional"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:295
+msgid "Chain Jumps"
+msgstr "Saltos en cadena"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:296
+#: tech_tree/upgrades/grenade_launcher_volley.tres
+msgid "Volley Size"
+msgstr "Tamaño de descarga"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:297
+msgid "Reload Time"
+msgstr "Tiempo de recarga"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:298
+msgid "Slow Strength"
+msgstr "Fuerza de ralentización"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:299
+msgid "Slow Duration"
+msgstr "Duración de ralentización"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:300
+msgid "Available Planes"
+msgstr "Aviones disponibles"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:301
+msgid "Available Bombs"
+msgstr "Bombas disponibles"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:302
+msgid "Explosion Radius"
+msgstr "Radio de explosión"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:303
+msgid "Max Bounces"
+msgstr "Máximo de rebotes"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:304
+msgid "Fuel Tank"
+msgstr "Depósito de combustible"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:305
+msgid "Freeze Duration"
+msgstr "Duración de la congelación"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:306
+msgid "Area Length"
+msgstr "Largo de la zona"
+
+#: tech_tree/hud/tower_stats/tower_stats.gd:307
+msgid "Explosion Damage"
+msgstr "Daño de explosión"
+
+#: tech_tree/upgrades/base_hp.tres tech_tree/upgrades/base_hp_2.tres
+msgid "More Health Points"
+msgstr "Más puntos de salud"
+
+#: tech_tree/upgrades/base_hp.tres tech_tree/upgrades/base_hp_2.tres
+msgid "+{x} health points"
+msgstr "{x} puntos de salud más"
+
+#: tech_tree/upgrades/cannon_count.tres tech_tree/upgrades/cannon_count_2.tres
+#: tech_tree/upgrades/cannon_count_3.tres
+msgid "More Cannons"
+msgstr "Más cañones"
+
+#: tech_tree/upgrades/cannon_count.tres tech_tree/upgrades/cannon_count_2.tres
+#: tech_tree/upgrades/cannon_count_3.tres
+msgid "+{x} Cannon tower"
+msgstr "{x} cañón más"
+
+#: tech_tree/upgrades/cannon_damage.tres
+#: tech_tree/upgrades/cannon_damage_2.tres
+#: tech_tree/upgrades/cannon_damage_3.tres
+msgid "Cannon Damage"
+msgstr "Daño de cañones"
+
+#: tech_tree/upgrades/cannon_damage.tres
+#: tech_tree/upgrades/cannon_damage_2.tres
+#: tech_tree/upgrades/cannon_damage_3.tres
+#: tech_tree/upgrades/gunner_damage.tres
+#: tech_tree/upgrades/gunner_damage_2.tres
+#: tech_tree/upgrades/missile_damage.tres
+#: tech_tree/upgrades/missile_damage_2.tres
+#: tech_tree/upgrades/missile_damage_3.tres
+#: tech_tree/upgrades/mortar_explosion_damage.tres
+#: tech_tree/upgrades/mortar_explosion_damage_2.tres
+#: tech_tree/upgrades/mortar_fragment_damage.tres
+#: tech_tree/upgrades/strafing_run_damage.tres
+#: tech_tree/upgrades/strafing_run_damage_2.tres
+#: tech_tree/upgrades/tesla_coil_damage.tres
+#: tech_tree/upgrades/explosive_orcs_damage.tres
+#: tech_tree/upgrades/grenade_launcher_explosion_damage.tres
+#: tech_tree/upgrades/grenade_launcher_explosion_damage_2.tres
+#: tech_tree/upgrades/gunner_damage_3.tres
+#: tech_tree/upgrades/missile_damage_4.tres
+#: tech_tree/upgrades/missile_shrapnel_damage.tres
+#: tech_tree/upgrades/nuke_damage.tres
+#: tech_tree/upgrades/tesla_coil_damage_2.tres
+#: tech_tree/upgrades/tesla_coil_damage_3.tres
+#: tech_tree/upgrades/laser_damage.tres tech_tree/upgrades/laser_damage_2.tres
+#: tech_tree/upgrades/laser_damage_3.tres
+#: tech_tree/upgrades/cryo_beam_damage_2.tres
+#: tech_tree/upgrades/cryo_beam_damage_3.tres
+#: tech_tree/upgrades/laser_damage_4.tres
+msgid "+{x} damage"
+msgstr "+{x} de daño"
+
+#: tech_tree/upgrades/cannon_firerate.tres
+#: tech_tree/upgrades/cannon_firerate_2.tres
+#: tech_tree/upgrades/cannon_firerate_3.tres
+msgid "Cannon Firerate"
+msgstr "Cadencia de tiro de cañones"
+
+#: tech_tree/upgrades/cannon_firerate.tres
+#: tech_tree/upgrades/cannon_firerate_2.tres
+#: tech_tree/upgrades/cannon_firerate_3.tres
+#: tech_tree/upgrades/gunner_firerate.tres
+#: tech_tree/upgrades/gunner_firerate_2.tres
+#: tech_tree/upgrades/gunner_firerate_3.tres
+#: tech_tree/upgrades/gunner_firerate_4.tres
+#: tech_tree/upgrades/mortar_firerate.tres
+#: tech_tree/upgrades/tesla_coil_firerate.tres
+#: tech_tree/upgrades/tesla_coil_firerate_2.tres
+#: tech_tree/upgrades/laser_firerate.tres
+#: tech_tree/upgrades/laser_firerate_2.tres
+msgid "+{x} shots / second"
+msgstr "{x} disparos más por segundo"
+
+#: tech_tree/upgrades/cannon_penetration.tres
+#: tech_tree/upgrades/cannon_penetration_2.tres
+#: tech_tree/upgrades/cannon_penetration_3.tres
+msgid "Cannon Penetration"
+msgstr "Penetración de cañones"
+
+#: tech_tree/upgrades/cannon_penetration.tres
+#: tech_tree/upgrades/cannon_penetration_2.tres
+#: tech_tree/upgrades/cannon_penetration_3.tres
+#: tech_tree/upgrades/gunner_penetration.tres
+#: tech_tree/upgrades/mortar_fragment_penetration.tres
+#: tech_tree/upgrades/gunner_penetration_2.tres
+#: tech_tree/upgrades/missile_shrapnel_penetration.tres
+msgid "+{x} penetration"
+msgstr "+{x} a la penetración"
+
+#: tech_tree/upgrades/cannon_range.tres
+msgid "Cannon Range"
+msgstr "Alcance de cañones"
+
+#: tech_tree/upgrades/cannon_range.tres
+#: tech_tree/upgrades/flamethrower_range.tres
+#: tech_tree/upgrades/gunner_range.tres tech_tree/upgrades/missile_radius.tres
+#: tech_tree/upgrades/missile_radius_2.tres
+#: tech_tree/upgrades/mortar_explosion_radius.tres
+#: tech_tree/upgrades/strafing_run_radius.tres
+#: tech_tree/upgrades/tesla_coil_range.tres
+#: tech_tree/upgrades/explosive_orcs_radius.tres
+#: tech_tree/upgrades/grenade_launcher_explosion_radius.tres
+#: tech_tree/upgrades/grenade_launcher_radius.tres
+#: tech_tree/upgrades/nuke_radius.tres tech_tree/upgrades/cryo_beam_radius.tres
+#: tech_tree/upgrades/cryo_beam_radius_2.tres
+#: tech_tree/upgrades/laser_range.tres tech_tree/upgrades/laser_range_2.tres
+#: tech_tree/upgrades/laser_range_3.tres
+msgid "+{x} meter"
+msgstr "{x} metro más"
+
+#: tech_tree/upgrades/cannon_unlock.tres
+msgid "Low fire rate but high damage. Projectiles penetrate through multiple orcs."
+msgstr "Una cadencia de tiro baja, pero inflige mucho daño. Los proyectiles atraviesan a varios orcos."
+
+#: tech_tree/upgrades/explosive_orcs_chance.tres
+msgid "Explosive Orcs Chance"
+msgstr "Probabilidad de orcos explosivos"
+
+#: tech_tree/upgrades/explosive_orcs_chance.tres
+#: tech_tree/upgrades/golden_orcs_chance.tres
+#: tech_tree/upgrades/fire_free_penetration_2.tres
+#: tech_tree/upgrades/golden_orcs_chance_2.tres
+msgid "+{x}% chance"
+msgstr "+ {x} % de probabilidades"
+
+#: tech_tree/upgrades/fire_tick_damage.tres
+msgid "Burn Damage"
+msgstr "Daño por quemadura"
+
+#: tech_tree/upgrades/fire_tick_damage.tres
+msgid "+{x} damage per tick"
+msgstr "+{x} al daño del intervalo"
+
+#: tech_tree/upgrades/fire_tick_rate.tres
+msgid "+{x} ticks / second"
+msgstr "+{x} intervalos/s"
+
+#: tech_tree/upgrades/flamethrower_count.tres
+#: tech_tree/upgrades/flamethrower_count_2.tres
+#: tech_tree/upgrades/flamethrower_count_3.tres
+msgid "More Flamethrowers"
+msgstr "Más lanzallamas"
+
+#: tech_tree/upgrades/flamethrower_count.tres
+#: tech_tree/upgrades/flamethrower_count_2.tres
+#: tech_tree/upgrades/flamethrower_count_3.tres
+msgid "+{x} Flamethrower tower"
+msgstr "{x} lanzallamas más"
+
+#: tech_tree/upgrades/flamethrower_fire_duration.tres
+#: tech_tree/upgrades/grenade_launcher_lifetime.tres
+#: tech_tree/upgrades/grenade_launcher_slow_duration.tres
+#: tech_tree/upgrades/missile_shrapnel_slow_duration.tres
+#: tech_tree/upgrades/tesla_coil_shock_duration.tres
+#: tech_tree/upgrades/cryo_beam_duration.tres
+#: tech_tree/upgrades/cryo_beam_duration_2.tres
+#: tech_tree/upgrades/cryo_beam_fuel.tres
+#: tech_tree/upgrades/cryo_beam_fuel_2.tres
+msgid "+{x} seconds"
+msgstr "{x} segundos más"
+
+#: tech_tree/upgrades/flamethrower_range.tres
+msgid "Flamethrower Range"
+msgstr "Alcance del lanzallamas"
+
+#: tech_tree/upgrades/flamethrower_unlock.tres
+msgid "Unleashes a continuous stream of flames that sets enemy orcs ablaze. Burning orcs take periodic damage."
+msgstr "Lanza una llamarada continua que prende fuego a los orcos enemigos. Los orcos en llamas reciben daños continuos."
+
+#: tech_tree/upgrades/golden_orcs.tres
+msgid "Silver Orcs"
+msgstr "Orcos plateados"
+
+#: tech_tree/upgrades/golden_orcs.tres
+msgid "Adds a {x}% chance that an orc becomes silver after spawning. Killing silver orcs grants {x} additional {upgrade_mark}."
+msgstr "Añade un {x} % de probabilidades de que un orco se vuelva plateado tras aparecer. Al eliminar orcos plateados, obtienes {x} {upgrade_mark} adicionales."
+
+#: tech_tree/upgrades/golden_orcs_chance.tres
+#: tech_tree/upgrades/golden_orcs_chance_2.tres
+msgid "Silver Orcs Chance"
+msgstr "Probabilidad de orcos plateados"
+
+#: tech_tree/upgrades/golden_orcs_money.tres
+msgid "Silver Orcs Value"
+msgstr "Valor de orcos plateados"
+
+#: tech_tree/upgrades/golden_orcs_money.tres
+msgid "+{x} {upgrade_mark}"
+msgstr "{x} {upgrade_mark} más"
+
+#: tech_tree/upgrades/gunner_count.tres tech_tree/upgrades/gunner_count_2.tres
+#: tech_tree/upgrades/gunner_count_3.tres
+#: tech_tree/upgrades/gunner_count_4.tres
+msgid "More Gunners"
+msgstr "Más torres artilleras"
+
+#: tech_tree/upgrades/gunner_count.tres tech_tree/upgrades/gunner_count_2.tres
+#: tech_tree/upgrades/gunner_count_3.tres
+#: tech_tree/upgrades/gunner_count_4.tres
+msgid "+{x} Gunner tower"
+msgstr "{x} torre artillera más"
+
+#: tech_tree/upgrades/gunner_damage.tres
+#: tech_tree/upgrades/gunner_damage_2.tres
+#: tech_tree/upgrades/gunner_damage_3.tres
+msgid "Gunner Damage"
+msgstr "Daño de torre artillera"
+
+#: tech_tree/upgrades/gunner_firerate.tres
+#: tech_tree/upgrades/gunner_firerate_2.tres
+#: tech_tree/upgrades/gunner_firerate_4.tres
+msgid "Gunner Firerate"
+msgstr "Cadencia de torre artillera"
+
+#: tech_tree/upgrades/gunner_firerate_3.tres
+msgid "Rapid Fire"
+msgstr "Disparo rápido"
+
+#: tech_tree/upgrades/gunner_penetration.tres
+#: tech_tree/upgrades/gunner_penetration_2.tres
+msgid "Gunner Penetration"
+msgstr "Penetración de torre artillera"
+
+#: tech_tree/upgrades/gunner_range.tres
+msgid "Gunner Range"
+msgstr "Alcance de torre artillera"
+
+#: tech_tree/upgrades/gunner_unlock.tres
+msgid "Simple machine gun with high firerate."
+msgstr "Ametralladora sencilla con una cadencia de tiro elevada."
+
+#: tech_tree/upgrades/marks_bonus.tres
+msgid "Bonus Resources"
+msgstr "Recursos adicionales"
+
+#: tech_tree/upgrades/marks_bonus.tres
+msgid "Gain +{x}{upgrade_mark} at the end of a battle."
+msgstr "Obtén {x}{upgrade_mark} más al final de una batalla."
+
+#: tech_tree/upgrades/marks_percentage.tres
+msgid "Bonus Resources 2"
+msgstr "Recursos adicionales 2"
+
+#: tech_tree/upgrades/marks_percentage.tres
+msgid "Gain +{x}% {upgrade_mark} at the end of a battle."
+msgstr "Obtén {x} % {upgrade_mark} más al final de una batalla."
+
+#: tech_tree/upgrades/missile_clickhold.tres
+msgid "Automatic Missile"
+msgstr "Misil automático"
+
+#: tech_tree/upgrades/missile_clickhold.tres
+msgid "Missiles are now fired continuously. Click once to toggle firing on and off."
+msgstr "Ahora los misiles se lanzan de forma continua. Haz clic una vez para activar o desactivar su lanzamiento."
+
+#: tech_tree/upgrades/missile_cooldown.tres
+#: tech_tree/upgrades/missile_cooldown_2.tres
+msgid "Missile Cooldown"
+msgstr "Tiempo de recarga de misiles"
+
+#: tech_tree/upgrades/missile_cooldown.tres
+#: tech_tree/upgrades/missile_cooldown_2.tres
+msgid "{x} seconds"
+msgstr "{x} segundos"
+
+#: tech_tree/upgrades/missile_damage.tres
+#: tech_tree/upgrades/missile_damage_2.tres
+#: tech_tree/upgrades/missile_damage_3.tres
+#: tech_tree/upgrades/missile_damage_4.tres
+msgid "Missile Damage"
+msgstr "Daño de misiles"
+
+#: tech_tree/upgrades/missile_radius.tres
+#: tech_tree/upgrades/missile_radius_2.tres
+msgid "Missile Explosion Radius"
+msgstr "Radio de explosión de misil"
+
+#: tech_tree/upgrades/mortar_count.tres tech_tree/upgrades/mortar_count_2.tres
+#: tech_tree/upgrades/mortar_count_3.tres
+msgid "More Mortars"
+msgstr "Más torres mortero"
+
+#: tech_tree/upgrades/mortar_count.tres tech_tree/upgrades/mortar_count_2.tres
+#: tech_tree/upgrades/mortar_count_3.tres
+msgid "+{x} Mortar tower"
+msgstr "{x} torre mortero más"
+
+#: tech_tree/upgrades/mortar_explosion_damage.tres
+#: tech_tree/upgrades/mortar_explosion_damage_2.tres
+msgid "Mortar Explosion Damage"
+msgstr "Daño de explosión de torre mortero"
+
+#: tech_tree/upgrades/mortar_explosion_radius.tres
+msgid "Mortar Explosion Radius"
+msgstr "Radio de explosión de torre mortero"
+
+#: tech_tree/upgrades/mortar_firerate.tres
+msgid "Mortar Fire Rate"
+msgstr "Cadencia de tiro de torre mortero"
+
+#: tech_tree/upgrades/mortar_fragment_count.tres
+msgid "Mortar Shrapnels"
+msgstr "Metralla de torre mortero"
+
+#: tech_tree/upgrades/mortar_fragment_count.tres
+msgid "Mortar shell explosions shoot out {x} shrapnels that deal damage."
+msgstr "Las explosiones de los proyectiles de la torre mortero lanzan {x} de metralla, lo que inflige daño."
+
+#: tech_tree/upgrades/mortar_fragment_damage.tres
+msgid "Mortar Shrapnel Damage"
+msgstr "Daño de metralla de torre mortero"
+
+#: tech_tree/upgrades/mortar_fragment_penetration.tres
+msgid "Mortar Shrapnel Penetration"
+msgstr "Penetración de metralla de torre mortero"
+
+#: tech_tree/upgrades/mortar_unlock.tres
+msgid "Launches explosive shells that deal heavy area damage to all enemy orcs within the blast radius."
+msgstr "Lanza proyectiles explosivos que infligen un daño de zona elevado a todos los orcos enemigos que se encuentren dentro del radio de la explosión."
+
+#: tech_tree/upgrades/strafing_run_bullet_count.tres
+msgid "Strafing Run Bullet Count"
+msgstr "Recuento de balas de bombardeo"
+
+#: tech_tree/upgrades/strafing_run_bullet_count.tres
+msgid "+{x} bullets"
+msgstr "{x} balas más"
+
+#: tech_tree/upgrades/strafing_run_damage.tres
+#: tech_tree/upgrades/strafing_run_damage_2.tres
+msgid "Strafing Run Damage"
+msgstr "Daño de bombardeo"
+
+#: tech_tree/upgrades/strafing_run_radius.tres
+msgid "Strafing Run Explosion Radius"
+msgstr "Radio de explosión de bombardeo"
+
+#: tech_tree/upgrades/strafing_run_unlock.tres
+msgid "Active ability: Call in an airstrike on a designated area. Can be used once per battle."
+msgstr "Habilidad activa: Solicita un ataque aéreo sobre una zona determinada. Se puede usar una vez por combate."
+
+#: tech_tree/upgrades/strafing_run_width.tres
+msgid "Strafing Run Area"
+msgstr "Zona de bombardeo"
+
+#: tech_tree/upgrades/strafing_run_width.tres
+msgid "+{x} meter width and +{straf_len} meter length"
+msgstr "+{x} metros de ancho y +{straf_len} metros de largo"
+
+#: tech_tree/upgrades/laser_unlock.tres
+msgid "Fires a laser beam that bounces off walls, striking enemies from unexpected angles."
+msgstr "Lanza un rayo láser que rebota en las paredes y alcanza a los enemigos desde ángulos inesperados."
+
+#: tech_tree/upgrades/nuke_unlock.tres
+msgid "Active ability: Drop a nuclear bomb. Can be used once per battle."
+msgstr "Habilidad activa: Lanza una bomba nuclear. Se puede usar una vez por combate."
+
+#: tech_tree/upgrades/headhunter.tres
+msgid "Headhunter"
+msgstr "Cazarrecompensas"
+
+#: tech_tree/upgrades/headhunter.tres
+msgid "Reduce the number of kills needed to earn 1 {upgrade_mark} by {x}."
+msgstr "Reduce en {x} la cantidad de eliminaciones necesarias para obtener 1 {upgrade_mark}."
+
+#: tech_tree/upgrades/dmg_stats.tres
+msgid "Damage Statistics"
+msgstr "Estadísticas de daño"
+
+#: tech_tree/upgrades/dmg_stats.tres
+msgid "Unlock tower damage stats."
+msgstr "Desbloquea las estadísticas de daño de las torres."
+
+#: tech_tree/upgrades/cannon_big_boy.tres
+msgid "Power Shot"
+msgstr "Disparo potente"
+
+#: tech_tree/upgrades/cannon_big_boy.tres
+msgid "Every 5th shot of the cannon is bigger and has more penetration."
+msgstr "Cada quinto disparo del cañón es más potente y tiene mayor poder de penetración."
+
+#: tech_tree/hud/currency_ui/currency_ui.tscn
+msgid "Earn this resource by killing orcs."
+msgstr "Mata orcos para obtener este recurso."
+
+#: tech_tree/upgrades/tesla_coil_unlock.tres
+msgid "Fires bolts of electricity that arc between nearby enemy orcs."
+msgstr "Lanza descargas eléctricas que se propagan entre los orcos enemigos cercanos."
+
+#: tech_tree/upgrades/tesla_coil_count.tres
+#: tech_tree/upgrades/tesla_coil_count_2.tres
+#: tech_tree/upgrades/tesla_coil_count_3.tres
+msgid "More Tesla Coils"
+msgstr "Más bobinas de Tesla"
+
+#: tech_tree/upgrades/tesla_coil_count.tres
+#: tech_tree/upgrades/tesla_coil_count_2.tres
+#: tech_tree/upgrades/tesla_coil_count_3.tres
+msgid "+{x} Tesla Coil tower"
+msgstr "{x} bobina de Tesla más"
+
+#: tech_tree/upgrades/tesla_coil_damage.tres
+#: tech_tree/upgrades/tesla_coil_damage_2.tres
+#: tech_tree/upgrades/tesla_coil_damage_3.tres
+msgid "Tesla Coil Damage"
+msgstr "Daño de la bobina de Tesla"
+
+#: tech_tree/upgrades/tesla_coil_firerate.tres
+#: tech_tree/upgrades/tesla_coil_firerate_2.tres
+msgid "Tesla Coil Firerate"
+msgstr "Cadencia de la bobina de Tesla"
+
+#: tech_tree/upgrades/tesla_coil_range.tres
+msgid "Tesla Coil Range"
+msgstr "Alcance de la bobina de Tesla"
+
+#: menu/save_slot_selection/new_game_dialog.tscn
+#: menu/save_slot_selection/new_game_dialog.gd:8
+msgid "Are you sure you want to overwrite slot #{x} and start a new game?"
+msgstr "¿Seguro que quieres sobrescribir el espacio n.º {x} y empezar una nueva partida?"
+
+#: menu/save_slot_selection/new_game_dialog.tscn
+msgid "No"
+msgstr "No"
+
+#: menu/save_slot_selection/new_game_dialog.tscn
+msgid "Yes"
+msgstr "Sí"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Current Level"
+msgstr "Nivel actual"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Earned"
+msgstr "Obtenido"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Last Played"
+msgstr "Jugado por última vez"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Active"
+msgstr "Actual"
+
+#: menu/save_slot_selection/save_slot.tscn
+msgid "Empty"
+msgstr "Vacío"
+
+#: menu/save_slot_selection/save_slot_selection.tscn
+msgid "Choose one to overwrite"
+msgstr "Elige uno para sobrescribirlo."
+
+#: menu/save_slot_selection/save_slot.gd:18
+msgid "Slot #{x}"
+msgstr "Espacio n.º {x}"
+
+#: tech_tree/upgrades/explosive_orcs_damage.tres
+msgid "Explosive Orcs Damage"
+msgstr "Daño de orcos explosivos"
+
+#: tech_tree/upgrades/explosive_orcs_radius.tres
+msgid "Explosive Orcs Radius"
+msgstr "Radio de orcos explosivos"
+
+#: tech_tree/upgrades/explosive_orcs_unlock.tres
+msgid "Explosive Orcs"
+msgstr "Orcos explosivos"
+
+#: tech_tree/upgrades/explosive_orcs_unlock.tres
+msgid "Adds a {x}% chance that orcs carry explosives which detonate upon death and damage nearby orcs."
+msgstr "Añade un {x} % de probabilidades de que los orcos lleven explosivos que detonan al morir y dañan a los orcos cercanos."
+
+#: tech_tree/upgrades/fire_damage_buff.tres
+#: tech_tree/upgrades/fire_damage_buff_2.tres
+msgid "Scorched Armor"
+msgstr "Armadura chamuscada"
+
+#: tech_tree/upgrades/fire_damage_buff.tres
+msgid "Increase all damage to burning orcs by {x}%."
+msgstr "Aumenta el daño sufrido por los orcos en llamas un {x} %."
+
+#: tech_tree/upgrades/fire_damage_buff_2.tres
+#: tech_tree/upgrades/grenade_launcher_damage_buff_2.tres
+msgid "+{x}% damage"
+msgstr "+{x} % de daño"
+
+#: tech_tree/upgrades/fire_free_penetration.tres
+msgid "Free Penetration"
+msgstr "Penetración gratuita"
+
+#: tech_tree/upgrades/fire_free_penetration.tres
+msgid "Bullets have a {x}% chance to penetrate burning enemies without consuming penetration."
+msgstr "Las balas tienen un {x} % de probabilidades de atravesar a los enemigos en llamas sin consumir penetración."
+
+#: tech_tree/upgrades/fire_free_penetration_2.tres
+msgid "Free Penetration Chance"
+msgstr "Probabilidad de penetración gratuita"
+
+#: tech_tree/upgrades/grenade_launcher_count.tres
+#: tech_tree/upgrades/grenade_launcher_count_2.tres
+msgid "More Grenade Launchers"
+msgstr "Más lanzagranadas"
+
+#: tech_tree/upgrades/grenade_launcher_count.tres
+#: tech_tree/upgrades/grenade_launcher_count_2.tres
+msgid "+{x} Grenade Launcher tower"
+msgstr "{x} lanzagranadas más"
+
+#: tech_tree/upgrades/grenade_launcher_damage_buff.tres
+#: tech_tree/upgrades/grenade_launcher_damage_buff_2.tres
+msgid "Corrosive Fumes"
+msgstr "Vapores corrosivos"
+
+#: tech_tree/upgrades/grenade_launcher_damage_buff.tres
+msgid "Increase all damage to slowed orcs by {x}%."
+msgstr "Aumenta el daño sufrido por los orcos ralentizados un {x} %."
+
+#: tech_tree/upgrades/grenade_launcher_explosion_damage.tres
+#: tech_tree/upgrades/grenade_launcher_explosion_damage_2.tres
+msgid "Grenade Explosion Damage"
+msgstr "Daño de explosión de granadas"
+
+#: tech_tree/upgrades/grenade_launcher_explosion_radius.tres
+msgid "Grenade Explosion Radius"
+msgstr "Radio de explosión de granadas"
+
+#: tech_tree/upgrades/grenade_launcher_explosive.tres
+msgid "Explosive Grenades"
+msgstr "Granadas explosivas"
+
+#: tech_tree/upgrades/grenade_launcher_explosive.tres
+msgid "Grenades explode when their duration expires."
+msgstr "Las granadas explotan cuando se acaba su duración."
+
+#: tech_tree/upgrades/grenade_launcher_lifetime.tres
+msgid "Grenade Duration"
+msgstr "Duración de granadas"
+
+#: tech_tree/upgrades/grenade_launcher_radius.tres
+msgid "Grenade Effect Radius"
+msgstr "Radio de efecto de granadas"
+
+#: tech_tree/upgrades/grenade_launcher_slow_duration.tres
+msgid "Grenade Slow Duration"
+msgstr "Duración de ralentización de las granadas"
+
+#: tech_tree/upgrades/grenade_launcher_slow_strength.tres
+#: tech_tree/upgrades/grenade_launcher_slow_strength_2.tres
+msgid "Grenade Slow Strength"
+msgstr "Fuerza de ralentización de las granadas"
+
+#: tech_tree/upgrades/grenade_launcher_slow_strength.tres
+#: tech_tree/upgrades/grenade_launcher_slow_strength_2.tres
+#: tech_tree/upgrades/missile_shrapnel_slow_strength.tres
+msgid "+{x}% slow strength"
+msgstr "+{x} % a la fuerza de ralentización"
+
+#: tech_tree/upgrades/grenade_launcher_unlock.tres
+msgid "Fires gas grenades that create lingering clouds, slowing enemy orcs caught within them."
+msgstr "Lanza granadas de gas que crean nubes persistentes, lo que ralentiza a los orcos enemigos que quedan atrapados en ellas."
+
+#: tech_tree/upgrades/grenade_launcher_volley.tres
+msgid "+{x} grenade per volley"
+msgstr "{x} granada más por descarga"
+
+#: tech_tree/upgrades/missile_shrapnel_count.tres
+msgid "Missile Shrapnels"
+msgstr "Metralla de misil"
+
+#: tech_tree/upgrades/missile_shrapnel_count.tres
+msgid "Missile explosions shoot out {x} shrapnels that deal damage and slow orcs."
+msgstr "Las explosiones de los misiles lanzan {x} de metralla, lo que inflige daño y ralentiza a los orcos."
+
+#: tech_tree/upgrades/missile_shrapnel_count_2.tres
+msgid "Shrapnel Count"
+msgstr "Cantidad de metralla"
+
+#: tech_tree/upgrades/missile_shrapnel_count_2.tres
+msgid "+{x} shrapnels"
+msgstr "+{x} de metralla"
+
+#: tech_tree/upgrades/missile_shrapnel_slow_duration.tres
+msgid "Shrapnel Slow Duration"
+msgstr "Duración de ralentización de la metralla"
+
+#: tech_tree/upgrades/missile_shrapnel_slow_strength.tres
+msgid "Shrapnel Slow Strength"
+msgstr "Fuerza de ralentización de la metralla"
+
+#: tech_tree/upgrades/mortar_fragment_count_2.tres
+msgid "Mortar Shrapnel Count"
+msgstr "Recuento de metralla de torre mortero"
+
+#: tech_tree/upgrades/mortar_fragment_count_2.tres
+msgid "+{x} shrapnel"
+msgstr "+{x} de metralla"
+
+#: tech_tree/upgrades/nuke_count.tres
+msgid "More Nukes"
+msgstr "Más bombas nucleares"
+
+#: tech_tree/upgrades/nuke_count.tres
+msgid "+{x} nuke bomb use"
+msgstr "{x} uso más de la bomba nuclear"
+
+#: tech_tree/upgrades/nuke_damage.tres
+msgid "Nuke Explosion Damage"
+msgstr "Daño de explosión nuclear"
+
+#: tech_tree/upgrades/nuke_radius.tres
+msgid "Nuke Explosion Radius"
+msgstr "Radio de la explosión nuclear"
+
+#: tech_tree/upgrades/strafing_run_count.tres
+msgid "More Runs"
+msgstr "Más bombardeos"
+
+#: tech_tree/upgrades/strafing_run_count.tres
+msgid "+{x} strafing run use"
+msgstr "{x} uso más del bombardeo"
+
+#: tech_tree/upgrades/tesla_coil_chaining.tres
+#: tech_tree/upgrades/tesla_coil_chaining_2.tres
+msgid "Tesla Coil Chain Jumps"
+msgstr "Saltos en cadena de la bobina de Tesla"
+
+#: tech_tree/upgrades/tesla_coil_chaining.tres
+#: tech_tree/upgrades/tesla_coil_chaining_2.tres
+msgid "+{x} jump"
+msgstr "{x} salto más"
+
+#: tech_tree/upgrades/tesla_coil_confusion.tres
+msgid "Tesla Coil Confusion"
+msgstr "Confusión de la bobina de Tesla"
+
+#: tech_tree/upgrades/tesla_coil_confusion.tres
+msgid "Shocked enemies will run in the wrong direction for {x} second."
+msgstr "Los enemigos electrocutados correrán en la dirección equivocada durante {x} segundos."
+
+#: tech_tree/upgrades/tesla_coil_shock_duration.tres
+msgid "Tesla Coil Shock Duration"
+msgstr "Duración de electrocución de la bobina de Tesla"
+
+#: tech_tree/upgrades/marks_bonus_2.tres
+msgid "Bonus Resources 3"
+msgstr "Recursos adicionales 3"
+
+#: tech_tree/upgrades/marks_bonus_2.tres
+msgid "Gain +{x}{upgrade_mark} at the end of a battle when playing level 3.1 or higher."
+msgstr "Obtén {x}{upgrade_mark} más al final de una batalla al jugar en el nivel 3.1 o superior."
+
+#: menu/save_slot_selection/save_slot_selection.gd:27
+msgid "Choose a save slot"
+msgstr "Elige un espacio de guardado."
+
+#: tech_tree/hud/level_panel.gd:45
+msgid "Attempts:"
+msgstr "Intentos:"
+
+#: tech_tree/hud/level_panel.gd:46
+msgid "Survivals:"
+msgstr "Victorias:"
+
+#: tech_tree/hud/level_panel.gd:47
+msgid "All orcs killed:"
+msgstr "Todos los orcos eliminados:"
+
+#: tech_tree/hud/level_panel.gd:48
+msgid "First attempt:"
+msgstr "Primer intento:"
+
+#: tech_tree/hud/level_panel.gd:49
+msgid "First survival:"
+msgstr "Primera victoria:"
+
+#: tech_tree/hud/level_panel.gd:50
+msgid "First all orcs killed:"
+msgstr "Primera vez que eliminas todos los orcos:"
+
+#: tech_tree/hud/level_panel.gd:51
+msgid "Total earned:"
+msgstr "Total obtenido:"
+
+#: tech_tree/upgrades/cryo_beam_duration.tres
+#: tech_tree/upgrades/cryo_beam_duration_2.tres
+msgid "Cryo Beam Duration"
+msgstr "Duración de rayo criogénico"
+
+#: tech_tree/upgrades/cryo_beam_fuel.tres
+#: tech_tree/upgrades/cryo_beam_fuel_2.tres
+msgid "Cryo Beam Fuel"
+msgstr "Combustible de rayo criogénico"
+
+#: tech_tree/upgrades/cryo_beam_radius.tres
+#: tech_tree/upgrades/cryo_beam_radius_2.tres
+msgid "Cryo Beam Radius"
+msgstr "Radio de rayo criogénico"
+
+#: tech_tree/upgrades/cryo_beam_unlock.tres
+msgid "Active ability: Call down an orbital cryo beam that freezes all orcs in its path."
+msgstr "Habilidad activa: Convoca un rayo criogénico orbital que congela a todos los orcos que se encuentran en su trayectoria."
+
+#: tech_tree/upgrades/laser_bounces.tres
+#: tech_tree/upgrades/laser_bounces_2.tres
+msgid "Laser Bounces"
+msgstr "Rebotes de láser"
+
+#: tech_tree/upgrades/laser_bounces.tres
+msgid "+{x} bounces"
+msgstr "{x} rebotes más"
+
+#: tech_tree/upgrades/laser_bounces_2.tres
+msgid "+{x} bounce"
+msgstr "{x} rebote más"
+
+#: tech_tree/upgrades/laser_count.tres tech_tree/upgrades/laser_count_2.tres
+#: tech_tree/upgrades/laser_count_3.tres
+msgid "More Lasers"
+msgstr "Más láseres"
+
+#: tech_tree/upgrades/laser_count.tres tech_tree/upgrades/laser_count_2.tres
+#: tech_tree/upgrades/laser_count_3.tres
+msgid "+{x} Laser tower"
+msgstr "{x} láser más"
+
+#: tech_tree/upgrades/laser_damage.tres tech_tree/upgrades/laser_damage_2.tres
+#: tech_tree/upgrades/laser_damage_3.tres
+#: tech_tree/upgrades/laser_damage_4.tres
+msgid "Laser Damage"
+msgstr "Daño del láser"
+
+#: tech_tree/upgrades/laser_firerate.tres
+#: tech_tree/upgrades/laser_firerate_2.tres
+msgid "Laser Firerate"
+msgstr "Cadencia del láser"
+
+#: tech_tree/upgrades/laser_range.tres tech_tree/upgrades/laser_range_2.tres
+#: tech_tree/upgrades/laser_range_3.tres
+msgid "Laser Range"
+msgstr "Alcance del láser"
+
+#: globals/game_manager.gd:86 globals/game_manager.gd:87
+#: globals/game_manager.gd:88 globals/game_manager.gd:89
+#: globals/game_manager.gd:90 globals/game_manager.gd:91
+#: globals/game_manager.gd:92 globals/game_manager.gd:93
+#: globals/game_manager.gd:94 globals/game_manager.gd:95
+#: globals/game_manager.gd:96 globals/game_manager.gd:97
+msgid "Level"
+msgstr "Nivel"
+
+#: tech_tree/upgrades/buy_pink.tres
+msgid "Emergency Supplies"
+msgstr "Suministros de emergencia"
+
+#: tech_tree/upgrades/buy_pink.tres
+msgid "+{x} {pink_upgrade}"
+msgstr "+{x} {pink_upgrade}"
+
+#: tech_tree/upgrades/cryo_beam_damage.tres
+#: tech_tree/upgrades/cryo_beam_damage_2.tres
+#: tech_tree/upgrades/cryo_beam_damage_3.tres
+msgid "Cryo Beam Damage"
+msgstr "Daño de rayo criogénico"
+
+#: tech_tree/upgrades/cryo_beam_damage.tres
+msgid "Enemies take {x} damage upon unfreezing."
+msgstr "Los enemigos reciben {x} de daño al descongelarse."
+
+#: tech_tree/upgrades/marks_bonus_4.tres
+msgid "Bonus Resources 4"
+msgstr "Recursos adicionales 4"
+
+#: tech_tree/upgrades/marks_bonus_4.tres
+msgid "Gain +{x}{upgrade_mark} at the end of a battle when playing level 4.1 or higher."
+msgstr "Obtén {x}{upgrade_mark} más al final de una batalla al jugar en el nivel 4.1 o superior."
+
+msgid "Sir, We Have an Orc Problem"
+msgstr "Sir, We Have an Orc Problem"

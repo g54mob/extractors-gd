@@ -1,0 +1,1334 @@
+[gd_scene format=3 uid="uid://dutm20d732bsa"]
+
+[ext_resource type="Script" uid="uid://bu4ugi7ok3t82" path="res://battle/battle.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bnfotq47shkb3" path="res://enemies/orc_corpse.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cdxuykic4rx2g" path="res://towers/flamethrower/fire_particle.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b1hcml3vhcnht" path="res://levels/sprite_sheet_space.png" id="4"]
+[ext_resource type="Environment" uid="uid://cgn6uyp4xn4rf" path="res://battle/default_environment.tres" id="5"]
+[ext_resource type="PackedScene" uid="uid://4g6jbn282gwp" path="res://levels/world/world_sprite.tscn" id="6"]
+[ext_resource type="Shader" uid="uid://bspg5qe86bqmq" path="res://levels/world/world_sprite.gdshader" id="7"]
+[ext_resource type="Script" uid="uid://dweshc5yol2lg" path="res://battle/battle_camera.gd" id="8"]
+[ext_resource type="AudioStream" uid="uid://fnbm1gimrb8g" path="res://audio/sounds/group_running.wav" id="9"]
+[ext_resource type="Material" uid="uid://b0do15d621d24" path="res://battle/rigidbodies_shadow.material" id="10"]
+[ext_resource type="Script" uid="uid://c3veftpr4dk68" path="res://battle/shadow_texture_rect.gd" id="11"]
+[ext_resource type="Script" uid="uid://2r83my7fv07w" path="res://battle/rigidbodies_debug_texture_rect.gd" id="12"]
+[ext_resource type="Texture2D" uid="uid://dy41ijhuqj04e" path="res://enemies/orc_anim_2.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://c6pr5twvkctuv" path="res://enemies/orc_anim_space_combo.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://bn6ga3m0x1cc4" path="res://towers/grenade_launcher/grenade.png" id="15"]
+[ext_resource type="Script" uid="uid://bg7xi74is701j" path="res://battle/transparent_texture_rect.gd" id="16"]
+[ext_resource type="Script" uid="uid://ddmttuprxs4px" path="res://battle/active_abilities_spawner.gd" id="17"]
+[ext_resource type="Texture2D" uid="uid://csswjysaufxho" path="res://tech_tree/tooltips/values_arrow_white.png" id="18"]
+[ext_resource type="AudioStream" uid="uid://ciyl4tei1xw1l" path="res://abilities/cryo_beam/cryo_beam.ogg" id="19"]
+[ext_resource type="Script" uid="uid://huw44guclotx" path="res://battle/tower_placement.gd" id="20"]
+[ext_resource type="Script" uid="uid://b0goq34nb3n3v" path="res://battle/battle_sounds.gd" id="21"]
+[ext_resource type="Script" uid="uid://ch2ab1lmi2x15" path="res://battle/ui.gd" id="22"]
+[ext_resource type="Texture2D" uid="uid://dple2viy7dlpv" path="res://tech_tree/hud/left_click.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://sjk35f6qrwjd" path="res://tech_tree/hud/left_click_drag.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://dbafs1h7x3g6d" path="res://tech_tree/hud/right_click.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://c4vru4546h7vv" path="res://tech_tree/hud/key_r.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://bosm1kg325be" path="res://tech_tree/hud/right_click_drag.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://lsqtbarlfcqn" path="res://tech_tree/hud/mouse_wheel.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://brlcfdklsjoqg" path="res://tech_tree/hud/mouse.png" id="29"]
+[ext_resource type="Script" uid="uid://ccvscgvsr4t2c" path="res://battle/health_progress_bar.gd" id="30"]
+[ext_resource type="Texture2D" uid="uid://2ctn3e0pme2q" path="res://battle/hud/enemies_to_spawn.png" id="31"]
+[ext_resource type="Script" uid="uid://dl7ghknhhkkwj" path="res://battle/hud/enemies_to_spawn_label.gd" id="32"]
+[ext_resource type="Texture2D" uid="uid://dw3pwlekvtr6" path="res://battle/hud/enemies_alive.png" id="33"]
+[ext_resource type="Script" uid="uid://bqb4grync7g47" path="res://battle/enemies_alive_label.gd" id="34"]
+[ext_resource type="Texture2D" uid="uid://ch67asaocdmuw" path="res://battle/hud/enemies_killed.png" id="35"]
+[ext_resource type="Script" uid="uid://bhfcxqsmq4uf5" path="res://battle/enemies_killed_label.gd" id="36"]
+[ext_resource type="Script" uid="uid://cqmrf844bgr63" path="res://battle/time_container.gd" id="37"]
+[ext_resource type="PackedScene" uid="uid://cag3jsvnq50g" path="res://battle/hud/tower_button.tscn" id="38"]
+[ext_resource type="Texture2D" uid="uid://do3uxed41hovx" path="res://abilities/missile/missile_icon.png" id="39"]
+[ext_resource type="Script" uid="uid://ckb13cduj58kg" path="res://battle/ability_button.gd" id="40"]
+[ext_resource type="Texture2D" uid="uid://lhqu0d4bpb3v" path="res://menu/gradient_circle_32.tres" id="41"]
+[ext_resource type="Texture2D" uid="uid://cfxkv4pgwaeyk" path="res://abilities/strafing_run/strafing_run_icon.png" id="42"]
+[ext_resource type="Script" uid="uid://c764fbrotqoxm" path="res://battle/strafing_uses_container.gd" id="43"]
+[ext_resource type="Texture2D" uid="uid://dvjhkukudix80" path="res://abilities/uses.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://c5hcy0fvvbv1t" path="res://abilities/nuke/nuke_icon.png" id="45"]
+[ext_resource type="Script" uid="uid://bbfwsd06bbkos" path="res://abilities/nuke/nuke_uses_container.gd" id="46"]
+[ext_resource type="Texture2D" uid="uid://b45iw0q0wbqh1" path="res://abilities/cryo_beam/cryo_beam_icon.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://do5mdj5x5y1nq" path="res://abilities/cryo_fuel.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://cnisv507y4rc6" path="res://tech_tree/hud/upgrade_mark.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://baj6eqp3h53pa" path="res://tech_tree/hud/level_finished_mark.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://c0gl6t565bca5" path="res://tech_tree/hud/all_killed_mark.png" id="51"]
+[ext_resource type="Shortcut" uid="uid://cxhdr1566sfoa" path="res://menu/input_shortcuts/space.tres" id="52"]
+[ext_resource type="PackedScene" uid="uid://byhsibl083cud" path="res://tech_tree/hud/currency_ui/currency_ui.tscn" id="53"]
+
+[sub_resource type="Curve" id="Curve_u44yw"]
+_data = [Vector2(0, 0.095505714), 0.0, 0.0, 0, 0, Vector2(0.71449274, 0.70623565), 0.0, 0.0, 0, 0, Vector2(1, 0.20786524), -4.9641137, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1fqm1"]
+texture_mode = 1
+curve = SubResource("Curve_u44yw")
+
+[sub_resource type="Gradient" id="Gradient_8po3f"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r433p"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wp5fx"]
+width = 4
+height = 4
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_r433p")
+color_ramp = SubResource("Gradient_8po3f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ayty"]
+resource_local_to_scene = true
+shader = ExtResource("7")
+shader_parameter/world_size = Vector2(2048, 2048)
+shader_parameter/sdf_scale = 8.0
+shader_parameter/sim_time = 10.0
+shader_parameter/wall_tiles_count = 1
+shader_parameter/ground_tiles_count = 1
+shader_parameter/fire_color = Vector3(3.5, 2, 0.1)
+shader_parameter/sdf_nearest = null
+shader_parameter/sdf_linear = null
+shader_parameter/sprite_sheet_tex = null
+shader_parameter/corpses_tex = SubResource("NoiseTexture2D_wp5fx")
+shader_parameter/fire_tex = null
+shader_parameter/flow_tex = null
+
+[sub_resource type="Gradient" id="Gradient_u44yw"]
+offsets = PackedFloat32Array(0.004746835, 0.27056962, 0.9147465, 1)
+colors = PackedColorArray(0, 8.767637, 13.719973, 1, 6.4287405, 3.3197262, 0, 1, 3.3060446, 1.6311835, 0, 1, 0.5, 0.29375002, 0.004999995, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1fqm1"]
+gradient = SubResource("Gradient_u44yw")
+use_hdr = true
+
+[sub_resource type="Gradient" id="Gradient_3oaio"]
+offsets = PackedFloat32Array(0.051068883, 0.12707838, 0.8610451, 1)
+colors = PackedColorArray(1.4225082, 3.4245715, 3.3614287, 1, 0, 0, 4.0805416, 1, 0, 0, 5.4003043, 1, 0.064306915, 0.4619474, 0.83479327, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_66hg2"]
+gradient = SubResource("Gradient_3oaio")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_qya3g"]
+_data = [Vector2(0, 1), 0.0, -4.0726957, 0, 0, Vector2(0.27040815, 0.58079064), -0.4337157, -0.4337157, 0, 0, Vector2(1, 0.0038142204), -0.39266494, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_66hg2"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 4.0
+angle_min = -109.99999
+angle_max = -69.99999
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 172.0
+initial_velocity_max = 172.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_phvbk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gma2d"]
+bg_color = Color(0.9843137, 0.13725491, 0.16470589, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sf8fp"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="InputEventKey" id="InputEventKey_dxsh4"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_phvbk"]
+events = [SubResource("InputEventKey_dxsh4")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_as1q7"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_as1q7"]
+events = [SubResource("InputEventKey_as1q7")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_7njrs"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_ihybe"]
+events = [SubResource("InputEventKey_7njrs")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qkdrc"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_lc3t0"]
+events = [SubResource("InputEventKey_qkdrc")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_1fqm1"]
+device = -1
+keycode = 53
+unicode = 53
+
+[sub_resource type="Shortcut" id="Shortcut_qkdrc"]
+events = [SubResource("InputEventKey_1fqm1")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_kd14d"]
+device = -1
+keycode = 54
+unicode = 54
+
+[sub_resource type="Shortcut" id="Shortcut_ju8jl"]
+events = [SubResource("InputEventKey_kd14d")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_qya3g"]
+device = -1
+keycode = 55
+unicode = 55
+
+[sub_resource type="Shortcut" id="Shortcut_3oaio"]
+events = [SubResource("InputEventKey_qya3g")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_rtunx"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_2r8ok"]
+events = [SubResource("InputEventKey_rtunx")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_b7ybl"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_58keo"]
+events = [SubResource("InputEventKey_b7ybl")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_5wpbc"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_b7ybl"]
+events = [SubResource("InputEventKey_5wpbc")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_3oaio"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_66hg2"]
+events = [SubResource("InputEventKey_3oaio")]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_b7ybl"]
+color = Color(1, 1, 1, 1)
+
+[node name="Battle" type="Node2D" unique_id=1960626660 groups=["battle"]]
+script = ExtResource("1")
+corpse_tex = ExtResource("2")
+fire_tex = ExtResource("3")
+flame_scale_curve_tex = SubResource("CurveTexture_1fqm1")
+supporter_sprite_sheet_tex = ExtResource("4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1786214485]
+environment = ExtResource("5")
+
+[node name="WorldLayer" type="CanvasLayer" parent="." unique_id=249987995 groups=["world_layer"]]
+unique_name_in_owner = true
+follow_viewport_enabled = true
+
+[node name="WorldSprite" parent="WorldLayer" unique_id=382021119 instance=ExtResource("6")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_4ayty")
+
+[node name="WorldCollision" type="Node2D" parent="WorldLayer" unique_id=1853582336 groups=["world_collision"]]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2107065540]
+layer = 5
+follow_viewport_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer" unique_id=1195531455]
+unique_name_in_owner = true
+process_mode = 3
+position = Vector2(571, 497)
+script = ExtResource("8")
+min_zoom = 1.0
+move_speed = 200.0
+edge_scroll_boost = 5.0
+
+[node name="AudioRunning" type="Node2D" parent="CanvasLayer/Camera2D" unique_id=608506686]
+unique_name_in_owner = true
+process_mode = 1
+
+[node name="Center" type="AudioStreamPlayer2D" parent="CanvasLayer/Camera2D/AudioRunning" unique_id=2082025035]
+stream = ExtResource("9")
+volume_db = -80.0
+autoplay = true
+bus = &"Battle"
+
+[node name="TopLeft" type="AudioStreamPlayer2D" parent="CanvasLayer/Camera2D/AudioRunning" unique_id=341965745]
+stream = ExtResource("9")
+volume_db = -80.0
+autoplay = true
+bus = &"Battle"
+
+[node name="TopRight" type="AudioStreamPlayer2D" parent="CanvasLayer/Camera2D/AudioRunning" unique_id=588661302]
+stream = ExtResource("9")
+volume_db = -80.0
+autoplay = true
+bus = &"Battle"
+
+[node name="BottomLeft" type="AudioStreamPlayer2D" parent="CanvasLayer/Camera2D/AudioRunning" unique_id=83126163]
+stream = ExtResource("9")
+volume_db = -80.0
+autoplay = true
+bus = &"Battle"
+
+[node name="BottomRight" type="AudioStreamPlayer2D" parent="CanvasLayer/Camera2D/AudioRunning" unique_id=1793197473]
+stream = ExtResource("9")
+volume_db = -80.0
+autoplay = true
+bus = &"Battle"
+
+[node name="RigidbodiesDebug" type="CanvasLayer" parent="." unique_id=1652449099]
+process_mode = 3
+layer = 2
+
+[node name="ShadowTextureRect" type="TextureRect" parent="RigidbodiesDebug" unique_id=806697751]
+unique_name_in_owner = true
+texture_filter = 2
+material = ExtResource("10")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11")
+
+[node name="RigidbodiesDebugTextureRect" type="TextureRect" parent="RigidbodiesDebug" unique_id=481443252 node_paths=PackedStringArray("cam")]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12")
+cam = NodePath("../../CanvasLayer/Camera2D")
+enemy_tex = ExtResource("13")
+enemy_supporter_tex = ExtResource("14")
+grenade_tex = ExtResource("15")
+
+[node name="TransparentTextureRect" type="TextureRect" parent="RigidbodiesDebug" unique_id=1167094648 node_paths=PackedStringArray("cam")]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16")
+cam = NodePath("../../CanvasLayer/Camera2D")
+flame_tex = ExtResource("3")
+flame_scale_curve_tex = SubResource("CurveTexture_1fqm1")
+flame_color_ramp_tex = SubResource("GradientTexture1D_1fqm1")
+flame_color_ramp_supporter_tex = SubResource("GradientTexture1D_66hg2")
+
+[node name="TowerLayer" type="CanvasLayer" parent="." unique_id=1620272814]
+layer = 3
+follow_viewport_enabled = true
+
+[node name="EnemySpawners" type="Node2D" parent="TowerLayer" unique_id=300611261]
+unique_name_in_owner = true
+
+[node name="ActiveAbilitiesSpawner" type="Node2D" parent="TowerLayer" unique_id=323469302 node_paths=PackedStringArray("missile_btn", "cryo_beam_btn")]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("17")
+missile_btn = NodePath("../../UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/MissileButton")
+cryo_beam_btn = NodePath("../../UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/CryoBeamButton")
+
+[node name="CryoBeamLine" type="Line2D" parent="TowerLayer/ActiveAbilitiesSpawner" unique_id=1510315380]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1.33, 1.636, 2.584, 1)
+points = PackedVector2Array(0, 0, 0, -100, 0, -200, 0, -1000)
+width_curve = SubResource("Curve_qya3g")
+
+[node name="CryoBeamParticles" type="GPUParticles2D" parent="TowerLayer/ActiveAbilitiesSpawner" unique_id=995994111]
+unique_name_in_owner = true
+modulate = Color(1.33, 1.636, 2.584, 1)
+emitting = false
+amount = 64
+texture = ExtResource("18")
+lifetime = 0.15000000000000002
+process_material = SubResource("ParticleProcessMaterial_66hg2")
+
+[node name="CryoBeamAudioPlayer" type="AudioStreamPlayer" parent="TowerLayer/ActiveAbilitiesSpawner" unique_id=1346325424]
+unique_name_in_owner = true
+stream = ExtResource("19")
+bus = &"Battle"
+
+[node name="TowerPlacement" type="Node2D" parent="TowerLayer" unique_id=611528693]
+unique_name_in_owner = true
+process_mode = 3
+script = ExtResource("20")
+
+[node name="BattleSounds" type="Node2D" parent="." unique_id=1538687433]
+script = ExtResource("21")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2025572244]
+process_mode = 3
+layer = 9
+script = ExtResource("22")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=387420600]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="BottomRightVBox" type="VBoxContainer" parent="UI/MarginContainer" unique_id=70783786]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="DebugContainer" type="MarginContainer" parent="UI/MarginContainer/BottomRightVBox" unique_id=758890199]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/BottomRightVBox/DebugContainer" unique_id=2020243137]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="DebugLabel" type="Label" parent="UI/MarginContainer/BottomRightVBox/DebugContainer/VBoxContainer" unique_id=1320836322]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+horizontal_alignment = 2
+
+[node name="SkipEndOfBattleButton" type="CheckButton" parent="UI/MarginContainer/BottomRightVBox/DebugContainer/VBoxContainer" unique_id=1878906167]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Skip End of Battle"
+
+[node name="GameSpeedSlider" type="HSlider" parent="UI/MarginContainer/BottomRightVBox/DebugContainer/VBoxContainer" unique_id=2040802205]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+min_value = 0.01
+max_value = 2.0
+step = 0.05
+value = 1.01
+
+[node name="StartBattleButton" type="Button" parent="UI/MarginContainer/BottomRightVBox" unique_id=1881095293]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PlayButton"
+text = "Start Battle"
+
+[node name="HideResultsButton" type="Button" parent="UI/MarginContainer/BottomRightVBox" unique_id=1961939788]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"PlayButton"
+text = "Hide Results"
+
+[node name="ControlsVBox" type="VBoxContainer" parent="UI/MarginContainer" unique_id=506874730]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="ControlsContainer" type="PanelContainer" parent="UI/MarginContainer/ControlsVBox" unique_id=1734504282]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/ControlsVBox/ControlsContainer" unique_id=1685510924]
+layout_mode = 2
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1164038353]
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1266661276]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer5" unique_id=1569905929]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture = ExtResource("23")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer5" unique_id=1726681506]
+layout_mode = 2
+text = "Click to Select Tower"
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer5" unique_id=1846659226]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Spacing6" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1093509945]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1018275575]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer" unique_id=1125335969]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture = ExtResource("24")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer" unique_id=539012872]
+layout_mode = 2
+text = "Drag to Move Tower or Target"
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer" unique_id=568412131]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Spacing5" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1271968115]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1733382080]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer4" unique_id=789385177]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture = ExtResource("25")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer4" unique_id=1460542054]
+layout_mode = 2
+text = "Remove Tower
+(hold SHIFT to remove all of the same type)"
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer4" unique_id=142749251]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Spacing7" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1664362254]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1317913722]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer6" unique_id=763761817]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture = ExtResource("26")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer6" unique_id=132300304]
+layout_mode = 2
+text = "Remove all Towers"
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer6" unique_id=1448754554]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Spacing4" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=938805920]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=2090631217]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer3" unique_id=1069523042]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture = ExtResource("27")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer3" unique_id=1947680457]
+layout_mode = 2
+text = "Pan Camera"
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer3" unique_id=2106208531]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Spacing2" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=415019435]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=93224794]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer2" unique_id=1573333362]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+texture = ExtResource("28")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer2" unique_id=356121317]
+layout_mode = 2
+text = "Zoom"
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer/HBoxContainer2" unique_id=311459414]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Spacing3" type="Control" parent="UI/MarginContainer/ControlsVBox/ControlsContainer/VBoxContainer" unique_id=1948259804]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="UI/MarginContainer/ControlsVBox/ControlsContainer" unique_id=2088811812]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = " X "
+flat = true
+
+[node name="ControlsButton" type="Button" parent="UI/MarginContainer/ControlsVBox" unique_id=1756402491]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+icon = ExtResource("29")
+icon_alignment = 1
+
+[node name="HealthContainer" type="VBoxContainer" parent="UI/MarginContainer" unique_id=169238591]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="UI/MarginContainer/HealthContainer" unique_id=1870598108]
+layout_mode = 2
+theme_override_constants/outline_size = 2
+text = "Health"
+horizontal_alignment = 1
+
+[node name="HealthProgressBar" type="ProgressBar" parent="UI/MarginContainer/HealthContainer" unique_id=1900845737 node_paths=PackedStringArray("delayed_progress_bar", "health_label")]
+custom_minimum_size = Vector2(400, 20)
+layout_mode = 2
+theme_override_constants/outline_size = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_phvbk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_gma2d")
+max_value = 1000.0
+value = 500.0
+show_percentage = false
+script = ExtResource("30")
+delayed_progress_bar = NodePath("DelayedProgressBar")
+health_label = NodePath("HealthLabel")
+
+[node name="DelayedProgressBar" type="ProgressBar" parent="UI/MarginContainer/HealthContainer/HealthProgressBar" unique_id=1087183097]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_sf8fp")
+max_value = 1000.0
+value = 550.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="UI/MarginContainer/HealthContainer/HealthProgressBar" unique_id=1200152854]
+auto_translate_mode = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
+text = "100 / 100"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/HealthContainer" unique_id=44228446]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/HealthContainer/HBoxContainer" unique_id=1763841625]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Enemies waiting"
+texture = ExtResource("31")
+stretch_mode = 5
+
+[node name="EnemiesToSpawnLabel" type="Label" parent="UI/MarginContainer/HealthContainer/HBoxContainer" unique_id=252052557 node_paths=PackedStringArray("battle")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+tooltip_text = "Enemies waiting"
+mouse_filter = 1
+text = "Enemies waiting"
+script = ExtResource("32")
+battle = NodePath("../../../../..")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/MarginContainer/HealthContainer/HBoxContainer" unique_id=964426070]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Enemies alive"
+texture = ExtResource("33")
+stretch_mode = 5
+
+[node name="EnemiesAliveLabel" type="Label" parent="UI/MarginContainer/HealthContainer/HBoxContainer" unique_id=1999578604 node_paths=PackedStringArray("battle")]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+tooltip_text = "Enemies alive"
+mouse_filter = 1
+text = "Enemies alive"
+script = ExtResource("34")
+battle = NodePath("../../../../..")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/MarginContainer/HealthContainer/HBoxContainer" unique_id=263910382]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "Enemies killed"
+texture = ExtResource("35")
+stretch_mode = 5
+
+[node name="EnemiesKilledLabel" type="Label" parent="UI/MarginContainer/HealthContainer/HBoxContainer" unique_id=1222983901 node_paths=PackedStringArray("battle")]
+layout_mode = 2
+tooltip_text = "Enemies killed"
+mouse_filter = 1
+text = "Enemies killed"
+script = ExtResource("36")
+battle = NodePath("../../../../..")
+
+[node name="TimeContainer" type="PanelContainer" parent="UI/MarginContainer/HealthContainer" unique_id=1851072439]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+script = ExtResource("37")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/HealthContainer/TimeContainer" unique_id=171885970]
+layout_mode = 2
+
+[node name="BuildPhaseContainer" type="VBoxContainer" parent="UI/MarginContainer/HealthContainer/TimeContainer/MarginContainer" unique_id=774398593]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/HealthContainer/TimeContainer/MarginContainer/BuildPhaseContainer" unique_id=234576860]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "BUILD PHASE"
+
+[node name="SpaceToStartLabel" type="Label" parent="UI/MarginContainer/HealthContainer/TimeContainer/MarginContainer/BuildPhaseContainer" unique_id=1429437408]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Press SPACE to start battle"
+
+[node name="PauseContainer" type="VBoxContainer" parent="UI/MarginContainer/HealthContainer/TimeContainer/MarginContainer" unique_id=1056412065]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/HealthContainer/TimeContainer/MarginContainer/PauseContainer" unique_id=929255644]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "PAUSED"
+
+[node name="SpaceToStartLabel" type="Label" parent="UI/MarginContainer/HealthContainer/TimeContainer/MarginContainer/PauseContainer" unique_id=289979305]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Press SPACE to unpause"
+
+[node name="TowerContainer" type="PanelContainer" parent="UI/MarginContainer" unique_id=63925013]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/TowerContainer" unique_id=796034370]
+layout_mode = 2
+
+[node name="Towers" type="HBoxContainer" parent="UI/MarginContainer/TowerContainer/VBoxContainer" unique_id=1885389045]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GunnerButton" parent="UI/MarginContainer/TowerContainer/VBoxContainer/Towers" unique_id=285208929 instance=ExtResource("38")]
+layout_mode = 2
+tooltip_text = "Gunner"
+shortcut = SubResource("Shortcut_phvbk")
+
+[node name="MortarButton" parent="UI/MarginContainer/TowerContainer/VBoxContainer/Towers" unique_id=271456812 instance=ExtResource("38")]
+layout_mode = 2
+tooltip_text = "Mortar"
+shortcut = SubResource("Shortcut_as1q7")
+tower_kind = 3
+
+[node name="CannonButton" parent="UI/MarginContainer/TowerContainer/VBoxContainer/Towers" unique_id=1118106737 instance=ExtResource("38")]
+layout_mode = 2
+tooltip_text = "Cannon"
+shortcut = SubResource("Shortcut_ihybe")
+tower_kind = 1
+
+[node name="FlamethrowerButton" parent="UI/MarginContainer/TowerContainer/VBoxContainer/Towers" unique_id=1065443459 instance=ExtResource("38")]
+layout_mode = 2
+tooltip_text = "Flamethrower"
+shortcut = SubResource("Shortcut_lc3t0")
+tower_kind = 4
+
+[node name="TeslaCoilButton" parent="UI/MarginContainer/TowerContainer/VBoxContainer/Towers" unique_id=2111854207 instance=ExtResource("38")]
+layout_mode = 2
+tooltip_text = "Tesla Coil"
+shortcut = SubResource("Shortcut_qkdrc")
+tower_kind = 5
+
+[node name="GrenadeLauncherButton" parent="UI/MarginContainer/TowerContainer/VBoxContainer/Towers" unique_id=1814814675 instance=ExtResource("38")]
+layout_mode = 2
+tooltip_text = "Grenade Launcher"
+shortcut = SubResource("Shortcut_ju8jl")
+tower_kind = 6
+
+[node name="LaserButton" parent="UI/MarginContainer/TowerContainer/VBoxContainer/Towers" unique_id=1487304036 instance=ExtResource("38")]
+layout_mode = 2
+tooltip_text = "Laser"
+shortcut = SubResource("Shortcut_3oaio")
+tower_kind = 7
+
+[node name="AbilityContainer" type="PanelContainer" parent="UI/MarginContainer" unique_id=2110922146]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/AbilityContainer" unique_id=637867435]
+layout_mode = 2
+
+[node name="Abilities" type="HBoxContainer" parent="UI/MarginContainer/AbilityContainer/VBoxContainer" unique_id=831682341]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MissileButton" type="Button" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities" unique_id=1841173999]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Missile"
+toggle_mode = true
+button_pressed = true
+shortcut = SubResource("Shortcut_2r8ok")
+shortcut_in_tooltip = false
+icon = ExtResource("39")
+icon_alignment = 1
+script = ExtResource("40")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/MissileButton" unique_id=403742284]
+self_modulate = Color(1, 0.7917869, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+fill_mode = 4
+texture_progress = ExtResource("41")
+
+[node name="ShortcutLabel" type="Label" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/MissileButton" unique_id=735205927]
+auto_translate_mode = 2
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "1"
+
+[node name="StrafingRunButton" type="Button" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities" unique_id=68278579]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Strafing Run"
+toggle_mode = true
+shortcut = SubResource("Shortcut_58keo")
+shortcut_in_tooltip = false
+icon = ExtResource("42")
+icon_alignment = 1
+script = ExtResource("40")
+unlock_upgrade = &"strafing_run_unlock"
+
+[node name="ShortcutLabel" type="Label" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/StrafingRunButton" unique_id=434531295]
+auto_translate_mode = 2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "2"
+
+[node name="StrafingUsesContainer" type="HBoxContainer" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/StrafingRunButton" unique_id=1357046422]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("43")
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/StrafingRunButton/StrafingUsesContainer" unique_id=1003974361]
+layout_mode = 2
+texture = ExtResource("44")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/StrafingRunButton/StrafingUsesContainer" unique_id=1168908515]
+layout_mode = 2
+texture = ExtResource("44")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/StrafingRunButton/StrafingUsesContainer" unique_id=1466712776]
+layout_mode = 2
+texture = ExtResource("44")
+
+[node name="NukeButton" type="Button" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities" unique_id=484389833]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Nuke"
+toggle_mode = true
+shortcut = SubResource("Shortcut_b7ybl")
+shortcut_in_tooltip = false
+icon = ExtResource("45")
+icon_alignment = 1
+script = ExtResource("40")
+unlock_upgrade = &"nuke_unlock"
+
+[node name="ShortcutLabel" type="Label" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/NukeButton" unique_id=1039464082]
+auto_translate_mode = 2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "3"
+
+[node name="NukeUsesContainer" type="HBoxContainer" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/NukeButton" unique_id=1590691761]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("46")
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/NukeButton/NukeUsesContainer" unique_id=1732099911]
+layout_mode = 2
+texture = ExtResource("44")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/NukeButton/NukeUsesContainer" unique_id=1680488371]
+layout_mode = 2
+texture = ExtResource("44")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/NukeButton/NukeUsesContainer" unique_id=28811617]
+layout_mode = 2
+texture = ExtResource("44")
+
+[node name="CryoBeamButton" type="Button" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities" unique_id=1913206369]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+tooltip_text = "Orbital Cryo Beam"
+toggle_mode = true
+shortcut = SubResource("Shortcut_66hg2")
+shortcut_in_tooltip = false
+icon = ExtResource("47")
+icon_alignment = 1
+script = ExtResource("40")
+unlock_upgrade = &"cryo_beam_unlock"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/CryoBeamButton" unique_id=1993767476]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 10.0
+step = 0.01
+value = 10.0
+texture_progress = ExtResource("48")
+texture_progress_offset = Vector2(3, 0)
+
+[node name="TextureRect" type="TextureRect" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/CryoBeamButton/TextureProgressBar" unique_id=811344015]
+modulate = Color(0.6651851, 0.6651851, 0.6651851, 1)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("48")
+
+[node name="ShortcutLabel" type="Label" parent="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/CryoBeamButton" unique_id=1776361785]
+auto_translate_mode = 2
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "4"
+
+[node name="BattleEndContainer" type="PanelContainer" parent="UI/MarginContainer" unique_id=572897592]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/BattleEndContainer" unique_id=1394953532]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer" unique_id=1402026200]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="BattleEndTitleLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer" unique_id=1767398494]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 72
+text = "Survived"
+
+[node name="Spacing2" type="Control" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer" unique_id=1836344018]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="CurrencyContainer" type="VBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer" unique_id=2022923577]
+layout_mode = 2
+
+[node name="MarksPerKillsContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=731163565]
+layout_mode = 2
+
+[node name="MarksForKillsCaption" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/MarksPerKillsContainer" unique_id=2084402254]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Kills ({x})"
+
+[node name="MarksForKillsCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/MarksPerKillsContainer" unique_id=1779597351]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/MarksPerKillsContainer" unique_id=1701172400]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("49")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarksCollectedContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=116287447]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarksCollectedCaption" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/MarksCollectedContainer" unique_id=674902856]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Silver Orcs ({x})"
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/MarksCollectedContainer" unique_id=296611026]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="MarksCollectedCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/MarksCollectedContainer" unique_id=679810682]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/MarksCollectedContainer" unique_id=1125746981]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("49")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BonusMarksFlatContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=840138733]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/BonusMarksFlatContainer" unique_id=395661284]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Bonus"
+
+[node name="BonusMarksFlatCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/BonusMarksFlatContainer" unique_id=1794730589]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/BonusMarksFlatContainer" unique_id=1453517573]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("49")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BonusMarksPercentageContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=851401074]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BonusMarksPercentageCaption" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/BonusMarksPercentageContainer" unique_id=1219497345]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Bonus ({x}%)"
+
+[node name="BonusMarksPercentageCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/BonusMarksPercentageContainer" unique_id=159502666]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/BonusMarksPercentageContainer" unique_id=59902855]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("49")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LevelBonusContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=1797721163]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/LevelBonusContainer" unique_id=47894253]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Level Bonus"
+
+[node name="LevelBonusCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/LevelBonusContainer" unique_id=95504722]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/LevelBonusContainer" unique_id=1890318228]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("49")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SurvivedMarksContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=371134088]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/SurvivedMarksContainer" unique_id=2028043203]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Survived"
+
+[node name="SurvivedMarksCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/SurvivedMarksContainer" unique_id=87601139]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/SurvivedMarksContainer" unique_id=1859343979]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("49")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AllKilledMarksContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=2109915586]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/AllKilledMarksContainer" unique_id=1641224913]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "All Orcs Killed"
+
+[node name="AllKilledMarksCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/AllKilledMarksContainer" unique_id=1562485316]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/AllKilledMarksContainer" unique_id=1835574842]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("49")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HSeparator4" type="HSeparator" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=632791754]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxLine_b7ybl")
+
+[node name="UpgradeMarksContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=1562020331]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/UpgradeMarksContainer" unique_id=1973802715]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Total"
+
+[node name="UpgradeMarksCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/UpgradeMarksContainer" unique_id=2135978749]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/UpgradeMarksContainer" unique_id=285097988]
+layout_mode = 2
+texture = ExtResource("49")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LevelFinishedContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=1549216396]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/LevelFinishedContainer" unique_id=1775464122]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Survived"
+
+[node name="LevelFinishedCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/LevelFinishedContainer" unique_id=1598536586]
+auto_translate_mode = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/LevelFinishedContainer" unique_id=146854184]
+layout_mode = 2
+texture = ExtResource("50")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AllKilledContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer" unique_id=225072832]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/AllKilledContainer" unique_id=1693595389]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "All Orcs Killed"
+
+[node name="AllKilledCountLabel" type="Label" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/AllKilledContainer" unique_id=665466183]
+auto_translate_mode = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="UpgradeMarksTextureRect" type="TextureRect" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/CurrencyContainer/AllKilledContainer" unique_id=1233084280]
+layout_mode = 2
+texture = ExtResource("51")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer" unique_id=533646561]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer" unique_id=1427276306]
+layout_mode = 2
+
+[node name="BattleEndGoBackButton" type="Button" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1433418686]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Upgrades"
+
+[node name="Spacing" type="Control" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=87736867]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="BattleEndRestartButton" type="Button" parent="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=660857060]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 32
+shortcut = ExtResource("52")
+shortcut_in_tooltip = false
+text = "Play Again"
+
+[node name="DamageList" type="VBoxContainer" parent="UI/MarginContainer" unique_id=301791924]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="CurrencyUI" parent="UI/MarginContainer" unique_id=237652426 instance=ExtResource("53")]
+layout_mode = 2
+
+[connection signal="toggled" from="UI/MarginContainer/BottomRightVBox/DebugContainer/VBoxContainer/SkipEndOfBattleButton" to="UI" method="_on_skip_end_of_battle_button_toggled"]
+[connection signal="tree_entered" from="UI/MarginContainer/BottomRightVBox/DebugContainer/VBoxContainer/SkipEndOfBattleButton" to="UI" method="_on_skip_end_of_battle_button_tree_entered"]
+[connection signal="gui_input" from="UI/MarginContainer/BottomRightVBox/DebugContainer/VBoxContainer/GameSpeedSlider" to="." method="_on_game_speed_slider_gui_input"]
+[connection signal="value_changed" from="UI/MarginContainer/BottomRightVBox/DebugContainer/VBoxContainer/GameSpeedSlider" to="UI" method="_on_game_speed_slider_value_changed"]
+[connection signal="pressed" from="UI/MarginContainer/BottomRightVBox/StartBattleButton" to="UI" method="_on_start_battle_button_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/BottomRightVBox/HideResultsButton" to="UI" method="_on_hide_results_button_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/ControlsVBox/ControlsContainer/CloseButton" to="UI" method="_on_controls_button_pressed" binds= [false]]
+[connection signal="pressed" from="UI/MarginContainer/ControlsVBox/ControlsButton" to="UI" method="_on_controls_button_pressed" binds= [true]]
+[connection signal="toggled" from="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/MissileButton" to="UI" method="_on_ability_button_toggled" binds= [1]]
+[connection signal="toggled" from="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/StrafingRunButton" to="UI" method="_on_ability_button_toggled" binds= [2]]
+[connection signal="toggled" from="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/NukeButton" to="UI" method="_on_ability_button_toggled" binds= [3]]
+[connection signal="toggled" from="UI/MarginContainer/AbilityContainer/VBoxContainer/Abilities/CryoBeamButton" to="UI" method="_on_ability_button_toggled" binds= [4]]
+[connection signal="pressed" from="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/HBoxContainer/BattleEndGoBackButton" to="UI" method="_on_battle_end_go_back_button_pressed"]
+[connection signal="pressed" from="UI/MarginContainer/BattleEndContainer/MarginContainer/VBoxContainer/HBoxContainer/BattleEndRestartButton" to="UI" method="_on_battle_end_restart_button_pressed"]

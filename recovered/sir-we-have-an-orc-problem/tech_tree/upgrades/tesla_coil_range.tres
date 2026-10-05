@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bm4cluok6d58l"]
+
+[ext_resource type="Resource" uid="uid://d0w42ek51lv81" path="res://tech_tree/upgrades/tesla_coil_chaining.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"tesla_coil_range"
+name = "Tesla Coil Range"
+icon = null
+description = "+{x} meter"
+value = 10.0
+max_level = 6
+cost = 43
+cost_change = 2.1
+children = [ExtResource("1")]

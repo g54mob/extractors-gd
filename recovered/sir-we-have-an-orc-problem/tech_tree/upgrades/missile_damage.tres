@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://blvmhkpmxrdji"]
+
+[ext_resource type="Resource" uid="uid://o8h3j775wln0" path="res://tech_tree/upgrades/missile_radius.tres" id="1"]
+[ext_resource type="Resource" uid="uid://dxvxvdwcnqhcq" path="res://tech_tree/upgrades/missile_clickhold.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"missile_damage"
+name = "Missile Damage"
+icon = null
+description = "+{x} damage"
+value = 0.5
+max_level = 5
+children = [ExtResource("1"), ExtResource("2")]

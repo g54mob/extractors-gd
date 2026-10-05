@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://cwyiaxbvd42kd"]
+
+[ext_resource type="Script" uid="uid://c6pgrnixh2gj7" path="res://startup_scene/startup.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://epneo4k5aw7c" path="res://startup_scene/OrcProblem-Artwork-nologo-1920x1080.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://ctp7prtprbvaj" path="res://startup_scene/godot_logo.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://yaoqusebrm2e" path="res://startup_scene/Mumpitz-logo.PNG" id="4"]
+
+[sub_resource type="Environment" id="Environment_kxab2"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.1
+glow_strength = 0.35
+glow_bloom = 0.1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxab2"]
+bg_color = Color(0, 0, 0, 0.9019608)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_peb03"]
+bg_color = Color(3.6369565, 1.4819729, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Startup" type="Control" unique_id=1973463363]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1166834212]
+environment = SubResource("Environment_kxab2")
+
+[node name="Background" type="TextureRect" parent="." unique_id=512019796]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=707684721]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=458506314]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=939602422]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Made with <3 "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer" unique_id=182690948]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1247362107]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=817440872]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "in"
+
+[node name="GodotLogo" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=829422414]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1901621710]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=691491971]
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "by"
+
+[node name="MumpitzLogo" type="TextureRect" parent="VBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1428728588]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+texture = ExtResource("4")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=665530810]
+layout_mode = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer" unique_id=1365771335]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxab2")
+
+[node name="LoadingProgressBar" type="ProgressBar" parent="VBoxContainer/MarginContainer/PanelContainer" unique_id=1200908246]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_peb03")
+value = 48.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/PanelContainer/LoadingProgressBar" unique_id=245415903]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = -33.500122
+offset_right = 111.5
+offset_bottom = 33.500122
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 48
+text = "Loading..."
+horizontal_alignment = 1

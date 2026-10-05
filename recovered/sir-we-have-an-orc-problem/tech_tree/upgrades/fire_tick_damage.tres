@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cvb2ll2au21bd"]
+
+[ext_resource type="Resource" uid="uid://db7wabdhhwv5s" path="res://tech_tree/upgrades/fire_damage_buff.tres" id="1"]
+[ext_resource type="Resource" uid="uid://br3a6pn620lv5" path="res://tech_tree/upgrades/flamethrower_count.tres" id="2"]
+[ext_resource type="Resource" uid="uid://cj8lqgucf1j2w" path="res://tech_tree/upgrades/fire_free_penetration.tres" id="3"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="4"]
+
+[resource]
+script = ExtResource("4")
+id = &"fire_tick_damage"
+name = "Burn Damage"
+icon = null
+description = "+{x} damage per tick"
+value = 0.05
+max_level = 10
+cost = 9
+cost_change = 1.8
+children = [ExtResource("1"), ExtResource("2"), ExtResource("3")]

@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://dnpef76dejysa"]
+
+[ext_resource type="Script" uid="uid://cwfbyfw3f6pdt" path="res://tech_tree/hud/level_panel.gd" id="1"]
+[ext_resource type="Shader" uid="uid://bgtvco4ktybpm" path="res://tech_tree/hud/level_panel_map.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://gupio03rrtfo" path="res://levels/level_1_1/level_1_1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c6hydxaktumpl" path="res://tech_tree/lock.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://baj6eqp3h53pa" path="res://tech_tree/hud/level_finished_mark.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cnisv507y4rc6" path="res://tech_tree/hud/upgrade_mark.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c0gl6t565bca5" path="res://tech_tree/hud/all_killed_mark.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://2ctn3e0pme2q" path="res://battle/hud/enemies_to_spawn.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://c55bup1v3lqo4" path="res://tech_tree/hud/health_range_icon.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dyndysep7kavh" path="res://tech_tree/hud/info_icon.png" id="10"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_86qe3"]
+resource_local_to_scene = true
+shader = ExtResource("2")
+shader_parameter/tilemap = null
+
+[node name="LevelPanel" type="PanelContainer" unique_id=2106998341]
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1771786289]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=744114424]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Container" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1339560996]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+
+[node name="MapTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Container" unique_id=1733691715]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_86qe3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LockTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Container/MapTextureRect" unique_id=537877539]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=18179047]
+layout_mode = 2
+
+[node name="LevelNameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1453015718]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_vertical = 0
+text = "Level 1"
+
+[node name="LevelFinishedTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1944724307]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+tooltip_text = "Earn this resource by surviving the level."
+texture = ExtResource("5")
+stretch_mode = 5
+
+[node name="SurvivedMarksContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2035800803]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Earn this resource by surviving the level."
+
+[node name="SurvivedMarksLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/SurvivedMarksContainer" unique_id=1080656889]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+text = "20"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/SurvivedMarksContainer" unique_id=378957907]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6")
+stretch_mode = 5
+
+[node name="AllKilledTextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=366053323]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+tooltip_text = "Earn this resource by killing all orcs in the level."
+texture = ExtResource("7")
+stretch_mode = 5
+
+[node name="AllKilledMarksContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=839347397]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Earn this resource by killing all orcs in the level."
+
+[node name="AllKilledMarksLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/AllKilledMarksContainer" unique_id=1856691620]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+text = "20"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/AllKilledMarksContainer" unique_id=1513909362]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("6")
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=47090573]
+layout_mode = 2
+
+[node name="AmountHBox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1735105600]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Number of Enemies"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/AmountHBox" unique_id=1093897937]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("8")
+
+[node name="AmountOrcsLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/AmountHBox" unique_id=1186853369]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+text = "80K"
+
+[node name="HPHBox" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1084072643]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Enemy Healthpoints"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HPHBox" unique_id=1720117139]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("9")
+
+[node name="HealthRangeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HPHBox" unique_id=846644361]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+text = "80K"
+
+[node name="DebugUnlockButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1548822495]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+size_flags_vertical = 4
+text = "Unlock"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1304308988]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="InfoTextureRect" type="TextureRect" parent="MarginContainer2" unique_id=998157796]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("10")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/DebugUnlockButton" to="." method="_on_debug_unlock_button_pressed"]

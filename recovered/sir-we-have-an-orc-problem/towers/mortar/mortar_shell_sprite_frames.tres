@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://brl03e2am7bph"]
+
+[ext_resource type="Texture2D" uid="uid://qa3bcapaohyl" path="res://towers/mortar/mortar_shell_frames.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48nsw"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rysyx"]
+atlas = ExtResource("1")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0u41"]
+atlas = ExtResource("1")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u2oj"]
+atlas = ExtResource("1")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrfg2"]
+atlas = ExtResource("1")
+region = Rect2(32, 0, 8, 8)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48nsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rysyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0u41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u2oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrfg2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

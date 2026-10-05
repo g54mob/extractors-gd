@@ -1,0 +1,2857 @@
+[gd_scene format=3 uid="uid://djaex7dlnelkh"]
+
+[ext_resource type="Script" uid="uid://dweshc5yol2lg" path="res://battle/battle_camera.gd" id="1"]
+[ext_resource type="Script" uid="uid://b80shgvoqpweb" path="res://tech_tree/nodes_editor.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://dr1sqj8yj6bqi" path="res://tech_tree/nodes/tech_tree_node.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://ck6loy1ml440x" path="res://towers/gunner/gunner_icon.png" id="4"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://c0gl6t565bca5" path="res://tech_tree/hud/all_killed_mark.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cjed5pa4vps3p" path="res://tech_tree/nodes/marks_bonus.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bd1j8u64qgyk3" path="res://tech_tree/nodes/dmg_stats_icon.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://btc3yh61jf2de" path="res://tech_tree/nodes/golden_orcs.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://c4885lbw8oqns" path="res://towers/cannon/cannon_icon.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://brgqqj4oprqnt" path="res://enemies/explosive_orcs_icon.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dpflrc56731y" path="res://towers/mortar/mortar_icon.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://uud1wjcx8lys" path="res://tech_tree/nodes/base_hp_icon.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://boxt8at864v6d" path="res://towers/flamethrower/flamethrower_icon.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://do3uxed41hovx" path="res://abilities/missile/missile_icon.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://cfxkv4pgwaeyk" path="res://abilities/strafing_run/strafing_run_icon.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://c5hcy0fvvbv1t" path="res://abilities/nuke/nuke_icon.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://cqy88t1coiot1" path="res://towers/tesla_coil/tesla_coil_icon.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://d14nni8t8p8fa" path="res://towers/grenade_launcher/grenade_launcher_icon.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://dybk43qi76w8c" path="res://towers/laser/laser_icon.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://b45iw0q0wbqh1" path="res://abilities/cryo_beam/cryo_beam_icon.png" id="21"]
+[ext_resource type="Script" uid="uid://c14k8naktdmy6" path="res://tech_tree/crt_effect.gd" id="22"]
+[ext_resource type="Material" uid="uid://bfrtnxwm0m62u" path="res://tech_tree/hud/crt_overlay.material" id="23"]
+[ext_resource type="PackedScene" uid="uid://5ouetant58qy" path="res://tech_tree/hud/tech_tree_hud.tscn" id="24"]
+[ext_resource type="Script" uid="uid://cu3g4o2b40k58" path="res://tech_tree/level_selection.gd" id="25"]
+[ext_resource type="Material" uid="uid://6ds4ety6if71" path="res://tech_tree/hud/blur_overlay.material" id="26"]
+[ext_resource type="Script" uid="uid://u7le5ief4mrd" path="res://tech_tree/level_container.gd" id="27"]
+[ext_resource type="Shortcut" uid="uid://dliuvawknrhl2" path="res://menu/input_shortcuts/back.tres" id="28"]
+
+[sub_resource type="Environment" id="Environment_bdihn"]
+background_mode = 3
+tonemap_mode = 4
+glow_enabled = true
+glow_bloom = 0.03
+
+[sub_resource type="Shader" id="Shader_f1ask"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.6.2.rc's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+float random (vec2 uv) {
+    return fract(sin(dot(uv.xy,
+        vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+uniform float WAVE_SPEED : hint_range(0.01, 10.0) = 1.0;
+uniform float WAVE_FREQ : hint_range(0.01, 10.0) = 4.0;
+uniform float WAVE_AMPL : hint_range(0.01, 0.1) = 0.05;
+uniform float NOISE_SCALE = 1.0;
+
+
+void fragment() {
+	vec2 uv = UV;
+	vec2 tex_size = vec2(textureSize(TEXTURE, 0));
+	vec2 noise_scale = (1.0 / tex_size) * NOISE_SCALE;
+	uv.y += sin(TIME * WAVE_SPEED + UV.x * WAVE_FREQ) * WAVE_AMPL;
+	uv.y += sin(TIME * WAVE_SPEED + UV.x * WAVE_FREQ * 3.0) * WAVE_AMPL * 0.5;
+	uv.y += sin(TIME * WAVE_SPEED + UV.x * WAVE_FREQ * 10.0) * WAVE_AMPL * 0.25;
+	uv += noise_scale * random(UV);
+	COLOR = texture(TEXTURE, uv);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bdihn"]
+shader = SubResource("Shader_f1ask")
+shader_parameter/WAVE_SPEED = 0.72700003383398
+shader_parameter/WAVE_FREQ = 6.95400032961648
+shader_parameter/WAVE_AMPL = 0.04000000120148
+shader_parameter/NOISE_SCALE = 4.0
+
+[sub_resource type="Gradient" id="Gradient_f1ask"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.50440526)
+colors = PackedColorArray(0.33576828, 0.11435408, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bdihn"]
+gradient = SubResource("Gradient_f1ask")
+width = 4
+height = 2048
+use_hdr = true
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Resource" id="Resource_ctixl"]
+script = ExtResource("5")
+id = &"gunner_unlock"
+name = "Gunner"
+icon = ExtResource("4")
+description = "Simple machine gun with high firerate."
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_sj1ft"]
+script = ExtResource("5")
+id = &"gunner_count"
+name = "More Gunners"
+icon = ExtResource("4")
+description = "+{x} Gunner tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost_change = 1.59
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_cui35"]
+script = ExtResource("5")
+id = &"gunner_firerate"
+name = "Gunner Firerate"
+icon = ExtResource("4")
+description = "+{x} shots / second"
+value = 0.4
+max_level = 10
+cost_change = 1.59
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_00ncw"]
+script = ExtResource("5")
+id = &"gunner_damage"
+name = "Gunner Damage"
+icon = ExtResource("4")
+description = "+{x} damage"
+value = 0.2
+max_level = 5
+cost = 2
+cost_change = 1.4
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_x6b4v"]
+script = ExtResource("5")
+id = &"gunner_count_2"
+name = "More Gunners"
+icon = ExtResource("4")
+description = "+{x} Gunner tower"
+value = 1.0
+value_display_type = 1
+max_level = 4
+cost = 6
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_a8xv7"]
+script = ExtResource("5")
+id = &"gunner_firerate_2"
+name = "Gunner Firerate"
+icon = ExtResource("4")
+description = "+{x} shots / second"
+value = 0.6
+max_level = 10
+cost = 40
+cost_change = 1.7
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_lh0i7"]
+script = ExtResource("5")
+id = &"gunner_count_3"
+name = "More Gunners"
+icon = ExtResource("4")
+description = "+{x} Gunner tower"
+value = 1.0
+value_display_type = 1
+max_level = 4
+cost = 45
+cost_change = 1.75
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_gpq5x"]
+script = ExtResource("5")
+id = &"gunner_damage_2"
+name = "Gunner Damage"
+icon = ExtResource("4")
+description = "+{x} damage"
+value = 0.4
+max_level = 5
+cost = 70
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_3n8ny"]
+script = ExtResource("5")
+id = &"gunner_damage_3"
+name = "Gunner Damage"
+icon = ExtResource("4")
+description = "+{x} damage"
+value = 1.0
+max_level = 8
+cost = 1800
+cost_change = 1.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_52omr"]
+script = ExtResource("5")
+id = &"gunner_count_4"
+name = "More Gunners"
+icon = ExtResource("4")
+description = "+{x} Gunner tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 8000
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_bdihn"]
+script = ExtResource("5")
+id = &"gunner_firerate_3"
+name = "Rapid Fire"
+icon = ExtResource("4")
+description = "+{x} shots / second"
+value = 5.0
+currency = 2
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_5i7k1"]
+script = ExtResource("5")
+id = &"gunner_firerate_4"
+name = "Gunner Firerate"
+icon = ExtResource("4")
+description = "+{x} shots / second"
+value = 0.6
+max_level = 10
+cost = 400
+cost_change = 1.4
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_m42ws"]
+script = ExtResource("5")
+id = &"gunner_range"
+name = "Gunner Range"
+icon = ExtResource("4")
+description = "+{x} meter"
+value = 20.0
+value_display_type = 1
+max_level = 10
+cost = 15
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_tlcy4"]
+script = ExtResource("5")
+id = &"gunner_penetration"
+name = "Gunner Penetration"
+icon = ExtResource("4")
+description = "+{x} penetration"
+value = 1.0
+value_display_type = 1
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_vl7hl"]
+script = ExtResource("5")
+id = &"gunner_penetration_2"
+name = "Gunner Penetration"
+icon = ExtResource("4")
+description = "+{x} penetration"
+value = 1.0
+value_display_type = 1
+max_level = 2
+cost = 350
+cost_change = 2.7
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_sfyr3"]
+script = ExtResource("5")
+id = &"buy_pink"
+name = "Emergency Supplies"
+icon = ExtResource("6")
+description = "+{x} {pink_upgrade}"
+value = 1.0
+value_display_type = 1
+max_level = 4
+cost = 15000
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_2iln8"]
+script = ExtResource("5")
+id = &"marks_bonus"
+name = "Bonus Resources"
+icon = ExtResource("7")
+description = "Gain +{x}{upgrade_mark} at the end of a battle."
+value = 3.0
+value_display_type = 1
+max_level = 3
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_4i2ud"]
+script = ExtResource("5")
+id = &"marks_percentage"
+name = "Bonus Resources 2"
+icon = ExtResource("7")
+description = "Gain +{x}% {upgrade_mark} at the end of a battle."
+value = 10.0
+value_display_type = 1
+max_level = 5
+cost = 30
+cost_change = 4.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_56pub"]
+script = ExtResource("5")
+id = &"headhunter"
+name = "Headhunter"
+icon = ExtResource("7")
+description = "Reduce the number of kills needed to earn 1 {upgrade_mark} by {x}."
+value = 1.0
+value_display_type = 1
+max_level = 7
+cost = 40
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_2ivb5"]
+script = ExtResource("5")
+id = &"marks_bonus_2"
+name = "Bonus Resources 3"
+icon = ExtResource("7")
+description = "Gain +{x}{upgrade_mark} at the end of a battle when playing level 3.1 or higher."
+value = 113.0
+value_display_type = 1
+max_level = 7
+cost = 400
+cost_change = 1.3
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_sobta"]
+script = ExtResource("5")
+id = &"marks_bonus_4"
+name = "Bonus Resources 4"
+icon = ExtResource("7")
+description = "Gain +{x}{upgrade_mark} at the end of a battle when playing level 4.1 or higher."
+value = 300.0
+value_display_type = 1
+max_level = 4
+cost = 1100
+cost_change = 1.3
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_jtkxt"]
+script = ExtResource("5")
+id = &"dmg_stats"
+name = "Damage Statistics"
+icon = ExtResource("8")
+description = "Unlock tower damage stats."
+cost = 100
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ppj04"]
+script = ExtResource("5")
+id = &"golden_orcs"
+name = "Silver Orcs"
+icon = ExtResource("9")
+description = "Adds a {x}% chance that an orc becomes silver after spawning. Killing silver orcs grants {x} additional {upgrade_mark}."
+value = 1.0
+cost = 500
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_231q8"]
+script = ExtResource("5")
+id = &"golden_orcs_chance"
+name = "Silver Orcs Chance"
+icon = ExtResource("9")
+description = "+{x}% chance"
+value = 0.25
+max_level = 4
+cost = 125
+cost_change = 3.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_euhpw"]
+script = ExtResource("5")
+id = &"golden_orcs_chance_2"
+name = "Silver Orcs Chance"
+icon = ExtResource("9")
+description = "+{x}% chance"
+value = 0.25
+max_level = 4
+cost = 1300
+cost_change = 2.4
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_en66h"]
+script = ExtResource("5")
+id = &"golden_orcs_money"
+name = "Silver Orcs Value"
+icon = ExtResource("9")
+description = "+{x} {upgrade_mark}"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 600
+cost_change = 2.05
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_fx41d"]
+script = ExtResource("5")
+id = &"cannon_unlock"
+name = "Cannon"
+icon = ExtResource("10")
+description = "Low fire rate but high damage. Projectiles penetrate through multiple orcs."
+currency = 1
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ees3b"]
+script = ExtResource("5")
+id = &"cannon_firerate"
+name = "Cannon Firerate"
+icon = ExtResource("10")
+description = "+{x} shots / second"
+value = 0.1
+max_level = 5
+cost = 9
+cost_change = 1.75
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_fckb5"]
+script = ExtResource("5")
+id = &"cannon_penetration"
+name = "Cannon Penetration"
+icon = ExtResource("10")
+description = "+{x} penetration"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 23
+cost_change = 1.7
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_3q6lt"]
+script = ExtResource("5")
+id = &"cannon_range"
+name = "Cannon Range"
+icon = ExtResource("10")
+description = "+{x} meter"
+value = 30.0
+value_display_type = 1
+max_level = 5
+cost = 25
+cost_change = 1.6
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_1bu3m"]
+script = ExtResource("5")
+id = &"cannon_count"
+name = "More Cannons"
+icon = ExtResource("10")
+description = "+{x} Cannon tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 12
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_vk4gl"]
+script = ExtResource("5")
+id = &"cannon_penetration_2"
+name = "Cannon Penetration"
+icon = ExtResource("10")
+description = "+{x} penetration"
+value = 2.0
+value_display_type = 1
+max_level = 6
+cost = 69
+cost_change = 1.65
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_w43wk"]
+script = ExtResource("5")
+id = &"cannon_count_2"
+name = "More Cannons"
+icon = ExtResource("10")
+description = "+{x} Cannon tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 80
+cost_change = 1.65
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_d3d0a"]
+script = ExtResource("5")
+id = &"cannon_firerate_3"
+name = "Cannon Firerate"
+icon = ExtResource("10")
+description = "+{x} shots / second"
+value = 0.1
+max_level = 5
+cost = 210
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_8aukp"]
+script = ExtResource("5")
+id = &"cannon_damage_3"
+name = "Cannon Damage"
+icon = ExtResource("10")
+description = "+{x} damage"
+value = 3.0
+max_level = 5
+cost = 510
+cost_change = 1.35
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_aa41y"]
+script = ExtResource("5")
+id = &"cannon_count_3"
+name = "More Cannons"
+icon = ExtResource("10")
+description = "+{x} Cannon tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 9000
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_5g55l"]
+script = ExtResource("5")
+id = &"cannon_penetration_3"
+name = "Cannon Penetration"
+icon = ExtResource("10")
+description = "+{x} penetration"
+value = 2.0
+value_display_type = 1
+max_level = 6
+cost = 690
+cost_change = 1.3
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_3jwn3"]
+script = ExtResource("5")
+id = &"cannon_damage"
+name = "Cannon Damage"
+icon = ExtResource("10")
+description = "+{x} damage"
+value = 1.5
+max_level = 5
+cost = 8
+cost_change = 1.75
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_qh3on"]
+script = ExtResource("5")
+id = &"cannon_firerate_2"
+name = "Cannon Firerate"
+icon = ExtResource("10")
+description = "+{x} shots / second"
+value = 0.1
+max_level = 5
+cost = 45
+cost_change = 2.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_k3qsf"]
+script = ExtResource("5")
+id = &"cannon_damage_2"
+name = "Cannon Damage"
+icon = ExtResource("10")
+description = "+{x} damage"
+value = 2.0
+max_level = 5
+cost = 300
+cost_change = 1.45
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_xxf3i"]
+script = ExtResource("5")
+id = &"cannon_big_boy"
+name = "Power Shot"
+icon = ExtResource("10")
+description = "Every 5th shot of the cannon is bigger and has more penetration."
+currency = 2
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_fl8l3"]
+script = ExtResource("5")
+id = &"explosive_orcs_unlock"
+name = "Explosive Orcs"
+icon = ExtResource("11")
+description = "Adds a {x}% chance that orcs carry explosives which detonate upon death and damage nearby orcs."
+value = 1.0
+currency = 2
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_n427i"]
+script = ExtResource("5")
+id = &"explosive_orcs_damage"
+name = "Explosive Orcs Damage"
+icon = ExtResource("11")
+description = "+{x} damage"
+value = 4.0
+max_level = 10
+cost = 70
+cost_change = 1.55
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_4i7nm"]
+script = ExtResource("5")
+id = &"explosive_orcs_radius"
+name = "Explosive Orcs Radius"
+icon = ExtResource("11")
+description = "+{x} meter"
+value = 2.0
+max_level = 6
+cost = 70
+cost_change = 1.55
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_bjf4l"]
+script = ExtResource("5")
+id = &"explosive_orcs_chance"
+name = "Explosive Orcs Chance"
+icon = ExtResource("11")
+description = "+{x}% chance"
+value = 0.4
+max_level = 10
+cost = 75
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_8alru"]
+script = ExtResource("5")
+id = &"mortar_unlock"
+name = "Mortar"
+icon = ExtResource("12")
+description = "Launches explosive shells that deal heavy area damage to all enemy orcs within the blast radius."
+currency = 1
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_w3klg"]
+script = ExtResource("5")
+id = &"mortar_explosion_radius"
+name = "Mortar Explosion Radius"
+icon = ExtResource("12")
+description = "+{x} meter"
+value = 2.0
+value_display_type = 1
+max_level = 10
+cost = 6
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_54ieq"]
+script = ExtResource("5")
+id = &"mortar_count"
+name = "More Mortars"
+icon = ExtResource("12")
+description = "+{x} Mortar tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 14
+cost_change = 3.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_mrg8e"]
+script = ExtResource("5")
+id = &"mortar_explosion_damage_2"
+name = "Mortar Explosion Damage"
+icon = ExtResource("12")
+description = "+{x} damage"
+value = 2.0
+value_display_type = 1
+max_level = 10
+cost = 120
+cost_change = 1.65
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_somlq"]
+script = ExtResource("5")
+id = &"mortar_explosion_damage"
+name = "Mortar Explosion Damage"
+icon = ExtResource("12")
+description = "+{x} damage"
+value = 1.0
+value_display_type = 1
+max_level = 10
+cost = 5
+cost_change = 1.85
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_f1ask"]
+script = ExtResource("5")
+id = &"mortar_firerate"
+name = "Mortar Fire Rate"
+icon = ExtResource("12")
+description = "+{x} shots / second"
+value = 0.2
+max_level = 5
+cost = 10
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ybc23"]
+script = ExtResource("5")
+id = &"mortar_count_2"
+name = "More Mortars"
+icon = ExtResource("12")
+description = "+{x} Mortar tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 60
+cost_change = 2.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_npsqx"]
+script = ExtResource("5")
+id = &"mortar_count_3"
+name = "More Mortars"
+icon = ExtResource("12")
+description = "+{x} Mortar tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 8700
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_c8gdy"]
+script = ExtResource("5")
+id = &"mortar_fragment_count"
+name = "Mortar Shrapnels"
+icon = ExtResource("12")
+description = "Mortar shell explosions shoot out {x} shrapnels that deal damage."
+value = 3.0
+value_display_type = 1
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_020h6"]
+script = ExtResource("5")
+id = &"mortar_fragment_penetration"
+name = "Mortar Shrapnel Penetration"
+icon = ExtResource("12")
+description = "+{x} penetration"
+value = 1.0
+value_display_type = 1
+max_level = 4
+cost = 38
+cost_change = 3.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_rixms"]
+script = ExtResource("5")
+id = &"mortar_fragment_damage"
+name = "Mortar Shrapnel Damage"
+icon = ExtResource("12")
+description = "+{x} damage"
+value = 0.5
+max_level = 8
+cost = 13
+cost_change = 1.95
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_oxq34"]
+script = ExtResource("5")
+id = &"mortar_fragment_count_2"
+name = "Mortar Shrapnel Count"
+icon = ExtResource("12")
+description = "+{x} shrapnel"
+value = 1.0
+value_display_type = 1
+max_level = 7
+cost = 15
+cost_change = 2.2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_4bt4o"]
+script = ExtResource("5")
+id = &"base_hp"
+name = "More Health Points"
+icon = ExtResource("13")
+description = "+{x} health points"
+value = 10.0
+value_display_type = 1
+max_level = 10
+cost = 4
+cost_change = 1.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_0egpm"]
+script = ExtResource("5")
+id = &"base_hp_2"
+name = "More Health Points"
+icon = ExtResource("13")
+description = "+{x} health points"
+value = 20.0
+value_display_type = 1
+max_level = 10
+cost = 78
+cost_change = 1.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_oy8dd"]
+script = ExtResource("5")
+id = &"flamethrower_unlock"
+name = "Flamethrower"
+icon = ExtResource("14")
+description = "Unleashes a continuous stream of flames that sets enemy orcs ablaze. Burning orcs take periodic damage."
+currency = 1
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_6votd"]
+script = ExtResource("5")
+id = &"fire_tick_rate"
+name = "Burn Tick Rate"
+icon = ExtResource("14")
+description = "+{x} ticks / second"
+value = 0.2
+max_level = 10
+cost = 8
+cost_change = 1.6
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ps4fw"]
+script = ExtResource("5")
+id = &"flamethrower_fire_duration"
+name = "Burn Duration"
+icon = ExtResource("14")
+description = "+{x} seconds"
+value = 0.5
+max_level = 5
+cost = 15
+cost_change = 2.2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_mohwm"]
+script = ExtResource("5")
+id = &"flamethrower_range"
+name = "Flamethrower Range"
+icon = ExtResource("14")
+description = "+{x} meter"
+value = 10.0
+value_display_type = 1
+max_level = 7
+cost = 18
+cost_change = 2.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_1034q"]
+script = ExtResource("5")
+id = &"fire_tick_damage"
+name = "Burn Damage"
+icon = ExtResource("14")
+description = "+{x} damage per tick"
+value = 0.05
+max_level = 10
+cost = 9
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_urfoe"]
+script = ExtResource("5")
+id = &"flamethrower_count"
+name = "More Flamethrowers"
+icon = ExtResource("14")
+description = "+{x} Flamethrower tower"
+value = 1.0
+value_display_type = 1
+max_level = 6
+cost = 22
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_cch8d"]
+script = ExtResource("5")
+id = &"flamethrower_count_2"
+name = "More Flamethrowers"
+icon = ExtResource("14")
+description = "+{x} Flamethrower tower"
+value = 1.0
+value_display_type = 1
+cost = 1500
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_sqpjm"]
+script = ExtResource("5")
+id = &"flamethrower_count_3"
+name = "More Flamethrowers"
+icon = ExtResource("14")
+description = "+{x} Flamethrower tower"
+value = 1.0
+value_display_type = 1
+max_level = 2
+cost = 10500
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_p60s0"]
+script = ExtResource("5")
+id = &"fire_free_penetration"
+name = "Free Penetration"
+icon = ExtResource("14")
+description = "Bullets have a {x}% chance to penetrate burning enemies without consuming penetration."
+value = 10.0
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_cc5so"]
+script = ExtResource("5")
+id = &"fire_free_penetration_2"
+name = "Free Penetration Chance"
+icon = ExtResource("14")
+description = "+{x}% chance"
+value = 5.0
+max_level = 8
+cost = 150
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_0gvhm"]
+script = ExtResource("5")
+id = &"fire_damage_buff"
+name = "Scorched Armor"
+icon = ExtResource("14")
+description = "Increase all damage to burning orcs by {x}%."
+value = 5.0
+value_display_type = 1
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_lplea"]
+script = ExtResource("5")
+id = &"fire_damage_buff_2"
+name = "Scorched Armor"
+icon = ExtResource("14")
+description = "+{x}% damage"
+value = 5.0
+value_display_type = 1
+max_level = 5
+cost = 750
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_jryfr"]
+script = ExtResource("5")
+id = &"missile_damage"
+name = "Missile Damage"
+icon = ExtResource("15")
+description = "+{x} damage"
+value = 0.5
+max_level = 5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_k4y7v"]
+script = ExtResource("5")
+id = &"missile_radius"
+name = "Missile Explosion Radius"
+icon = ExtResource("15")
+description = "+{x} meter"
+value = 2.0
+value_display_type = 1
+max_level = 4
+cost = 3
+cost_change = 3.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_stuiw"]
+script = ExtResource("5")
+id = &"missile_cooldown"
+name = "Missile Cooldown"
+icon = ExtResource("15")
+description = "{x} seconds"
+value = -0.1
+max_level = 3
+cost = 5
+cost_change = 2.3
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_yex8r"]
+script = ExtResource("5")
+id = &"missile_clickhold"
+name = "Automatic Missile"
+icon = ExtResource("15")
+description = "Missiles are now fired continuously. Click once to toggle firing on and off."
+cost = 50
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_mchjq"]
+script = ExtResource("5")
+id = &"missile_damage_2"
+name = "Missile Damage"
+icon = ExtResource("15")
+description = "+{x} damage"
+value = 2.0
+max_level = 5
+cost = 25
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_8trcw"]
+script = ExtResource("5")
+id = &"missile_shrapnel_count"
+name = "Missile Shrapnels"
+icon = ExtResource("15")
+description = "Missile explosions shoot out {x} shrapnels that deal damage and slow orcs."
+value = 2.0
+value_display_type = 1
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_jw6wj"]
+script = ExtResource("5")
+id = &"missile_shrapnel_count_2"
+name = "Shrapnel Count"
+icon = ExtResource("15")
+description = "+{x} shrapnels"
+value = 2.0
+value_display_type = 1
+max_level = 5
+cost = 60
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_lylsa"]
+script = ExtResource("5")
+id = &"missile_shrapnel_damage"
+name = "Shrapnel Damage"
+icon = ExtResource("15")
+description = "+{x} damage"
+value = 1.0
+max_level = 7
+cost = 64
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_q11h8"]
+script = ExtResource("5")
+id = &"missile_shrapnel_penetration"
+name = "Shrapnel Penetration"
+icon = ExtResource("15")
+description = "+{x} penetration"
+value = 1.0
+value_display_type = 1
+max_level = 2
+cost = 400
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_fmsyx"]
+script = ExtResource("5")
+id = &"missile_shrapnel_slow_duration"
+name = "Shrapnel Slow Duration"
+icon = ExtResource("15")
+description = "+{x} seconds"
+value = 0.3
+max_level = 5
+cost = 55
+cost_change = 2.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_b615o"]
+script = ExtResource("5")
+id = &"missile_shrapnel_slow_strength"
+name = "Shrapnel Slow Strength"
+icon = ExtResource("15")
+description = "+{x}% slow strength"
+value = 5.0
+value_display_type = 1
+max_level = 6
+cost = 58
+cost_change = 2.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_vsebu"]
+script = ExtResource("5")
+id = &"missile_radius_2"
+name = "Missile Explosion Radius"
+icon = ExtResource("15")
+description = "+{x} meter"
+value = 2.0
+value_display_type = 1
+max_level = 4
+cost = 30
+cost_change = 2.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_i815x"]
+script = ExtResource("5")
+id = &"missile_cooldown_2"
+name = "Missile Cooldown"
+icon = ExtResource("15")
+description = "{x} seconds"
+value = -0.1
+max_level = 3
+cost = 45
+cost_change = 2.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_17brc"]
+script = ExtResource("5")
+id = &"missile_damage_3"
+name = "Missile Damage"
+icon = ExtResource("15")
+description = "+{x} damage"
+value = 3.0
+max_level = 5
+cost = 70
+cost_change = 2.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_roh5j"]
+script = ExtResource("5")
+id = &"missile_damage_4"
+name = "Missile Damage"
+icon = ExtResource("15")
+description = "+{x} damage"
+value = 10.0
+max_level = 5
+cost = 900
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ghf8n"]
+script = ExtResource("5")
+id = &"strafing_run_unlock"
+name = "Strafing Run"
+icon = ExtResource("16")
+description = "Active ability: Call in an airstrike on a designated area. Can be used once per battle."
+value_display_type = 1
+currency = 2
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_a3lqm"]
+script = ExtResource("5")
+id = &"strafing_run_damage"
+name = "Strafing Run Damage"
+icon = ExtResource("16")
+description = "+{x} damage"
+value = 10.0
+max_level = 6
+cost = 18
+cost_change = 2.2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_frd8a"]
+script = ExtResource("5")
+id = &"strafing_run_bullet_count"
+name = "Strafing Run Bullet Count"
+icon = ExtResource("16")
+description = "+{x} bullets"
+value = 10.0
+value_display_type = 1
+max_level = 5
+cost = 30
+cost_change = 2.4
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_83v3v"]
+script = ExtResource("5")
+id = &"strafing_run_damage_2"
+name = "Strafing Run Damage"
+icon = ExtResource("16")
+description = "+{x} damage"
+value = 10.0
+max_level = 6
+cost = 120
+cost_change = 1.95
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_xnf4e"]
+script = ExtResource("5")
+id = &"strafing_run_count"
+name = "More Runs"
+icon = ExtResource("16")
+description = "+{x} strafing run use"
+value = 1.0
+value_display_type = 1
+max_level = 2
+cost = 120
+cost_change = 3.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_l2fn1"]
+script = ExtResource("5")
+id = &"strafing_run_width"
+name = "Strafing Run Area"
+icon = ExtResource("16")
+description = "+{x} meter width and +{straf_len} meter length"
+value = 10.0
+max_level = 6
+cost = 40
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ffy17"]
+script = ExtResource("5")
+id = &"strafing_run_radius"
+name = "Strafing Run Explosion Radius"
+icon = ExtResource("16")
+description = "+{x} meter"
+value = 4.0
+max_level = 4
+cost = 60
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ov4f3"]
+script = ExtResource("5")
+id = &"nuke_unlock"
+name = "Nuke"
+icon = ExtResource("17")
+description = "Active ability: Drop a nuclear bomb. Can be used once per battle."
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_sme0e"]
+script = ExtResource("5")
+id = &"nuke_count"
+name = "More Nukes"
+icon = ExtResource("17")
+description = "+{x} nuke bomb use"
+value = 1.0
+value_display_type = 1
+max_level = 2
+cost = 5000
+cost_change = 2.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ein50"]
+script = ExtResource("5")
+id = &"nuke_radius"
+name = "Nuke Explosion Radius"
+icon = ExtResource("17")
+description = "+{x} meter"
+value = 20.0
+value_display_type = 1
+max_level = 5
+cost = 100
+cost_change = 2.05
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_1ixt4"]
+script = ExtResource("5")
+id = &"nuke_damage"
+name = "Nuke Explosion Damage"
+icon = ExtResource("17")
+description = "+{x} damage"
+value = 20.0
+value_display_type = 1
+max_level = 7
+cost = 135
+cost_change = 1.95
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ns7w3"]
+script = ExtResource("5")
+id = &"tesla_coil_unlock"
+name = "Tesla Coil"
+icon = ExtResource("18")
+description = "Fires bolts of electricity that arc between nearby enemy orcs."
+currency = 1
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_2l0cc"]
+script = ExtResource("5")
+id = &"tesla_coil_damage"
+name = "Tesla Coil Damage"
+icon = ExtResource("18")
+description = "+{x} damage"
+value = 1.0
+max_level = 5
+cost = 35
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_86re3"]
+script = ExtResource("5")
+id = &"tesla_coil_range"
+name = "Tesla Coil Range"
+icon = ExtResource("18")
+description = "+{x} meter"
+value = 10.0
+max_level = 6
+cost = 43
+cost_change = 2.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_y04x8"]
+script = ExtResource("5")
+id = &"tesla_coil_chaining"
+name = "Tesla Coil Chain Jumps"
+icon = ExtResource("18")
+description = "+{x} jump"
+value = 1.0
+value_display_type = 1
+max_level = 5
+cost = 45
+cost_change = 2.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_q4vlf"]
+script = ExtResource("5")
+id = &"tesla_coil_chaining_2"
+name = "Tesla Coil Chain Jumps"
+icon = ExtResource("18")
+description = "+{x} jump"
+value = 1.0
+value_display_type = 1
+max_level = 5
+cost = 200
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_pl3r4"]
+script = ExtResource("5")
+id = &"tesla_coil_firerate"
+name = "Tesla Coil Firerate"
+icon = ExtResource("18")
+description = "+{x} shots / second"
+value = 0.2
+max_level = 5
+cost = 39
+cost_change = 2.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_6itnk"]
+script = ExtResource("5")
+id = &"tesla_coil_firerate_2"
+name = "Tesla Coil Firerate"
+icon = ExtResource("18")
+description = "+{x} shots / second"
+value = 0.3
+max_level = 6
+cost = 700
+cost_change = 1.7
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_6qp1n"]
+script = ExtResource("5")
+id = &"tesla_coil_damage_2"
+name = "Tesla Coil Damage"
+icon = ExtResource("18")
+description = "+{x} damage"
+value = 1.0
+max_level = 5
+cost = 175
+cost_change = 1.6
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_dyw0a"]
+script = ExtResource("5")
+id = &"tesla_coil_damage_3"
+name = "Tesla Coil Damage"
+icon = ExtResource("18")
+description = "+{x} damage"
+value = 2.0
+max_level = 8
+cost = 1500
+cost_change = 1.6
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_41tf2"]
+script = ExtResource("5")
+id = &"tesla_coil_confusion"
+name = "Tesla Coil Confusion"
+icon = ExtResource("18")
+description = "Shocked enemies will run in the wrong direction for {x} second."
+value = 1.0
+currency = 2
+cost_change = 1.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_yocup"]
+script = ExtResource("5")
+id = &"tesla_coil_shock_duration"
+name = "Tesla Coil Shock Duration"
+icon = ExtResource("18")
+description = "+{x} seconds"
+value = 0.3
+max_level = 6
+cost = 200
+cost_change = 1.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_87heq"]
+script = ExtResource("5")
+id = &"tesla_coil_count"
+name = "More Tesla Coils"
+icon = ExtResource("18")
+description = "+{x} Tesla Coil tower"
+value = 1.0
+value_display_type = 1
+max_level = 4
+cost = 25
+cost_change = 3.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_7y8ym"]
+script = ExtResource("5")
+id = &"tesla_coil_count_2"
+name = "More Tesla Coils"
+icon = ExtResource("18")
+description = "+{x} Tesla Coil tower"
+value = 1.0
+value_display_type = 1
+max_level = 2
+cost = 700
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_bhkxi"]
+script = ExtResource("5")
+id = &"tesla_coil_count_3"
+name = "More Tesla Coils"
+icon = ExtResource("18")
+description = "+{x} Tesla Coil tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 11000
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_khah3"]
+script = ExtResource("5")
+id = &"grenade_launcher_unlock"
+name = "Grenade Launcher"
+icon = ExtResource("19")
+description = "Fires gas grenades that create lingering clouds, slowing enemy orcs caught within them."
+currency = 1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_byyt6"]
+script = ExtResource("5")
+id = &"grenade_launcher_lifetime"
+name = "Grenade Duration"
+icon = ExtResource("19")
+description = "+{x} seconds"
+value = 0.5
+max_level = 5
+cost = 8
+cost_change = 3.2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_x7pgp"]
+script = ExtResource("5")
+id = &"grenade_launcher_slow_strength"
+name = "Grenade Slow Strength"
+icon = ExtResource("19")
+description = "+{x}% slow strength"
+value = 5.0
+max_level = 4
+cost = 12
+cost_change = 2.7
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_4odfv"]
+script = ExtResource("5")
+id = &"grenade_launcher_slow_strength_2"
+name = "Grenade Slow Strength"
+icon = ExtResource("19")
+description = "+{x}% slow strength"
+value = 5.0
+max_level = 2
+cost = 675
+cost_change = 1.85
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_8f17c"]
+script = ExtResource("5")
+id = &"grenade_launcher_slow_duration"
+name = "Grenade Slow Duration"
+icon = ExtResource("19")
+description = "+{x} seconds"
+value = 0.25
+max_level = 4
+cost = 15
+cost_change = 3.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_vv0te"]
+script = ExtResource("5")
+id = &"grenade_launcher_radius"
+name = "Grenade Effect Radius"
+icon = ExtResource("19")
+description = "+{x} meter"
+value = 2.0
+max_level = 5
+cost = 9
+cost_change = 3.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_c3bd8"]
+script = ExtResource("5")
+id = &"grenade_launcher_volley"
+name = "Volley Size"
+icon = ExtResource("19")
+description = "+{x} grenade per volley"
+value = 1.0
+value_display_type = 1
+max_level = 6
+cost = 10
+cost_change = 2.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_yvplg"]
+script = ExtResource("5")
+id = &"grenade_launcher_damage_buff"
+name = "Corrosive Fumes"
+icon = ExtResource("19")
+description = "Increase all damage to slowed orcs by {x}%."
+value = 5.0
+value_display_type = 1
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_bt25j"]
+script = ExtResource("5")
+id = &"grenade_launcher_damage_buff_2"
+name = "Corrosive Fumes"
+icon = ExtResource("19")
+description = "+{x}% damage"
+value = 5.0
+value_display_type = 1
+max_level = 5
+cost = 750
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_381fi"]
+script = ExtResource("5")
+id = &"grenade_launcher_count"
+name = "More Grenade Launchers"
+icon = ExtResource("19")
+description = "+{x} Grenade Launcher tower"
+value = 1.0
+value_display_type = 1
+max_level = 6
+cost = 13
+cost_change = 2.4
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_u84fe"]
+script = ExtResource("5")
+id = &"grenade_launcher_explosive"
+name = "Explosive Grenades"
+icon = ExtResource("19")
+description = "Grenades explode when their duration expires."
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_822wr"]
+script = ExtResource("5")
+id = &"grenade_launcher_explosion_damage"
+name = "Grenade Explosion Damage"
+icon = ExtResource("19")
+description = "+{x} damage"
+value = 2.0
+max_level = 5
+cost = 110
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_is3o8"]
+script = ExtResource("5")
+id = &"grenade_launcher_explosion_damage_2"
+name = "Grenade Explosion Damage"
+icon = ExtResource("19")
+description = "+{x} damage"
+value = 4.0
+max_level = 8
+cost = 1400
+cost_change = 1.6
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_mws1a"]
+script = ExtResource("5")
+id = &"grenade_launcher_explosion_radius"
+name = "Grenade Explosion Radius"
+icon = ExtResource("19")
+description = "+{x} meter"
+value = 1.0
+max_level = 5
+cost = 30
+cost_change = 2.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_1iv3k"]
+script = ExtResource("5")
+id = &"grenade_launcher_count_2"
+name = "More Grenade Launchers"
+icon = ExtResource("19")
+description = "+{x} Grenade Launcher tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 9900
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_f3e5m"]
+script = ExtResource("5")
+id = &"laser_unlock"
+name = "Laser"
+icon = ExtResource("20")
+description = "Fires a laser beam that bounces off walls, striking enemies from unexpected angles."
+currency = 1
+cost_change = 0.0
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_2fetd"]
+script = ExtResource("5")
+id = &"laser_count"
+name = "More Lasers"
+icon = ExtResource("20")
+description = "+{x} Laser tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 12
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_1e5b2"]
+script = ExtResource("5")
+id = &"laser_count_2"
+name = "More Lasers"
+icon = ExtResource("20")
+description = "+{x} Laser tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 80
+cost_change = 1.65
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_it7cl"]
+script = ExtResource("5")
+id = &"laser_count_3"
+name = "More Lasers"
+icon = ExtResource("20")
+description = "+{x} Laser tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 8500
+cost_change = 2.05
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_0q1gq"]
+script = ExtResource("5")
+id = &"laser_firerate"
+name = "Laser Firerate"
+icon = ExtResource("20")
+description = "+{x} shots / second"
+value = 0.2
+max_level = 3
+cost = 9
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_iagmg"]
+script = ExtResource("5")
+id = &"laser_damage"
+name = "Laser Damage"
+icon = ExtResource("20")
+description = "+{x} damage"
+value = 0.4
+max_level = 5
+cost = 13
+cost_change = 1.7
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_3jbit"]
+script = ExtResource("5")
+id = &"laser_firerate_2"
+name = "Laser Firerate"
+icon = ExtResource("20")
+description = "+{x} shots / second"
+value = 0.2
+max_level = 3
+cost = 71
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_xjjbg"]
+script = ExtResource("5")
+id = &"laser_damage_2"
+name = "Laser Damage"
+icon = ExtResource("20")
+description = "+{x} damage"
+value = 0.8
+max_level = 5
+cost = 104
+cost_change = 1.9
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_lnpvk"]
+script = ExtResource("5")
+id = &"laser_damage_3"
+name = "Laser Damage"
+icon = ExtResource("20")
+description = "+{x} damage"
+value = 2.0
+max_level = 5
+cost = 790
+cost_change = 1.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_yxtvr"]
+script = ExtResource("5")
+id = &"laser_damage_4"
+name = "Laser Damage"
+icon = ExtResource("20")
+description = "+{x} damage"
+value = 2.0
+max_level = 5
+cost = 790
+cost_change = 1.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_dlhxm"]
+script = ExtResource("5")
+id = &"laser_range"
+name = "Laser Range"
+icon = ExtResource("20")
+description = "+{x} meter"
+value = 20.0
+value_display_type = 1
+max_level = 5
+cost = 15
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_vqqjo"]
+script = ExtResource("5")
+id = &"laser_range_2"
+name = "Laser Range"
+icon = ExtResource("20")
+description = "+{x} meter"
+value = 30.0
+value_display_type = 1
+max_level = 5
+cost = 128
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_xwty3"]
+script = ExtResource("5")
+id = &"laser_range_3"
+name = "Laser Range"
+icon = ExtResource("20")
+description = "+{x} meter"
+value = 40.0
+value_display_type = 1
+max_level = 5
+cost = 703
+cost_change = 1.7
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_nvp6l"]
+script = ExtResource("5")
+id = &"laser_bounces"
+name = "Laser Bounces"
+icon = ExtResource("20")
+description = "+{x} bounces"
+value = 5.0
+value_display_type = 1
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_y010w"]
+script = ExtResource("5")
+id = &"laser_bounces_2"
+name = "Laser Bounces"
+icon = ExtResource("20")
+description = "+{x} bounce"
+value = 1.0
+value_display_type = 1
+max_level = 5
+cost = 270
+cost_change = 1.65
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_rbrsd"]
+script = ExtResource("5")
+id = &"cryo_beam_unlock"
+name = "Orbital Cryo Beam"
+icon = ExtResource("21")
+description = "Active ability: Call down an orbital cryo beam that freezes all orcs in its path."
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_0yy1x"]
+script = ExtResource("5")
+id = &"cryo_beam_fuel"
+name = "Cryo Beam Fuel"
+icon = ExtResource("21")
+description = "+{x} seconds"
+value = 0.5
+max_level = 3
+cost = 14
+cost_change = 3.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_lnqxs"]
+script = ExtResource("5")
+id = &"cryo_beam_radius"
+name = "Cryo Beam Radius"
+icon = ExtResource("21")
+description = "+{x} meter"
+value = 5.0
+value_display_type = 1
+max_level = 3
+cost = 16
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_kc1yg"]
+script = ExtResource("5")
+id = &"cryo_beam_duration"
+name = "Cryo Beam Duration"
+icon = ExtResource("21")
+description = "+{x} seconds"
+value = 0.2
+max_level = 6
+cost = 21
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_ggwd7"]
+script = ExtResource("5")
+id = &"cryo_beam_fuel_2"
+name = "Cryo Beam Fuel"
+icon = ExtResource("21")
+description = "+{x} seconds"
+value = 0.5
+max_level = 3
+cost = 165
+cost_change = 3.1
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_154dm"]
+script = ExtResource("5")
+id = &"cryo_beam_radius_2"
+name = "Cryo Beam Radius"
+icon = ExtResource("21")
+description = "+{x} meter"
+value = 5.0
+value_display_type = 1
+max_level = 3
+cost = 101
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_8g708"]
+script = ExtResource("5")
+id = &"cryo_beam_damage"
+name = "Cryo Beam Damage"
+icon = ExtResource("21")
+description = "Enemies take {x} damage upon unfreezing."
+value = 5.0
+currency = 2
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_4mugn"]
+script = ExtResource("5")
+id = &"cryo_beam_damage_2"
+name = "Cryo Beam Damage"
+icon = ExtResource("21")
+description = "+{x} damage"
+value = 3.0
+max_level = 5
+cost = 200
+cost_change = 1.8
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_3byei"]
+script = ExtResource("5")
+id = &"cryo_beam_damage_3"
+name = "Cryo Beam Damage"
+icon = ExtResource("21")
+description = "+{x} damage"
+value = 10.0
+max_level = 3
+cost = 1800
+cost_change = 2.5
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[sub_resource type="Resource" id="Resource_cyqnv"]
+script = ExtResource("5")
+id = &"cryo_beam_duration_2"
+name = "Cryo Beam Duration"
+icon = ExtResource("21")
+description = "+{x} seconds"
+value = 0.2
+max_level = 6
+cost = 199
+cost_change = 1.65
+metadata/_custom_type_script = "uid://bfb3v25h0jac6"
+
+[node name="TechTree" type="Node2D" unique_id=2087665074]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1483726070]
+environment = SubResource("Environment_bdihn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=858094426]
+position = Vector2(1418, 709)
+script = ExtResource("1")
+min_zoom = 0.8
+max_zoom = 2.0
+edge_scroll_move_speed = 5.0
+edge_scroll_boost = 2.0
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=150763568]
+layer = -1
+follow_viewport_enabled = true
+follow_viewport_scale = 0.6
+
+[node name="Background2" type="TextureRect" parent="Background" unique_id=1103385389]
+modulate = Color(1, 0.52156866, 0, 1)
+material = SubResource("ShaderMaterial_bdihn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6, 6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("GradientTexture2D_bdihn")
+expand_mode = 1
+
+[node name="Nodes" type="Node2D" parent="." unique_id=593431788]
+script = ExtResource("2")
+
+[node name="Gunner" parent="Nodes" unique_id=1993414254 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1426, 728)
+upgrade_data = SubResource("Resource_ctixl")
+child_upgrades = [NodePath("../GunnerCount"), NodePath("../ExplosiveOrcs"), NodePath("../Mortar"), NodePath("../BaseHP"), NodePath("../MarksBonus"), NodePath("../MissileDmg")]
+
+[node name="GunnerCount" parent="Nodes" unique_id=1225698484 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1475.0476, 596.8728)
+upgrade_data = SubResource("Resource_sj1ft")
+child_upgrades = [NodePath("../GunnerFirerate"), NodePath("../CryoBeam"), NodePath("../BuyPink")]
+
+[node name="GunnerFirerate" parent="Nodes" unique_id=1518425126 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1501.2726, 459.35098)
+upgrade_data = SubResource("Resource_cui35")
+child_upgrades = [NodePath("../GunnerDmg"), NodePath("../GunnerCount2")]
+
+[node name="GunnerDmg" parent="Nodes" unique_id=848293283 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1588.6127, 349.93567)
+upgrade_data = SubResource("Resource_00ncw")
+child_upgrades = [NodePath("../GunnerFirerate2"), NodePath("../Cannon"), NodePath("../GunnerMaxRange"), NodePath("../Laser")]
+
+[node name="GunnerCount2" parent="Nodes" unique_id=1915548189 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1430.0692, 338.81018)
+upgrade_data = SubResource("Resource_x6b4v")
+
+[node name="GunnerFirerate2" parent="Nodes" unique_id=21364152 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1580.0815, 210.19583)
+upgrade_data = SubResource("Resource_a8xv7")
+child_upgrades = [NodePath("../GunnerFirerate3"), NodePath("../GunnerCount3")]
+
+[node name="GunnerCount3" parent="Nodes" unique_id=1052309275 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1623.8905, 77.226746)
+upgrade_data = SubResource("Resource_lh0i7")
+child_upgrades = [NodePath("../GunnerDmg2")]
+
+[node name="GunnerDmg2" parent="Nodes" unique_id=201601063 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1616.137, -62.55838)
+upgrade_data = SubResource("Resource_gpq5x")
+child_upgrades = [NodePath("../GunnerFirerate4"), NodePath("../GunnerDmg3")]
+
+[node name="GunnerDmg3" parent="Nodes" unique_id=997589163 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1529.214, -172.30534)
+upgrade_data = SubResource("Resource_3n8ny")
+child_upgrades = [NodePath("../GunnerCount4")]
+
+[node name="GunnerCount4" parent="Nodes" unique_id=273691348 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1503.2485, -309.8764)
+upgrade_data = SubResource("Resource_52omr")
+
+[node name="GunnerFirerate3" parent="Nodes" unique_id=642948546 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1512.1133, 87.801735)
+upgrade_data = SubResource("Resource_bdihn")
+
+[node name="GunnerFirerate4" parent="Nodes" unique_id=118297208 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1656.1641, -196.71439)
+upgrade_data = SubResource("Resource_5i7k1")
+
+[node name="GunnerMaxRange" parent="Nodes" unique_id=1842689120 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1497.5286, 243.61688)
+upgrade_data = SubResource("Resource_m42ws")
+child_upgrades = [NodePath("../GunnerPenetration")]
+
+[node name="GunnerPenetration" parent="Nodes" unique_id=681163417 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1412.5311, 132.37195)
+upgrade_data = SubResource("Resource_tlcy4")
+child_upgrades = [NodePath("../GunnerPenetration2")]
+
+[node name="GunnerPenetration2" parent="Nodes" unique_id=670441949 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1400.561, -7.115387)
+upgrade_data = SubResource("Resource_vl7hl")
+
+[node name="BuyPink" parent="Nodes" unique_id=1484637414 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1595.851, 526.1159)
+upgrade_data = SubResource("Resource_sfyr3")
+
+[node name="MarksBonus" parent="Nodes" unique_id=628248546 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1293.9089, 681.6109)
+upgrade_data = SubResource("Resource_2iln8")
+child_upgrades = [NodePath("../MarksPercentage"), NodePath("../Flamethrower"), NodePath("../DmgStats")]
+
+[node name="MarksPercentage" parent="Nodes" unique_id=1598677265 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1167.2535, 621.9586)
+upgrade_data = SubResource("Resource_4i2ud")
+child_upgrades = [NodePath("../Headhunter"), NodePath("../TeslaCoil")]
+
+[node name="Headhunter" parent="Nodes" unique_id=582040402 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1119.1732, 490.4737)
+upgrade_data = SubResource("Resource_56pub")
+child_upgrades = [NodePath("../MarksBonus3")]
+
+[node name="MarksBonus3" parent="Nodes" unique_id=547510395 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1076.4111, 357.16425)
+upgrade_data = SubResource("Resource_2ivb5")
+child_upgrades = [NodePath("../MarksBonus4")]
+
+[node name="MarksBonus4" parent="Nodes" unique_id=808915502 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1062.9817, 217.80984)
+upgrade_data = SubResource("Resource_sobta")
+
+[node name="DmgStats" parent="Nodes" unique_id=2035145217 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1264.0729, 544.8271)
+upgrade_data = SubResource("Resource_jtkxt")
+child_upgrades = [NodePath("../GoldenOrcs")]
+
+[node name="GoldenOrcs" parent="Nodes" unique_id=1927035375 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1225.8336, 410.15057)
+upgrade_data = SubResource("Resource_ppj04")
+child_upgrades = [NodePath("../GoldenOrcsChance"), NodePath("../GoldenOrcsMoney")]
+
+[node name="GoldenOrcsChance" parent="Nodes" unique_id=2022909956 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1226.9586, 270.1551)
+upgrade_data = SubResource("Resource_231q8")
+child_upgrades = [NodePath("../GoldenOrcsChance2")]
+
+[node name="GoldenOrcsChance2" parent="Nodes" unique_id=1359762467 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1170.3905, 142.09242)
+upgrade_data = SubResource("Resource_euhpw")
+
+[node name="GoldenOrcsMoney" parent="Nodes" unique_id=772341618 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1157.103, 288.18292)
+upgrade_data = SubResource("Resource_en66h")
+
+[node name="Cannon" parent="Nodes" unique_id=1877302709 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1726.2428, 375.58636)
+upgrade_data = SubResource("Resource_fx41d")
+child_upgrades = [NodePath("../CannonFirerate")]
+
+[node name="CannonFirerate" parent="Nodes" unique_id=1023318846 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1866.1638, 370.8859)
+upgrade_data = SubResource("Resource_ees3b")
+child_upgrades = [NodePath("../CannonPenetration"), NodePath("../CannonDmg"), NodePath("../CannonCount"), NodePath("../CannonBigBoy")]
+
+[node name="CannonPenetration" parent="Nodes" unique_id=189410332 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1941.4868, 488.89624)
+upgrade_data = SubResource("Resource_fckb5")
+child_upgrades = [NodePath("../CannonRange")]
+
+[node name="CannonRange" parent="Nodes" unique_id=1718215099 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2057.9297, 566.62054)
+upgrade_data = SubResource("Resource_3q6lt")
+
+[node name="CannonCount" parent="Nodes" unique_id=1080243747 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1935.9899, 249.54205)
+upgrade_data = SubResource("Resource_1bu3m")
+child_upgrades = [NodePath("../CannonPenetration2")]
+
+[node name="CannonPenetration2" parent="Nodes" unique_id=529006394 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2040.293, 156.15646)
+upgrade_data = SubResource("Resource_vk4gl")
+child_upgrades = [NodePath("../CannonCount2")]
+
+[node name="CannonCount2" parent="Nodes" unique_id=1863351433 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2159.9255, 83.43748)
+upgrade_data = SubResource("Resource_w43wk")
+child_upgrades = [NodePath("../CannonFirerate3")]
+
+[node name="CannonFirerate3" parent="Nodes" unique_id=1867238222 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2296.0898, 50.890793)
+upgrade_data = SubResource("Resource_d3d0a")
+child_upgrades = [NodePath("../CannonDmg3"), NodePath("../CannonPenetration3")]
+
+[node name="CannonDmg3" parent="Nodes" unique_id=21761651 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2435.1626, 66.97765)
+upgrade_data = SubResource("Resource_8aukp")
+child_upgrades = [NodePath("../CannonCount3")]
+
+[node name="CannonCount3" parent="Nodes" unique_id=1180106690 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2574.2158, 83.23241)
+upgrade_data = SubResource("Resource_aa41y")
+
+[node name="CannonPenetration3" parent="Nodes" unique_id=2066272502 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2422.3967, -9.496094)
+upgrade_data = SubResource("Resource_5g55l")
+
+[node name="CannonDmg" parent="Nodes" unique_id=1629047043 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2006.1553, 372.43262)
+upgrade_data = SubResource("Resource_3jwn3")
+child_upgrades = [NodePath("../CannonFirerate2")]
+
+[node name="CannonFirerate2" parent="Nodes" unique_id=1741368464 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2146.1548, 372.0284)
+upgrade_data = SubResource("Resource_qh3on")
+child_upgrades = [NodePath("../CannonDmg2")]
+
+[node name="CannonDmg2" parent="Nodes" unique_id=267982423 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2286.1548, 372.00058)
+upgrade_data = SubResource("Resource_k3qsf")
+
+[node name="CannonBigBoy" parent="Nodes" unique_id=327247210 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1989.9307, 305.45062)
+upgrade_data = SubResource("Resource_xxf3i")
+
+[node name="ExplosiveOrcs" parent="Nodes" unique_id=589727741 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1556.1409, 779.6076)
+upgrade_data = SubResource("Resource_fl8l3")
+child_upgrades = [NodePath("../ExplosiveOrcsDamage"), NodePath("../ExplosiveOrcsChance")]
+
+[node name="ExplosiveOrcsDamage" parent="Nodes" unique_id=352832464 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1613.3447, 907.3876)
+upgrade_data = SubResource("Resource_n427i")
+
+[node name="ExplosiveOrcsRadius" parent="Nodes" unique_id=800975519 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1733.1594, 924.82715)
+upgrade_data = SubResource("Resource_4i7nm")
+
+[node name="ExplosiveOrcsChance" parent="Nodes" unique_id=2034224382 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1695.761, 789.91473)
+upgrade_data = SubResource("Resource_bjf4l")
+child_upgrades = [NodePath("../ExplosiveOrcsRadius")]
+
+[node name="Mortar" parent="Nodes" unique_id=927574295 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1306.9877, 801.7296)
+upgrade_data = SubResource("Resource_8alru")
+child_upgrades = [NodePath("../MortarExplDmg"), NodePath("../MortarExplRadius")]
+
+[node name="MortarExplRadius" parent="Nodes" unique_id=2140621300 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1304.5023, 941.7075)
+upgrade_data = SubResource("Resource_w3klg")
+child_upgrades = [NodePath("../MortarCount")]
+
+[node name="MortarCount" parent="Nodes" unique_id=1639823088 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1359.2799, 1070.5463)
+upgrade_data = SubResource("Resource_54ieq")
+child_upgrades = [NodePath("../MortarExplDmg2"), NodePath("../Nuke")]
+
+[node name="MortarExplDmg2" parent="Nodes" unique_id=1975425056 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1448.8105, 1178.1765)
+upgrade_data = SubResource("Resource_mrg8e")
+
+[node name="MortarExplDmg" parent="Nodes" unique_id=25847783 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1206.6648, 899.3786)
+upgrade_data = SubResource("Resource_somlq")
+child_upgrades = [NodePath("../MortarFirerate"), NodePath("../MortarFragmentCount")]
+
+[node name="MortarFirerate" parent="Nodes" unique_id=643165610 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1106.1373, 996.8169)
+upgrade_data = SubResource("Resource_f1ask")
+child_upgrades = [NodePath("../MortarCount2")]
+
+[node name="MortarCount2" parent="Nodes" unique_id=539135765 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(981.6726, 1060.9148)
+upgrade_data = SubResource("Resource_ybc23")
+child_upgrades = [NodePath("../MortarCount3")]
+
+[node name="MortarCount3" parent="Nodes" unique_id=1789919878 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(861.4087, 1132.5848)
+upgrade_data = SubResource("Resource_npsqx")
+
+[node name="MortarFragmentCount" parent="Nodes" unique_id=865616272 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1193.7465, 1038.7813)
+upgrade_data = SubResource("Resource_c8gdy")
+child_upgrades = [NodePath("../MortarFragmentPenetration"), NodePath("../MortarFragmentDamage")]
+
+[node name="MortarFragmentPenetration" parent="Nodes" unique_id=1871872089 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1146.3113, 1170.5002)
+upgrade_data = SubResource("Resource_020h6")
+
+[node name="MortarFragmentDamage" parent="Nodes" unique_id=756747903 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1239.5343, 1171.0819)
+upgrade_data = SubResource("Resource_rixms")
+child_upgrades = [NodePath("../MortarFragmentCount2")]
+
+[node name="MortarFragmentCount2" parent="Nodes" unique_id=1907527152 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1196.6731, 1304.3595)
+upgrade_data = SubResource("Resource_oxq34")
+
+[node name="BaseHP" parent="Nodes" unique_id=1614736336 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1455.119, 864.93823)
+upgrade_data = SubResource("Resource_4bt4o")
+child_upgrades = [NodePath("../BaseHP2"), NodePath("../GrenadeLauncher")]
+
+[node name="BaseHP2" parent="Nodes" unique_id=853023219 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1446.8405, 1004.69324)
+upgrade_data = SubResource("Resource_0egpm")
+
+[node name="Flamethrower" parent="Nodes" unique_id=1744797222 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1162.1552, 728.9494)
+upgrade_data = SubResource("Resource_oy8dd")
+child_upgrades = [NodePath("../FireTickDmg"), NodePath("../FireTickRate")]
+
+[node name="FireTickRate" parent="Nodes" unique_id=1116312958 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1036.658, 666.89746)
+upgrade_data = SubResource("Resource_6votd")
+child_upgrades = [NodePath("../FlamethrowerFireDuration"), NodePath("../FlamethrowerRange")]
+
+[node name="FlamethrowerFireDuration" parent="Nodes" unique_id=158369777 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(963.55023, 547.5021)
+upgrade_data = SubResource("Resource_ps4fw")
+
+[node name="FlamethrowerRange" parent="Nodes" unique_id=1853894070 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(897.48755, 651.6794)
+upgrade_data = SubResource("Resource_mohwm")
+
+[node name="FireTickDmg" parent="Nodes" unique_id=565674991 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1038.7903, 795.1394)
+upgrade_data = SubResource("Resource_1034q")
+child_upgrades = [NodePath("../FireDmgBuff"), NodePath("../FlamethrowerCount"), NodePath("../FireFreePenetration")]
+
+[node name="FlamethrowerCount" parent="Nodes" unique_id=1362071908 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(915.55884, 728.70135)
+upgrade_data = SubResource("Resource_urfoe")
+child_upgrades = [NodePath("../FlamethrowerCount2")]
+
+[node name="FlamethrowerCount2" parent="Nodes" unique_id=1546619756 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(775.5711, 726.84875)
+upgrade_data = SubResource("Resource_cch8d")
+child_upgrades = [NodePath("../FlamethrowerCount3")]
+
+[node name="FlamethrowerCount3" parent="Nodes" unique_id=88489429 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(635.6321, 730.9813)
+upgrade_data = SubResource("Resource_sqpjm")
+
+[node name="FireFreePenetration" parent="Nodes" unique_id=878465208 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(901.7953, 823.9901)
+upgrade_data = SubResource("Resource_p60s0")
+child_upgrades = [NodePath("../FireFreePenetration2")]
+
+[node name="FireFreePenetration2" parent="Nodes" unique_id=1229400166 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(778.2329, 889.81055)
+upgrade_data = SubResource("Resource_cc5so")
+
+[node name="FireDmgBuff" parent="Nodes" unique_id=1008324102 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(962.5904, 912.58545)
+upgrade_data = SubResource("Resource_0gvhm")
+child_upgrades = [NodePath("../FireDmgBuff2")]
+
+[node name="FireDmgBuff2" parent="Nodes" unique_id=1608620216 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(850.5764, 996.5668)
+upgrade_data = SubResource("Resource_lplea")
+
+[node name="MissileDmg" parent="Nodes" unique_id=212118792 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1547.947, 659.23285)
+upgrade_data = SubResource("Resource_jryfr")
+child_upgrades = [NodePath("../MissileRadius"), NodePath("../MissileClickhold")]
+
+[node name="MissileRadius" parent="Nodes" unique_id=1314385516 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1672.6932, 595.6846)
+upgrade_data = SubResource("Resource_k4y7v")
+child_upgrades = [NodePath("../MissileCooldown")]
+
+[node name="MissileCooldown" parent="Nodes" unique_id=814181889 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1812.6226, 591.2346)
+upgrade_data = SubResource("Resource_stuiw")
+child_upgrades = [NodePath("../StrafingRun"), NodePath("../MissileDmg2")]
+
+[node name="MissileClickhold" parent="Nodes" unique_id=1092661069 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1684.3992, 690.55066)
+upgrade_data = SubResource("Resource_yex8r")
+
+[node name="MissileDmg2" parent="Nodes" unique_id=2101386561 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1952.4191, 598.78107)
+upgrade_data = SubResource("Resource_mchjq")
+child_upgrades = [NodePath("../MissileRadius2"), NodePath("../MissileShrapnels")]
+
+[node name="MissileShrapnels" parent="Nodes" unique_id=283340989 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2041.0348, 707.1658)
+upgrade_data = SubResource("Resource_8trcw")
+child_upgrades = [NodePath("../MissileShrapnelCount"), NodePath("../MissileShrapnelSlowDuration")]
+
+[node name="MissileShrapnelCount" parent="Nodes" unique_id=543788096 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2141.0535, 805.12634)
+upgrade_data = SubResource("Resource_jw6wj")
+child_upgrades = [NodePath("../MissileShrapnelDamage")]
+
+[node name="MissileShrapnelDamage" parent="Nodes" unique_id=1034287413 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2258.6348, 881.11743)
+upgrade_data = SubResource("Resource_lylsa")
+child_upgrades = [NodePath("../MissileShrapnelPenetration")]
+
+[node name="MissileShrapnelPenetration" parent="Nodes" unique_id=369850467 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2371.0295, 964.58844)
+upgrade_data = SubResource("Resource_q11h8")
+
+[node name="MissileShrapnelSlowDuration" parent="Nodes" unique_id=643042268 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2177.0554, 740.3079)
+upgrade_data = SubResource("Resource_fmsyx")
+child_upgrades = [NodePath("../MissileShrapnelSlowStrength")]
+
+[node name="MissileShrapnelSlowStrength" parent="Nodes" unique_id=2128487773 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2305.58, 795.8186)
+upgrade_data = SubResource("Resource_b615o")
+
+[node name="MissileRadius2" parent="Nodes" unique_id=673954386 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2090.4944, 621.9153)
+upgrade_data = SubResource("Resource_vsebu")
+child_upgrades = [NodePath("../MissileCooldown2")]
+
+[node name="MissileCooldown2" parent="Nodes" unique_id=1426782983 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2224.581, 662.1743)
+upgrade_data = SubResource("Resource_i815x")
+child_upgrades = [NodePath("../MissileDmg3")]
+
+[node name="MissileDmg3" parent="Nodes" unique_id=1222330578 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2356.1404, 710.0509)
+upgrade_data = SubResource("Resource_17brc")
+child_upgrades = [NodePath("../MissileDmg4")]
+
+[node name="MissileDmg4" parent="Nodes" unique_id=2125918986 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2489.4944, 752.6738)
+upgrade_data = SubResource("Resource_roh5j")
+
+[node name="StrafingRun" parent="Nodes" unique_id=1923017851 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1900.3031, 700.3773)
+upgrade_data = SubResource("Resource_ghf8n")
+child_upgrades = [NodePath("../StrafingRunDmg"), NodePath("../StrafingRunArea")]
+
+[node name="StrafingRunDmg" parent="Nodes" unique_id=35572305 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1982.863, 813.443)
+upgrade_data = SubResource("Resource_a3lqm")
+child_upgrades = [NodePath("../StrafingRunBulletCount"), NodePath("../StrafingRunCount")]
+
+[node name="StrafingRunBulletCount" parent="Nodes" unique_id=1596853941 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2102.1594, 886.7121)
+upgrade_data = SubResource("Resource_frd8a")
+child_upgrades = [NodePath("../StrafingRunDmg2")]
+
+[node name="StrafingRunDmg2" parent="Nodes" unique_id=546546752 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2207.8083, 978.5723)
+upgrade_data = SubResource("Resource_83v3v")
+
+[node name="StrafingRunCount" parent="Nodes" unique_id=206893355 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2027.7412, 946.05505)
+upgrade_data = SubResource("Resource_xnf4e")
+
+[node name="StrafingRunArea" parent="Nodes" unique_id=1066943365 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1882.6648, 839.2618)
+upgrade_data = SubResource("Resource_l2fn1")
+child_upgrades = [NodePath("../StrafingRunRadius")]
+
+[node name="StrafingRunRadius" parent="Nodes" unique_id=1132280903 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1909.5396, 976.6581)
+upgrade_data = SubResource("Resource_ffy17")
+
+[node name="Nuke" parent="Nodes" unique_id=1446412851 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1341.2634, 1209.3822)
+upgrade_data = SubResource("Resource_ov4f3")
+child_upgrades = [NodePath("../NukeCount"), NodePath("../NukeRadius")]
+
+[node name="NukeCount" parent="Nodes" unique_id=1177568912 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1296.9331, 1342.1783)
+upgrade_data = SubResource("Resource_sme0e")
+
+[node name="NukeRadius" parent="Nodes" unique_id=719032704 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1400.3329, 1336.3105)
+upgrade_data = SubResource("Resource_ein50")
+child_upgrades = [NodePath("../NukeDamage")]
+
+[node name="NukeDamage" parent="Nodes" unique_id=463821873 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1395.2255, 1476.2174)
+upgrade_data = SubResource("Resource_1ixt4")
+
+[node name="TeslaCoil" parent="Nodes" unique_id=1292490180 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1060.9708, 530.8324)
+upgrade_data = SubResource("Resource_ns7w3")
+child_upgrades = [NodePath("../TeslaCoilDmg")]
+
+[node name="TeslaCoilDmg" parent="Nodes" unique_id=539744684 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(956.0125, 438.18384)
+upgrade_data = SubResource("Resource_2l0cc")
+child_upgrades = [NodePath("../TeslaCoilRange"), NodePath("../TeslaCoilFirerate"), NodePath("../TeslaCoilCount")]
+
+[node name="TeslaCoilRange" parent="Nodes" unique_id=1981072480 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(966.1182, 298.54904)
+upgrade_data = SubResource("Resource_86re3")
+child_upgrades = [NodePath("../TeslaCoilChaining")]
+
+[node name="TeslaCoilChaining" parent="Nodes" unique_id=769325993 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(944.9536, 160.15808)
+upgrade_data = SubResource("Resource_y04x8")
+child_upgrades = [NodePath("../TeslaCoilChaining2"), NodePath("../TeslaCoilDmg3")]
+
+[node name="TeslaCoilChaining2" parent="Nodes" unique_id=383565287 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(986.0495, 26.325623)
+upgrade_data = SubResource("Resource_q4vlf")
+
+[node name="TeslaCoilFirerate" parent="Nodes" unique_id=688610157 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(848.0056, 349.10797)
+upgrade_data = SubResource("Resource_pl3r4")
+child_upgrades = [NodePath("../TeslaCoilDmg2")]
+
+[node name="TeslaCoilFirerate2" parent="Nodes" unique_id=1230766088 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(709.7565, 536.49963)
+upgrade_data = SubResource("Resource_6itnk")
+
+[node name="TeslaCoilDmg2" parent="Nodes" unique_id=1860069537 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(747.99567, 251.13855)
+upgrade_data = SubResource("Resource_6qp1n")
+child_upgrades = [NodePath("../TeslaCoilConfusion")]
+
+[node name="TeslaCoilDmg3" parent="Nodes" unique_id=497582118 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(866.9647, 43.89229)
+upgrade_data = SubResource("Resource_dyw0a")
+
+[node name="TeslaCoilConfusion" parent="Nodes" unique_id=1936518283 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(609.98676, 227.61105)
+upgrade_data = SubResource("Resource_41tf2")
+child_upgrades = [NodePath("../TeslaCoilShockDuration")]
+
+[node name="TeslaCoilShockDuration" parent="Nodes" unique_id=1582794581 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(471.35614, 208.07755)
+upgrade_data = SubResource("Resource_yocup")
+
+[node name="TeslaCoilCount" parent="Nodes" unique_id=347659315 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(816.2075, 445.5702)
+upgrade_data = SubResource("Resource_87heq")
+child_upgrades = [NodePath("../TeslaCoilCount2"), NodePath("../TeslaCoilFirerate2")]
+
+[node name="TeslaCoilCount2" parent="Nodes" unique_id=2115423304 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(676.32446, 451.2914)
+upgrade_data = SubResource("Resource_7y8ym")
+child_upgrades = [NodePath("../TeslaCoilCount3")]
+
+[node name="TeslaCoilCount3" parent="Nodes" unique_id=959798122 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(536.3367, 453.14087)
+upgrade_data = SubResource("Resource_bhkxi")
+
+[node name="GrenadeLauncher" parent="Nodes" unique_id=167413192 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1544.5444, 972.6559)
+upgrade_data = SubResource("Resource_khah3")
+child_upgrades = [NodePath("../GrenadeLifetime"), NodePath("../GrenadeRadius")]
+
+[node name="GrenadeLifetime" parent="Nodes" unique_id=2083014965 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1669.4467, 1035.897)
+upgrade_data = SubResource("Resource_byyt6")
+child_upgrades = [NodePath("../GrenadeSlow"), NodePath("../GrenadeSlowDuration")]
+
+[node name="GrenadeSlow" parent="Nodes" unique_id=2113039954 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1807.253, 1060.5828)
+upgrade_data = SubResource("Resource_x7pgp")
+child_upgrades = [NodePath("../GrenadeSlow2")]
+
+[node name="GrenadeSlow2" parent="Nodes" unique_id=1364615134 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1946.6572, 1073.4854)
+upgrade_data = SubResource("Resource_4odfv")
+
+[node name="GrenadeSlowDuration" parent="Nodes" unique_id=15313702 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1768.6658, 1134.6672)
+upgrade_data = SubResource("Resource_8f17c")
+
+[node name="GrenadeRadius" parent="Nodes" unique_id=1751496505 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1588.8251, 1105.4686)
+upgrade_data = SubResource("Resource_vv0te")
+child_upgrades = [NodePath("../GrenadeVolleySize"), NodePath("../GrenadeLauncherCount")]
+
+[node name="GrenadeVolleySize" parent="Nodes" unique_id=87463249 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1693.6104, 1198.3129)
+upgrade_data = SubResource("Resource_c3bd8")
+child_upgrades = [NodePath("../GrenadeDmgBuff")]
+
+[node name="GrenadeDmgBuff" parent="Nodes" unique_id=87291859 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1807.4735, 1279.7695)
+upgrade_data = SubResource("Resource_yvplg")
+child_upgrades = [NodePath("../GrenadeDmgBuff2")]
+
+[node name="GrenadeDmgBuff2" parent="Nodes" unique_id=900431110 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1923.2079, 1358.5448)
+upgrade_data = SubResource("Resource_bt25j")
+
+[node name="GrenadeLauncherCount" parent="Nodes" unique_id=1073466274 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1605.0442, 1244.526)
+upgrade_data = SubResource("Resource_381fi")
+child_upgrades = [NodePath("../GrenadeLauncherExplosive"), NodePath("../GrenadeLauncherCount2")]
+
+[node name="GrenadeLauncherExplosive" parent="Nodes" unique_id=1144621203 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1614.4342, 1384.2107)
+upgrade_data = SubResource("Resource_u84fe")
+child_upgrades = [NodePath("../GrenadeLauncherExplosionDamage"), NodePath("../GrenadeLauncherExplosionRadius")]
+
+[node name="GrenadeLauncherExplosionDamage" parent="Nodes" unique_id=581403459 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1561.3625, 1513.7615)
+upgrade_data = SubResource("Resource_822wr")
+
+[node name="GrenadeLauncherExplosionDamage2" parent="Nodes" unique_id=926399633 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1720.6559, 1639.8328)
+upgrade_data = SubResource("Resource_is3o8")
+
+[node name="GrenadeLauncherExplosionRadius" parent="Nodes" unique_id=2025659551 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1686.9938, 1503.94)
+upgrade_data = SubResource("Resource_mws1a")
+child_upgrades = [NodePath("../GrenadeLauncherExplosionDamage2")]
+
+[node name="GrenadeLauncherCount2" parent="Nodes" unique_id=482625106 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1703.7878, 1343.7716)
+upgrade_data = SubResource("Resource_1iv3k")
+
+[node name="Laser" parent="Nodes" unique_id=433643357 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1698.6445, 263.37366)
+upgrade_data = SubResource("Resource_f3e5m")
+child_upgrades = [NodePath("../LaserCount"), NodePath("../LaserFirerate"), NodePath("../LaserRange")]
+
+[node name="LaserCount" parent="Nodes" unique_id=793591017 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1722.4132, 125.40608)
+upgrade_data = SubResource("Resource_2fetd")
+child_upgrades = [NodePath("../LaserCount2")]
+
+[node name="LaserCount2" parent="Nodes" unique_id=24949751 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1739.2236, -13.581009)
+upgrade_data = SubResource("Resource_1e5b2")
+child_upgrades = [NodePath("../LaserCount3"), NodePath("../LaserDamage3")]
+
+[node name="LaserCount3" parent="Nodes" unique_id=1762201840 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1751.1774, -153.06975)
+upgrade_data = SubResource("Resource_it7cl")
+
+[node name="LaserFirerate" parent="Nodes" unique_id=536216182 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1787.1094, 154.86574)
+upgrade_data = SubResource("Resource_0q1gq")
+child_upgrades = [NodePath("../LaserDamage")]
+
+[node name="LaserDamage" parent="Nodes" unique_id=358272660 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1833.81, 22.884506)
+upgrade_data = SubResource("Resource_iagmg")
+child_upgrades = [NodePath("../LaserFirerate2")]
+
+[node name="LaserFirerate2" parent="Nodes" unique_id=359256724 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1908.2969, -95.65538)
+upgrade_data = SubResource("Resource_3jbit")
+child_upgrades = [NodePath("../LaserDamage2")]
+
+[node name="LaserDamage2" parent="Nodes" unique_id=1886360164 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2006.4883, -195.44736)
+upgrade_data = SubResource("Resource_xjjbg")
+
+[node name="LaserDamage3" parent="Nodes" unique_id=193642141 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1830.8844, -119.403046)
+upgrade_data = SubResource("Resource_lnpvk")
+
+[node name="LaserDamage4" parent="Nodes" unique_id=1589289640 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2106.8706, -73.316315)
+upgrade_data = SubResource("Resource_yxtvr")
+
+[node name="LaserRange" parent="Nodes" unique_id=662586267 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1823.969, 200.97354)
+upgrade_data = SubResource("Resource_dlhxm")
+child_upgrades = [NodePath("../LaserBounces"), NodePath("../LaserRange2")]
+
+[node name="LaserRange2" parent="Nodes" unique_id=1835477354 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1891.1075, 78.12236)
+upgrade_data = SubResource("Resource_vqqjo")
+child_upgrades = [NodePath("../LaserRange3")]
+
+[node name="LaserRange3" parent="Nodes" unique_id=644572726 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1971.8711, -36.233444)
+upgrade_data = SubResource("Resource_xwty3")
+child_upgrades = [NodePath("../LaserDamage4")]
+
+[node name="LaserBounces" parent="Nodes" unique_id=191151156 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1939.2244, 121.49904)
+upgrade_data = SubResource("Resource_nvp6l")
+child_upgrades = [NodePath("../LaserBounces2")]
+
+[node name="LaserBounces2" parent="Nodes" unique_id=1361943325 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(2048.3115, 33.749428)
+upgrade_data = SubResource("Resource_y010w")
+
+[node name="CryoBeam" parent="Nodes" unique_id=1904842140 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1396.5718, 480.93512)
+upgrade_data = SubResource("Resource_rbrsd")
+child_upgrades = [NodePath("../CryoBeamFuel")]
+
+[node name="CryoBeamFuel" parent="Nodes" unique_id=1267263833 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1329.798, 357.8853)
+upgrade_data = SubResource("Resource_0yy1x")
+child_upgrades = [NodePath("../CryoBeamRadius")]
+
+[node name="CryoBeamRadius" parent="Nodes" unique_id=1710569465 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1325.2513, 217.95917)
+upgrade_data = SubResource("Resource_lnqxs")
+child_upgrades = [NodePath("../CryoBeamDuration")]
+
+[node name="CryoBeamDuration" parent="Nodes" unique_id=234365814 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1277.714, 86.27698)
+upgrade_data = SubResource("Resource_kc1yg")
+child_upgrades = [NodePath("../CryoBeamFuel2"), NodePath("../CryoBeamRadius2"), NodePath("../CryoBeamDuration2")]
+
+[node name="CryoBeamFuel2" parent="Nodes" unique_id=1840389292 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1297.2687, -52.35063)
+upgrade_data = SubResource("Resource_ggwd7")
+
+[node name="CryoBeamRadius2" parent="Nodes" unique_id=814748819 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1206.1282, -34.037064)
+upgrade_data = SubResource("Resource_154dm")
+child_upgrades = [NodePath("../CryoBeamDamage")]
+
+[node name="CryoBeamDamage" parent="Nodes" unique_id=1954015945 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1113.7046, -139.19354)
+upgrade_data = SubResource("Resource_8g708")
+child_upgrades = [NodePath("../CryoBeamDamage2")]
+
+[node name="CryoBeamDamage2" parent="Nodes" unique_id=724735992 node_paths=PackedStringArray("child_upgrades") instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1020.07947, -243.28165)
+upgrade_data = SubResource("Resource_4mugn")
+child_upgrades = [NodePath("../CryoBeamDamage3")]
+
+[node name="CryoBeamDamage3" parent="Nodes" unique_id=1749257944 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(901.6167, -317.89105)
+upgrade_data = SubResource("Resource_3byei")
+
+[node name="CryoBeamDuration2" parent="Nodes" unique_id=1791857396 instance=ExtResource("3")]
+z_index = 5
+position = Vector2(1147.9767, 33.663017)
+upgrade_data = SubResource("Resource_cyqnv")
+
+[node name="CRTEffect" type="CanvasLayer" parent="." unique_id=817028196]
+script = ExtResource("22")
+
+[node name="ColorRect" type="ColorRect" parent="CRTEffect" unique_id=1453967221]
+material = ExtResource("23")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2057496232]
+layer = 2
+
+[node name="TechTreeHud" parent="CanvasLayer" unique_id=582723878 instance=ExtResource("24")]
+unique_name_in_owner = true
+
+[node name="LevelSelection" type="CanvasLayer" parent="." unique_id=1696115057]
+layer = 3
+visible = false
+script = ExtResource("25")
+
+[node name="Blur" type="ColorRect" parent="LevelSelection" unique_id=914252896]
+unique_name_in_owner = true
+texture_filter = 4
+material = ExtResource("26")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+
+[node name="ContentContainer" type="MarginContainer" parent="LevelSelection" unique_id=1639589804]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelection/ContentContainer" unique_id=1350001020]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LevelSelection/ContentContainer/VBoxContainer" unique_id=1846666478]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "Levels"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LevelSelection/ContentContainer/VBoxContainer" unique_id=1209461191]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="LevelContainer" type="VBoxContainer" parent="LevelSelection/ContentContainer/VBoxContainer/ScrollContainer" unique_id=1856151649]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+script = ExtResource("27")
+
+[node name="BackButton" type="Button" parent="LevelSelection/ContentContainer" unique_id=1089783587]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 64
+shortcut = ExtResource("28")
+shortcut_in_tooltip = false
+text = "Back"
+
+[connection signal="play_pressed" from="CanvasLayer/TechTreeHud" to="LevelSelection" method="make_visible" binds= [true]]
+[connection signal="pressed" from="LevelSelection/ContentContainer/BackButton" to="LevelSelection" method="make_visible" binds= [false]]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://mjtyufugbrlr"]
+
+[ext_resource type="Resource" uid="uid://c6v8gdmr6j5a" path="res://tech_tree/upgrades/mortar_count_2.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"mortar_firerate"
+name = "Mortar Fire Rate"
+icon = null
+description = "+{x} shots / second"
+value = 0.2
+max_level = 5
+cost = 10
+cost_change = 1.9
+children = [ExtResource("1")]

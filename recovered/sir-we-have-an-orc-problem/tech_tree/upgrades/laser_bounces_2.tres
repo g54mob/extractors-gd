@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://xrys5tsumvcy"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"laser_bounces_2"
+name = "Laser Bounces"
+icon = null
+description = "+{x} bounce"
+value = 1.0
+value_display_type = 1
+max_level = 5
+cost = 270
+cost_change = 1.65

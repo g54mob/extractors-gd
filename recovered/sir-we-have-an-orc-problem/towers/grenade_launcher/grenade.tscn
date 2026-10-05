@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dcfo1nq2wfvya"]
+
+[ext_resource type="Texture2D" uid="uid://bn6ga3m0x1cc4" path="res://towers/grenade_launcher/grenade.png" id="1"]
+[ext_resource type="Script" uid="uid://bhes0rdihjrqa" path="res://towers/grenade_launcher/grenade.gd" id="2"]
+
+[node name="Grenade" type="Sprite2D" unique_id=737490422]
+texture = ExtResource("1")
+script = ExtResource("2")

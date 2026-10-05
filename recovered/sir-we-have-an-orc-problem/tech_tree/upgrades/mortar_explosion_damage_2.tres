@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bok6fagieotgv"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"mortar_explosion_damage_2"
+name = "Mortar Explosion Damage"
+icon = null
+description = "+{x} damage"
+value = 2.0
+value_display_type = 1
+max_level = 10
+cost = 120
+cost_change = 1.65

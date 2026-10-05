@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://r5qe42bot42s"]
+
+[ext_resource type="Shader" uid="uid://bspg5qe86bqmq" path="res://levels/world/world_sprite.gdshader" id="1"]
+
+[sub_resource type="Gradient" id="Gradient_8po3f"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r433p"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wp5fx"]
+width = 4
+height = 4
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_r433p")
+color_ramp = SubResource("Gradient_8po3f")
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1")
+shader_parameter/world_size = Vector2(2048, 2048)
+shader_parameter/sdf_scale = 8.0
+shader_parameter/sim_time = 10.0
+shader_parameter/sdf_nearest = null
+shader_parameter/sdf_linear = null
+shader_parameter/sprite_sheet_tex = null
+shader_parameter/corpses_tex = SubResource("NoiseTexture2D_wp5fx")
+shader_parameter/fire_tex = null

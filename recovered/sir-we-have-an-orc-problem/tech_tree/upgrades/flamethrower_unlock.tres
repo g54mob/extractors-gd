@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://h6brfuuqkcvv"]
+
+[ext_resource type="Resource" uid="uid://cvb2ll2au21bd" path="res://tech_tree/upgrades/fire_tick_damage.tres" id="1"]
+[ext_resource type="Resource" uid="uid://cupxpeto52ml3" path="res://tech_tree/upgrades/fire_tick_rate.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"flamethrower_unlock"
+name = "Flamethrower"
+icon = null
+description = "Unleashes a continuous stream of flames that sets enemy orcs ablaze. Burning orcs take periodic damage."
+currency = 1
+cost_change = 0.0
+children = [ExtResource("1"), ExtResource("2")]

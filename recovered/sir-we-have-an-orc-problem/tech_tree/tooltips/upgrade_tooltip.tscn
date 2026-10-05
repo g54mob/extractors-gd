@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dkcmobbkd7rh4"]
+
+[ext_resource type="Script" uid="uid://cowev5wes5fgt" path="res://tech_tree/tooltips/upgrade_tooltip.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://baj6eqp3h53pa" path="res://tech_tree/hud/level_finished_mark.png" id="2"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7evyc"]
+color = Color(1, 1, 1, 1)
+thickness = 2
+
+[node name="UpgradeTooltip" type="VBoxContainer" unique_id=672995759]
+custom_minimum_size = Vector2(400, 0)
+offset_right = 400.0
+offset_bottom = 188.0
+script = ExtResource("1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1010312426]
+layout_mode = 2
+
+[node name="CaptionLabel" type="Label" parent="HBoxContainer" unique_id=1420135418]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Caption"
+
+[node name="Spacing" type="Control" parent="HBoxContainer" unique_id=2012132973]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="ProgressLabel" type="Label" parent="HBoxContainer" unique_id=47380152]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0 / 1"
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=115312166]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_7evyc")
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="." unique_id=1455262748]
+unique_name_in_owner = true
+clip_contents = false
+custom_minimum_size = Vector2(400, 23)
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "Description"
+scroll_active = false
+
+[node name="ValuesLabel" type="RichTextLabel" parent="." unique_id=2064953391]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+bbcode_enabled = true
+text = "(0 [img=center,center]res://tech_tree/tooltips/values_arrow_white.png[/img] 1)"
+
+[node name="Spacing2" type="Control" parent="." unique_id=912408605]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="CostHBox" type="HBoxContainer" parent="." unique_id=1839079226]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="CostLabel" type="Label" parent="CostHBox" unique_id=848410439]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cost"
+
+[node name="CurrencyTextureRect" type="TextureRect" parent="CostHBox" unique_id=997597682]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2")
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=972806853]
+layout_mode = 2
+
+[node name="NotImplementedLabel" type="Label" parent="." unique_id=2105948785]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8901961, 0.91764706, 0.07450981, 1)
+text = "NOT IN THE GAME YET"
+
+[node name="FullGameLabel" type="Label" parent="." unique_id=363806491]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8901961, 0.91764706, 0.07450981, 1)
+text = "NOT IN DEMO"

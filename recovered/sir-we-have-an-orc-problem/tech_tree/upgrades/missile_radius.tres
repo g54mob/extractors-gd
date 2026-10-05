@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://o8h3j775wln0"]
+
+[ext_resource type="Resource" uid="uid://b7lkwum7evw8k" path="res://tech_tree/upgrades/missile_cooldown.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"missile_radius"
+name = "Missile Explosion Radius"
+icon = null
+description = "+{x} meter"
+value = 2.0
+value_display_type = 1
+max_level = 4
+cost = 3
+cost_change = 3.0
+children = [ExtResource("1")]

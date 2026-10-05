@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dnibs0bwos86j"]
+
+[ext_resource type="Resource" uid="uid://bm4cluok6d58l" path="res://tech_tree/upgrades/tesla_coil_range.tres" id="1"]
+[ext_resource type="Resource" uid="uid://73dsjicrrbmu" path="res://tech_tree/upgrades/tesla_coil_firerate.tres" id="2"]
+[ext_resource type="Resource" uid="uid://bqjmiidrfxkrh" path="res://tech_tree/upgrades/tesla_coil_count.tres" id="3"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="4"]
+
+[resource]
+script = ExtResource("4")
+id = &"tesla_coil_damage"
+name = "Tesla Coil Damage"
+icon = null
+description = "+{x} damage"
+value = 1.0
+max_level = 5
+cost = 35
+children = [ExtResource("1"), ExtResource("2"), ExtResource("3")]

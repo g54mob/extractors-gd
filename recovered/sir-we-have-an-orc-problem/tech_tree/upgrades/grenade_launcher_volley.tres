@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://duky6sy1skgdy"]
+
+[ext_resource type="Resource" uid="uid://hqwon3nfuaoc" path="res://tech_tree/upgrades/grenade_launcher_damage_buff.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"grenade_launcher_volley"
+name = "Volley Size"
+icon = null
+description = "+{x} grenade per volley"
+value = 1.0
+value_display_type = 1
+max_level = 6
+cost = 10
+cost_change = 2.5
+children = [ExtResource("1")]

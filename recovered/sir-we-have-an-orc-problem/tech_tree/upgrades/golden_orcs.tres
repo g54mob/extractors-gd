@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bu1fdyjs4qjf0"]
+
+[ext_resource type="Resource" uid="uid://csr52ltxgtudh" path="res://tech_tree/upgrades/golden_orcs_chance.tres" id="1"]
+[ext_resource type="Resource" uid="uid://biidkslj4ux2k" path="res://tech_tree/upgrades/golden_orcs_money.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"golden_orcs"
+name = "Silver Orcs"
+icon = null
+description = "Adds a {x}% chance that an orc becomes silver after spawning. Killing silver orcs grants {x} additional {upgrade_mark}."
+value = 1.0
+cost = 500
+cost_change = 0.0
+children = [ExtResource("1"), ExtResource("2")]

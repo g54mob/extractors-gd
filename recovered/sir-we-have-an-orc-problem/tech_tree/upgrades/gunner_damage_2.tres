@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://ua4d3mnpllcl"]
+
+[ext_resource type="Resource" uid="uid://dcifr5u5i7xee" path="res://tech_tree/upgrades/gunner_firerate_4.tres" id="1"]
+[ext_resource type="Resource" uid="uid://7t31m03cj1xk" path="res://tech_tree/upgrades/gunner_damage_3.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"gunner_damage_2"
+name = "Gunner Damage"
+icon = null
+description = "+{x} damage"
+value = 0.4
+max_level = 5
+cost = 70
+cost_change = 1.9
+children = [ExtResource("1"), ExtResource("2")]

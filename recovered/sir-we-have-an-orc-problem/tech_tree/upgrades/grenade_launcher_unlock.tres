@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bj16t55nvxic5"]
+
+[ext_resource type="Resource" uid="uid://bh2l85c5dijsr" path="res://tech_tree/upgrades/grenade_launcher_lifetime.tres" id="1"]
+[ext_resource type="Resource" uid="uid://dm3664f8c2gns" path="res://tech_tree/upgrades/grenade_launcher_radius.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"grenade_launcher_unlock"
+name = "Grenade Launcher"
+icon = null
+description = "Fires gas grenades that create lingering clouds, slowing enemy orcs caught within them."
+currency = 1
+children = [ExtResource("1"), ExtResource("2")]

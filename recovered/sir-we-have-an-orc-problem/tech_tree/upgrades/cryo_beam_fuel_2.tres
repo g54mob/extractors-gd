@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dga4l8jfp7bo5"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"cryo_beam_fuel_2"
+name = "Cryo Beam Fuel"
+icon = null
+description = "+{x} seconds"
+value = 0.5
+max_level = 3
+cost = 165
+cost_change = 3.1

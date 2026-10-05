@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://dv4c1oyu2f55x"
+path="res://.godot/imported/update_explosions.glsl-808a12b1b506f0df5df2ca921c80a009.res"
+
+[deps]
+
+source_file="res://shaders/other/update_explosions.glsl"
+dest_files=["res://.godot/imported/update_explosions.glsl-808a12b1b506f0df5df2ca921c80a009.res"]
+
+[params]
+

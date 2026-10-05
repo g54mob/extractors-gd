@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://cpt12ikcgg321"]
+
+[ext_resource type="Texture2D" uid="uid://bd8h1c0e1yhw5" path="res://levels/level_4_2/level_4_2.png" id="1"]
+[ext_resource type="Script" uid="uid://c4bfcwceu8wcv" path="res://levels/level_data.gd" id="2"]
+[ext_resource type="Script" uid="uid://bu0wxbqwbk7rp" path="res://levels/enemy_spawner_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://ppioriml83lu" path="res://levels/enemy_spawn_wave.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://ciha24mttjj0k" path="res://levels/sprite_sheet_desert.png" id="5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wio3k"]
+size = Vector2(20, 213.3)
+
+[sub_resource type="Resource" id="Resource_eorp2"]
+script = ExtResource("4")
+amount = 13334
+duration = 90.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="Resource" id="Resource_fvdqj"]
+script = ExtResource("3")
+position = Vector2(-15, 295)
+shape = SubResource("RectangleShape2D_wio3k")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_eorp2")]
+
+[sub_resource type="Resource" id="Resource_8jbay"]
+script = ExtResource("4")
+amount = 13333
+duration = 90.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="Resource" id="Resource_ug86t"]
+script = ExtResource("3")
+position = Vector2(-15, 515)
+shape = SubResource("RectangleShape2D_wio3k")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[sub_resource type="Resource" id="Resource_sqjhn"]
+script = ExtResource("3")
+position = Vector2(-15, 735)
+shape = SubResource("RectangleShape2D_wio3k")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[resource]
+script = ExtResource("2")
+map_texture = ExtResource("1")
+world_size = Vector2(1024, 1024)
+spawners = [SubResource("Resource_fvdqj"), SubResource("Resource_ug86t"), SubResource("Resource_sqjhn")]
+sprite_sheet_texture = ExtResource("5")
+enemy_health_buff = 27.343
+level_bonus_marks = 1000
+marks_upon_survival = 20000

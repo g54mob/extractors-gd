@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bxbic5ancm6s0"]
+
+[ext_resource type="Resource" uid="uid://q076dcs1l0v2" path="res://tech_tree/upgrades/gunner_count.tres" id="1"]
+[ext_resource type="Resource" uid="uid://4nbtjb5r8w6w" path="res://tech_tree/upgrades/explosive_orcs_unlock.tres" id="2"]
+[ext_resource type="Resource" uid="uid://dvf4cpm50u383" path="res://tech_tree/upgrades/mortar_unlock.tres" id="3"]
+[ext_resource type="Resource" uid="uid://dq0cktwjasfw5" path="res://tech_tree/upgrades/base_hp.tres" id="4"]
+[ext_resource type="Resource" uid="uid://dintsuqs8cj4" path="res://tech_tree/upgrades/marks_bonus.tres" id="5"]
+[ext_resource type="Resource" uid="uid://blvmhkpmxrdji" path="res://tech_tree/upgrades/missile_damage.tres" id="6"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="7"]
+
+[resource]
+script = ExtResource("7")
+id = &"gunner_unlock"
+name = "Gunner"
+icon = null
+description = "Simple machine gun with high firerate."
+cost_change = 0.0
+children = [ExtResource("1"), ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6")]

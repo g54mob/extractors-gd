@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://c2tjufnbmhbqi"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"laser_count_3"
+name = "More Lasers"
+icon = null
+description = "+{x} Laser tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 8500
+cost_change = 2.05

@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://c5cuc0hn5edmw"]
+
+[ext_resource type="Texture2D" uid="uid://dbog5kkne8sm" path="res://levels/level_6_2/level_6_2.png" id="1"]
+[ext_resource type="Script" uid="uid://c4bfcwceu8wcv" path="res://levels/level_data.gd" id="2"]
+[ext_resource type="Script" uid="uid://bu0wxbqwbk7rp" path="res://levels/enemy_spawner_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://ppioriml83lu" path="res://levels/enemy_spawn_wave.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://dm7c8cgg0gvwu" path="res://levels/sprite_sheet_ice.png" id="5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brddj"]
+size = Vector2(40, 280)
+
+[sub_resource type="Resource" id="Resource_8jbay"]
+script = ExtResource("4")
+amount = 40000
+duration = 90.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="Resource" id="Resource_3qtcg"]
+script = ExtResource("3")
+position = Vector2(-25, 161)
+shape = SubResource("RectangleShape2D_brddj")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssd7"]
+size = Vector2(40, 280)
+
+[sub_resource type="Resource" id="Resource_dhssd"]
+script = ExtResource("3")
+position = Vector2(-25, 400)
+shape = SubResource("RectangleShape2D_1ssd7")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[sub_resource type="Resource" id="Resource_rhbem"]
+script = ExtResource("3")
+position = Vector2(-25, 600)
+shape = SubResource("RectangleShape2D_1ssd7")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[sub_resource type="Resource" id="Resource_yl0yg"]
+script = ExtResource("3")
+position = Vector2(-25, 850)
+shape = SubResource("RectangleShape2D_1ssd7")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[resource]
+script = ExtResource("2")
+map_texture = ExtResource("1")
+world_size = Vector2(2048, 1024)
+spawners = [SubResource("Resource_3qtcg"), SubResource("Resource_dhssd"), SubResource("Resource_rhbem"), SubResource("Resource_yl0yg")]
+sprite_sheet_texture = ExtResource("5")
+enemy_health_buff = 97.656
+level_bonus_marks = 14000
+marks_upon_survival = 300000

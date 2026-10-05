@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cag3jsvnq50g"]
+
+[ext_resource type="Texture2D" uid="uid://bxo5ff1osu46n" path="res://towers/gunner/gunner.png" id="1"]
+[ext_resource type="Script" uid="uid://dcmyio4rlh7xc" path="res://battle/tower_button.gd" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dleu0"]
+bg_color = Color(0.24379997, 0.46322006, 0.53, 0.5411765)
+
+[node name="TowerButton" type="Button" unique_id=285208929]
+custom_minimum_size = Vector2(64, 64)
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dleu0")
+shortcut_in_tooltip = false
+icon = ExtResource("1")
+icon_alignment = 1
+script = ExtResource("2")
+
+[node name="ShortcutKeyLabel" type="Label" parent="." unique_id=1302127939]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "<1>"
+
+[node name="CountLabel" type="Label" parent="." unique_id=363174304]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
+horizontal_alignment = 2

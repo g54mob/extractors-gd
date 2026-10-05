@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cupxpeto52ml3"]
+
+[ext_resource type="Resource" uid="uid://b0ymecaifmlvg" path="res://tech_tree/upgrades/flamethrower_fire_duration.tres" id="1"]
+[ext_resource type="Resource" uid="uid://ood4lqbfagmy" path="res://tech_tree/upgrades/flamethrower_range.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"fire_tick_rate"
+name = "Burn Tick Rate"
+icon = null
+description = "+{x} ticks / second"
+value = 0.2
+max_level = 10
+cost = 8
+cost_change = 1.6
+children = [ExtResource("1"), ExtResource("2")]

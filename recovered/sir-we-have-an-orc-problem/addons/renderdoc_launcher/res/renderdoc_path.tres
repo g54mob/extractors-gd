@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="RenderDocPath" format=3 uid="uid://2ggk5jcogr84"]
+
+[ext_resource type="Script" uid="uid://dv2tudcl8qkp1" path="res://addons/renderdoc_launcher/res/renderdoc_path.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+win_path = "C:/Program Files/RenderDoc/qrenderdoc.exe"

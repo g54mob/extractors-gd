@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cdv1wu504artx"]
+
+[ext_resource type="Resource" uid="uid://dlsofy1ilmvjj" path="res://tech_tree/upgrades/laser_count.tres" id="1"]
+[ext_resource type="Resource" uid="uid://dpupquo0y3tso" path="res://tech_tree/upgrades/laser_firerate.tres" id="2"]
+[ext_resource type="Resource" uid="uid://dk085stgfbd1m" path="res://tech_tree/upgrades/laser_range.tres" id="3"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="4"]
+
+[resource]
+script = ExtResource("4")
+id = &"laser_unlock"
+name = "Laser"
+icon = null
+description = "Fires a laser beam that bounces off walls, striking enemies from unexpected angles."
+currency = 1
+cost_change = 0.0
+children = [ExtResource("1"), ExtResource("2"), ExtResource("3")]

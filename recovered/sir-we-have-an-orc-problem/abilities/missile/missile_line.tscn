@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bo0pxvcqbxdxm"]
+
+[sub_resource type="Curve" id="Curve_faewk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6438679, 0.11797762), 0.0, 0.0, 0, 0, Vector2(1, 0.3314607), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_faewk"]
+offsets = PackedFloat32Array(0, 0.6465517, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.71115655, 0.6780325, 0.6377747, 0.5137255, 3.1915548, 1.9606338, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_ky0oq"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w44qm"]
+gradient = SubResource("Gradient_ky0oq")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0.5)
+repeat = 2
+metadata/_snap_enabled = true
+
+[node name="MissileLine" type="Line2D" unique_id=1453180389]
+width_curve = SubResource("Curve_faewk")
+default_color = Color(1, 1, 1, 0.6862745)
+gradient = SubResource("Gradient_faewk")
+texture = SubResource("GradientTexture2D_w44qm")
+texture_mode = 2

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dq0cktwjasfw5"]
+
+[ext_resource type="Resource" uid="uid://cstnmmenhlkie" path="res://tech_tree/upgrades/base_hp_2.tres" id="1"]
+[ext_resource type="Resource" uid="uid://bj16t55nvxic5" path="res://tech_tree/upgrades/grenade_launcher_unlock.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"base_hp"
+name = "More Health Points"
+icon = null
+description = "+{x} health points"
+value = 10.0
+value_display_type = 1
+max_level = 10
+cost = 4
+cost_change = 1.5
+children = [ExtResource("1"), ExtResource("2")]

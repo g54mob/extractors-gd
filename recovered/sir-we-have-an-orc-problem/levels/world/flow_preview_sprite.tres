@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://djjcdvgq8ido2"]
+
+[ext_resource type="Shader" uid="uid://cjlowahebgvr8" path="res://levels/world/flow_preview_sprite.gdshader" id="1"]
+[ext_resource type="Texture2D" uid="uid://trexj0hltob5" path="res://levels/world/arrow.png" id="2"]
+
+[resource]
+shader = ExtResource("1")
+shader_parameter/arrow_tex = ExtResource("2")

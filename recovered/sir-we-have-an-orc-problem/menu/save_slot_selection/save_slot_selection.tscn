@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://de1ln3w4ghl0k"]
+
+[ext_resource type="Script" uid="uid://bgb8ky0ylagrm" path="res://menu/save_slot_selection/save_slot_selection.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dpxoxotkqqljy" path="res://menu/background_blur.tscn" id="2"]
+[ext_resource type="Shortcut" uid="uid://dliuvawknrhl2" path="res://menu/input_shortcuts/back.tres" id="3"]
+
+[node name="SaveSlotSelection" type="Control" unique_id=313946181]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="BackgroundBlur" parent="." unique_id=1947588915 instance=ExtResource("2")]
+layout_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1563937881]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -79.0
+offset_right = 137.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="BackButton" type="Button" parent="MarginContainer" unique_id=913529549]
+layout_mode = 2
+theme_type_variation = &"PlayButton"
+shortcut = ExtResource("3")
+shortcut_in_tooltip = false
+text = "Back"
+
+[node name="SlotsContainer" type="HBoxContainer" parent="." unique_id=492796287]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="OverwriteLabel" type="Label" parent="." unique_id=1245083459]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 300.0
+offset_right = 20.0
+offset_bottom = 323.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "Choose one to overwrite"
+
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cx15a1rq13e87"]
+
+[ext_resource type="Script" uid="uid://djmllm43sgkc3" path="res://towers/minigun_robot/minigun_robot.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c64etuyt7icci" path="res://towers/minigun_robot/minigun_robot_base.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cu850nmshvr54" path="res://towers/minigun_robot/minigun_robot.png" id="3"]
+[ext_resource type="SpriteFrames" uid="uid://ckd2q5m15je1n" path="res://towers/gunner/gunner_muzzle_flash.tres" id="4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6t4wh"]
+radius = 20.0
+
+[node name="MinigunRobot" type="Node2D" unique_id=1707147116 node_paths=PackedStringArray("rotatable", "spawn_pos_bases", "muzzle_flashes")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1")
+rotatable = NodePath("Rotatable")
+spawn_pos_bases = [NodePath("Rotatable/SpawnPosMarker2D"), NodePath("Rotatable/SpawnPosMarker2D2")]
+muzzle_flashes = [NodePath("Rotatable/SpawnPosMarker2D/MuzzleFlashAnimatedSprite2D"), NodePath("Rotatable/SpawnPosMarker2D2/MuzzleFlashAnimatedSprite2D")]
+
+[node name="SpreadPreview" type="Polygon2D" parent="." unique_id=271325798]
+unique_name_in_owner = true
+polygon = PackedVector2Array(0, 0, 100, -12, 100, 12)
+vertex_colors = PackedColorArray(1, 1, 1, 0.5647059, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="TowerBaseSprite" type="Sprite2D" parent="." unique_id=1993926398]
+texture = ExtResource("2")
+
+[node name="Rotatable" type="Node2D" parent="." unique_id=218672470]
+
+[node name="TowerSprite" type="Sprite2D" parent="Rotatable" unique_id=1593412286]
+texture = ExtResource("3")
+
+[node name="SpawnPosMarker2D" type="Marker2D" parent="Rotatable" unique_id=542076194]
+position = Vector2(30, -16.5)
+
+[node name="MuzzleFlashAnimatedSprite2D" type="AnimatedSprite2D" parent="Rotatable/SpawnPosMarker2D" unique_id=181372433]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+position = Vector2(3, 0)
+sprite_frames = ExtResource("4")
+
+[node name="SpawnPosMarker2D2" type="Marker2D" parent="Rotatable" unique_id=1743393527]
+position = Vector2(30, 16.5)
+
+[node name="MuzzleFlashAnimatedSprite2D" type="AnimatedSprite2D" parent="Rotatable/SpawnPosMarker2D2" unique_id=972510663]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+position = Vector2(3, 0)
+sprite_frames = ExtResource("4")
+
+[node name="BuildArea" type="Area2D" parent="." unique_id=1586780648]
+unique_name_in_owner = true
+disable_mode = 2
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildArea" unique_id=725984085]
+shape = SubResource("CircleShape2D_6t4wh")

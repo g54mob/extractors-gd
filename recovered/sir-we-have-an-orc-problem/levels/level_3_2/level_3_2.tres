@@ -1,0 +1,143 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://baabjnb3wvvqf"]
+
+[ext_resource type="Texture2D" uid="uid://b7y400hh2ea2x" path="res://levels/level_3_2/level_3_2.png" id="1"]
+[ext_resource type="Script" uid="uid://c4bfcwceu8wcv" path="res://levels/level_data.gd" id="2"]
+[ext_resource type="Script" uid="uid://bu0wxbqwbk7rp" path="res://levels/enemy_spawner_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://ppioriml83lu" path="res://levels/enemy_spawn_wave.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bj6d5yjb6otpl" path="res://levels/sprite_sheet_lava.png" id="5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhjof"]
+size = Vector2(20, 30)
+
+[sub_resource type="Resource" id="Resource_brddj"]
+script = ExtResource("4")
+amount = 800
+duration = 30.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="Resource" id="Resource_swxn5"]
+script = ExtResource("3")
+position = Vector2(-20, 80)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_s3rct"]
+script = ExtResource("3")
+position = Vector2(-20, 144)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_ky2ps"]
+script = ExtResource("3")
+position = Vector2(-20, 335)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_v3ly1"]
+script = ExtResource("3")
+position = Vector2(-20, 465)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_q3fpk"]
+script = ExtResource("3")
+position = Vector2(-20, 528)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_vbvdf"]
+script = ExtResource("3")
+position = Vector2(-20, 593)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_blt26"]
+script = ExtResource("3")
+position = Vector2(-20, 719)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_jeoiy"]
+script = ExtResource("3")
+position = Vector2(-20, 783)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_lcvek"]
+script = ExtResource("3")
+position = Vector2(-20, 913)
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mle8q"]
+size = Vector2(30, 20)
+
+[sub_resource type="Resource" id="Resource_f4i71"]
+script = ExtResource("3")
+position = Vector2(142, -20)
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_sw7bb"]
+script = ExtResource("3")
+position = Vector2(207, -20)
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_xxagm"]
+script = ExtResource("3")
+position = Vector2(527, -20)
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_y0vbs"]
+script = ExtResource("3")
+position = Vector2(593, -20)
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_hfmvy"]
+script = ExtResource("3")
+position = Vector2(695, -20)
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_6d6y0"]
+script = ExtResource("3")
+position = Vector2(848, -20)
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[sub_resource type="Resource" id="Resource_n6wqb"]
+script = ExtResource("3")
+position = Vector2(975, -20)
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[resource]
+script = ExtResource("2")
+map_texture = ExtResource("1")
+world_size = Vector2(1024, 1024)
+spawners = [SubResource("Resource_swxn5"), SubResource("Resource_s3rct"), SubResource("Resource_ky2ps"), SubResource("Resource_v3ly1"), SubResource("Resource_q3fpk"), SubResource("Resource_vbvdf"), SubResource("Resource_blt26"), SubResource("Resource_jeoiy"), SubResource("Resource_lcvek"), SubResource("Resource_f4i71"), SubResource("Resource_sw7bb"), SubResource("Resource_xxagm"), SubResource("Resource_y0vbs"), SubResource("Resource_hfmvy"), SubResource("Resource_6d6y0"), SubResource("Resource_n6wqb")]
+sprite_sheet_texture = ExtResource("5")
+wall_tiles_count = 2
+ground_tiles_count = 3
+enemy_health_buff = 10.938
+level_bonus_marks = 360
+marks_upon_survival = 1500

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cw1hpo4t528pj"]
+
+[ext_resource type="Texture2D" uid="uid://bq4ut0pocwqrl" path="res://abilities/nuke/nuke.png" id="1"]
+[ext_resource type="Script" uid="uid://iu41b3423ue2" path="res://abilities/nuke/nuke.gd" id="2"]
+
+[node name="Missile" type="Sprite2D" unique_id=1027116908]
+texture = ExtResource("1")
+script = ExtResource("2")
+
+[node name="LineMarker" type="Marker2D" parent="." unique_id=1141294910]
+unique_name_in_owner = true
+position = Vector2(-5, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bpe3546t6mvu8"]
+
+[ext_resource type="SpriteFrames" uid="uid://brl03e2am7bph" path="res://towers/mortar/mortar_shell_sprite_frames.tres" id="1"]
+[ext_resource type="Script" uid="uid://e7qcq7oms4ci" path="res://towers/mortar/mortar_shell.gd" id="2"]
+
+[node name="MortarShell" type="AnimatedSprite2D" unique_id=1070154817]
+sprite_frames = ExtResource("1")
+script = ExtResource("2")

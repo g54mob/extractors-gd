@@ -1,0 +1,265 @@
+[gd_scene format=3 uid="uid://gtbf7b0wptv"]
+
+[ext_resource type="Script" uid="uid://bk11nhque3puc" path="res://addons/resources_spreadsheet_view/typed_editors/dock_number.gd" id="1"]
+
+[node name="EditNumber" type="VBoxContainer" unique_id=1634386420]
+offset_right = 1141.0
+offset_bottom = 126.0
+mouse_filter = 0
+script = ExtResource("1")
+
+[node name="Header" type="HBoxContainer" parent="." unique_id=893421228]
+layout_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 9
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Header" unique_id=1312978712]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Header/HBoxContainer" unique_id=1093633774]
+layout_mode = 2
+text = "EDIT: Number"
+
+[node name="HSeparator" type="HSeparator" parent="Header/HBoxContainer" unique_id=938189446]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Header" unique_id=846132112]
+layout_mode = 2
+text = "PROPERTY NAME"
+
+[node name="HSeparator2" type="HSeparator" parent="Header" unique_id=119446148]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=889097305]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="CustomX2" type="VBoxContainer" parent="HBoxContainer" unique_id=248958551]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/CustomX2" unique_id=400877497]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/CustomX2/HBoxContainer3" unique_id=628302075]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Fill with Sequence"
+
+[node name="Label2" type="Label" parent="HBoxContainer/CustomX2/HBoxContainer3" unique_id=1694604461]
+layout_mode = 2
+size_flags_vertical = 6
+tooltip_text = "Fill selected cells with a number sequence. Order is the same as the cells were selected.
+- You must specify Start.
+- If all values specified, selected cells will have a repeating sequence
+of numbers from Start to End, with increment of Step, not including End.
+- If both End AND Step are empty, cells are filled with Start.
+- If End is omitted, selected cells will have values from Start to (Step x CellCount).
+- If Step is omitted, selected cells will have values from Start to End inclusive,
+step based on cell count."
+mouse_filter = 0
+mouse_default_cursor_shape = 16
+text = "(?)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CustomX2" unique_id=670190853]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/CustomX2/HBoxContainer" unique_id=1503906322]
+visible = false
+layout_mode = 2
+text = "Sequence"
+
+[node name="Start" type="LineEdit" parent="HBoxContainer/CustomX2/HBoxContainer" unique_id=309344888]
+layout_mode = 2
+tooltip_text = "Start (must not be blank)"
+placeholder_text = "Start *"
+
+[node name="End" type="LineEdit" parent="HBoxContainer/CustomX2/HBoxContainer" unique_id=316928286]
+layout_mode = 2
+tooltip_text = "End"
+placeholder_text = "End"
+
+[node name="Step" type="LineEdit" parent="HBoxContainer/CustomX2/HBoxContainer" unique_id=520176691]
+layout_mode = 2
+tooltip_text = "End"
+placeholder_text = "Step"
+
+[node name="Box" type="HBoxContainer" parent="HBoxContainer/CustomX2/HBoxContainer" unique_id=1132905866]
+visible = false
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/CustomX2/HBoxContainer/Box" unique_id=1419785110]
+layout_mode = 2
+
+[node name="SequenceFill3" type="Button" parent="HBoxContainer/CustomX2/HBoxContainer/Box" unique_id=1478911146]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Set"
+text = "="
+
+[node name="SequenceFill4" type="Button" parent="HBoxContainer/CustomX2/HBoxContainer/Box" unique_id=1347570649]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Add to each value"
+text = "+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/CustomX2" unique_id=1798464777]
+layout_mode = 2
+
+[node name="SequenceFill" type="Button" parent="HBoxContainer/CustomX2/HBoxContainer2" unique_id=694742833]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Set"
+
+[node name="SequenceFill2" type="Button" parent="HBoxContainer/CustomX2/HBoxContainer2" unique_id=902705087]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add"
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer" unique_id=1535100733]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1356619601]
+layout_mode = 2
+alignment = 1
+
+[node name="NumberPanel" type="MarginContainer" parent="HBoxContainer/HBoxContainer" unique_id=1088992329]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 10
+
+[node name="Panel" type="Panel" parent="HBoxContainer/HBoxContainer/NumberPanel" unique_id=204610138]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer/NumberPanel" unique_id=1042965797]
+layout_mode = 2
+text = "1"
+clip_text = true
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/HBoxContainer" unique_id=1255647123]
+layout_mode = 2
+columns = 6
+
+[node name="Button15" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=1037052976]
+layout_mode = 2
+text = "+0.1"
+
+[node name="Button12" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=455563160]
+layout_mode = 2
+text = "+1"
+
+[node name="Button8" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=1260501166]
+layout_mode = 2
+text = "+10"
+
+[node name="Button13" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=1182866530]
+layout_mode = 2
+text = "+100"
+
+[node name="Button9" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=1237747889]
+layout_mode = 2
+text = "+X"
+
+[node name="Button16" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=330367165]
+layout_mode = 2
+text = "*X"
+
+[node name="Button14" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=73588900]
+layout_mode = 2
+text = "-0.1"
+
+[node name="Button11" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=1805091913]
+layout_mode = 2
+text = "-1"
+
+[node name="Button7" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=275497195]
+layout_mode = 2
+text = "-10"
+
+[node name="Button10" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=1201474927]
+layout_mode = 2
+text = "-100"
+
+[node name="Button4" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=536709158]
+layout_mode = 2
+text = "-X"
+
+[node name="Button5" type="Button" parent="HBoxContainer/HBoxContainer/GridContainer" unique_id=1021011287]
+layout_mode = 2
+text = "/X"
+
+[node name="GridContainerSmall" type="HBoxContainer" parent="HBoxContainer/HBoxContainer" unique_id=444186464]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/HBoxContainer/GridContainerSmall" unique_id=1295685054]
+layout_mode = 2
+text = "Value"
+
+[node name="Button1" type="Button" parent="HBoxContainer/HBoxContainer/GridContainerSmall" unique_id=974538983]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "/X"
+
+[node name="Button2" type="Button" parent="HBoxContainer/HBoxContainer/GridContainerSmall" unique_id=940878538]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-X"
+
+[node name="Button3" type="Button" parent="HBoxContainer/HBoxContainer/GridContainerSmall" unique_id=307838277]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-1"
+
+[node name="Button4" type="Button" parent="HBoxContainer/HBoxContainer/GridContainerSmall" unique_id=1381438412]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="Button5" type="Button" parent="HBoxContainer/HBoxContainer/GridContainerSmall" unique_id=113189528]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+X"
+
+[node name="Button6" type="Button" parent="HBoxContainer/HBoxContainer/GridContainerSmall" unique_id=700786534]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "*X"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=2063583117]
+layout_mode = 2
+
+[node name="CustomX" type="VBoxContainer" parent="HBoxContainer" unique_id=343912364]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/CustomX" unique_id=772759271]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Custom Value"
+horizontal_alignment = 1
+
+[node name="Box" type="HBoxContainer" parent="HBoxContainer/CustomX" unique_id=1073054723]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/CustomX/Box" unique_id=1047604549]
+layout_mode = 2
+text = "X ="
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/CustomX/Box" unique_id=609759471]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1000"
+
+[connection signal="pressed" from="HBoxContainer/CustomX2/HBoxContainer/Box/SequenceFill3" to="." method="_on_SequenceFill_pressed"]
+[connection signal="pressed" from="HBoxContainer/CustomX2/HBoxContainer/Box/SequenceFill4" to="." method="_on_SequenceFill_pressed"]
+[connection signal="pressed" from="HBoxContainer/CustomX2/HBoxContainer2/SequenceFill" to="." method="_on_SequenceFill_pressed"]
+[connection signal="pressed" from="HBoxContainer/CustomX2/HBoxContainer2/SequenceFill2" to="." method="_on_SequenceFill_pressed" binds= [true]]
+[connection signal="gui_input" from="HBoxContainer/HBoxContainer/NumberPanel" to="." method="_on_NumberPanel_gui_input"]

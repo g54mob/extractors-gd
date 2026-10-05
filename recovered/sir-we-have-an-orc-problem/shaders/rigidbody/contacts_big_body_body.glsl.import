@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://26tepcxc0e03"
+path="res://.godot/imported/contacts_big_body_body.glsl-b88cb0742857ee3a48f6b17ba4fe30f9.res"
+
+[deps]
+
+source_file="res://shaders/rigidbody/contacts_big_body_body.glsl"
+dest_files=["res://.godot/imported/contacts_big_body_body.glsl-b88cb0742857ee3a48f6b17ba4fe30f9.res"]
+
+[params]
+

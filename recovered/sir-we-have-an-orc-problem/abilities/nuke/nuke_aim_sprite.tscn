@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://t6cqub57udp"]
+
+[ext_resource type="Texture2D" uid="uid://c5hcy0fvvbv1t" path="res://abilities/nuke/nuke_icon.png" id="1"]
+[ext_resource type="Script" uid="uid://clvkvepugsgb5" path="res://abilities/nuke/nuke_aim_sprite.gd" id="2"]
+
+[node name="NukeAimSprite" type="Sprite2D" unique_id=1542225695]
+process_mode = 3
+texture = ExtResource("1")
+script = ExtResource("2")

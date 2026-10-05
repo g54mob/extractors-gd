@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bd626e4nnk25r"]
+
+[ext_resource type="Resource" uid="uid://cpkmyqqlgyi1t" path="res://tech_tree/upgrades/cannon_firerate_2.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"cannon_damage"
+name = "Cannon Damage"
+icon = null
+description = "+{x} damage"
+value = 1.5
+max_level = 5
+cost = 8
+cost_change = 1.75
+children = [ExtResource("1")]

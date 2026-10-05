@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cchkl4mhkxute"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"tesla_coil_shock_duration"
+name = "Tesla Coil Shock Duration"
+icon = null
+description = "+{x} seconds"
+value = 0.3
+max_level = 6
+cost = 200
+cost_change = 1.5

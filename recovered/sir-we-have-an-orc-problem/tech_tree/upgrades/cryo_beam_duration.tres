@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dbkwt5s4t4jq2"]
+
+[ext_resource type="Resource" uid="uid://dga4l8jfp7bo5" path="res://tech_tree/upgrades/cryo_beam_fuel_2.tres" id="1"]
+[ext_resource type="Resource" uid="uid://brfdlbk3qprhj" path="res://tech_tree/upgrades/cryo_beam_radius_2.tres" id="2"]
+[ext_resource type="Resource" uid="uid://bn5kp30apyfpp" path="res://tech_tree/upgrades/cryo_beam_duration_2.tres" id="3"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="4"]
+
+[resource]
+script = ExtResource("4")
+id = &"cryo_beam_duration"
+name = "Cryo Beam Duration"
+icon = null
+description = "+{x} seconds"
+value = 0.2
+max_level = 6
+cost = 21
+cost_change = 1.8
+children = [ExtResource("1"), ExtResource("2"), ExtResource("3")]

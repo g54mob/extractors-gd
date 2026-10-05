@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bqjmiidrfxkrh"]
+
+[ext_resource type="Resource" uid="uid://vur4i6ng3vyk" path="res://tech_tree/upgrades/tesla_coil_count_2.tres" id="1"]
+[ext_resource type="Resource" uid="uid://c1cqxejutati4" path="res://tech_tree/upgrades/tesla_coil_firerate_2.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"tesla_coil_count"
+name = "More Tesla Coils"
+icon = null
+description = "+{x} Tesla Coil tower"
+value = 1.0
+value_display_type = 1
+max_level = 4
+cost = 25
+cost_change = 3.0
+children = [ExtResource("1"), ExtResource("2")]

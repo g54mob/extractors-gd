@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dry01ixirokx0"]
+
+[ext_resource type="Resource" uid="uid://bu1fdyjs4qjf0" path="res://tech_tree/upgrades/golden_orcs.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"dmg_stats"
+name = "Damage Statistics"
+icon = null
+description = "Unlock tower damage stats."
+cost = 100
+cost_change = 0.0
+children = [ExtResource("1")]

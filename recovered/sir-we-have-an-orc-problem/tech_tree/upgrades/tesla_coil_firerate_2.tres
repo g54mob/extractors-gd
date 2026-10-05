@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://c1cqxejutati4"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"tesla_coil_firerate_2"
+name = "Tesla Coil Firerate"
+icon = null
+description = "+{x} shots / second"
+value = 0.3
+max_level = 6
+cost = 700
+cost_change = 1.7

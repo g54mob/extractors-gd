@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://4exvc1e7t5pa"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"cannon_big_boy"
+name = "Power Shot"
+icon = null
+description = "Every 5th shot of the cannon is bigger and has more penetration."
+currency = 2
+cost_change = 0.0

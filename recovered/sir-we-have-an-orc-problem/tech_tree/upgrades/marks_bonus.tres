@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dintsuqs8cj4"]
+
+[ext_resource type="Resource" uid="uid://hbntkjil52ml" path="res://tech_tree/upgrades/marks_percentage.tres" id="1"]
+[ext_resource type="Resource" uid="uid://h6brfuuqkcvv" path="res://tech_tree/upgrades/flamethrower_unlock.tres" id="2"]
+[ext_resource type="Resource" uid="uid://dry01ixirokx0" path="res://tech_tree/upgrades/dmg_stats.tres" id="3"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="4"]
+
+[resource]
+script = ExtResource("4")
+id = &"marks_bonus"
+name = "Bonus Resources"
+icon = null
+description = "Gain +{x}{upgrade_mark} at the end of a battle."
+value = 3.0
+value_display_type = 1
+max_level = 3
+children = [ExtResource("1"), ExtResource("2"), ExtResource("3")]

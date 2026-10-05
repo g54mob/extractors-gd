@@ -1,0 +1,185 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_custom_features="steam"
+
+[addons]
+
+resources_spreadsheet_view/array_color_tint=100.0
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/resource_preview_size=32.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+resources_spreadsheet_view/fold_docks=true
+resources_spreadsheet_view/resource_cell_label_mode=1
+resources_spreadsheet_view/freeze_first_column=true
+
+[application]
+
+config/name="Sir, We Have an Orc Problem"
+config/version="2026.07.27.11.50"
+run/main_scene="uid://cwyiaxbvd42kd"
+config/use_custom_user_dir=true
+config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/show_image=false
+config/icon="uid://b8r4yvep8hrtn"
+config/name.demo="Sir, We Have an Orc Problem Demo"
+config/name.playtest="Sir, We Have an Orc Problem Playtest"
+config/icon.playtest="uid://briy6dk8fa71r"
+config/icon.demo="uid://briy6dk8fa71r"
+
+[audio]
+
+buses/default_bus_layout="uid://cevqgwnyqis5s"
+
+[autoload]
+
+SaveSystem="*uid://d3lcla3jxb2ig"
+GameManager="*uid://cnsm7ouqum1lr"
+TechTree="*uid://dfsk6q62erlxr"
+GPUSim="*uid://dhtxyuu8d6gvs"
+TooltipManager="*uid://def8rtrkwflbf"
+SceneTransition="*uid://cyiio87jseedj"
+NumberFormatter="*uid://bmkwbvcs6vrjf"
+AudioManager="*uid://00ee3sv16e6e"
+Steamy="*uid://dh78ihuhicay3"
+Options="*uid://elq16jj1ds3b"
+DevOptions="*uid://b8a4l2k544f2e"
+TutorialManager="*uid://dxmoeikc6n8yt"
+EventBus="*uid://48jkrk4n64bd"
+Achievements="*uid://dd3i84o7jn8ob"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://clii2r0rlc2al"
+mouse_cursor/custom_image_hotspot=Vector2(6, 2)
+mouse_cursor/tooltip_position_offset=Vector2(10, -40)
+
+[editor_overrides]
+
+text_editor/behavior/indent/type=0
+text_editor/behavior/indent/size=4
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg", "res://addons/localization_tools/plugin.cfg", "res://addons/rebuild_shaders/plugin.cfg", "res://addons/renderdoc_launcher/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/tech_tree_upgrades/plugin.cfg")
+
+[gui]
+
+timers/tooltip_delay_sec=0.1
+theme/custom="uid://wk5vtl2l3hag"
+GPUSim="*uid://dhtxyuu8d6gvs"
+
+[importer_defaults]
+
+texture={
+"compress/channel_pack": 0,
+"compress/hdr_compression": 1,
+"compress/high_quality": false,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"compress/rdo_quality_loss": 0.0,
+"compress/uastc_level": 0,
+"detect_3d/compress_to": 1,
+"mipmaps/generate": true,
+"mipmaps/limit": -1,
+"process/channel_remap/alpha": 3,
+"process/channel_remap/blue": 2,
+"process/channel_remap/green": 1,
+"process/channel_remap/red": 0,
+"process/fix_alpha_border": true,
+"process/hdr_as_srgb": false,
+"process/hdr_clamp_exposure": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"process/size_limit": 0,
+"roughness/mode": 0,
+"roughness/src_normal": ""
+}
+
+[input]
+
+ui_accept={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194310,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+ui_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194319,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194321,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194320,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194322,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/de.mo", "res://localization/es.mo", "res://localization/fr.mo", "res://localization/it.mo", "res://localization/ja.mo", "res://localization/ko.mo", "res://localization/nl.mo", "res://localization/pl.mo", "res://localization/pt_BR.mo", "res://localization/ru.mo", "res://localization/zh_CN.mo", "res://localization/zh_TW.mo")
+locale/translations_pot_files=PackedStringArray("res://menu/menu.tscn", "res://menu/quit_popup.tscn", "res://options/options_menu.tscn", "res://battle/battle.tscn", "res://startup_scene/startup.tscn", "res://tech_tree/tech_tree.tscn", "res://tutorial/battle_tutorial_1.tscn", "res://tutorial/battle_tutorial_2.tscn", "res://tutorial/tech_tree_tutorial.tscn", "res://battle/ui.gd", "res://tech_tree/hud/level_panel.tscn", "res://tech_tree/hud/tech_tree_hud.tscn", "res://tech_tree/hud/tower_stats/tower_stats.gd", "res://tech_tree/upgrades/base_hp.tres", "res://tech_tree/upgrades/base_hp_2.tres", "res://tech_tree/upgrades/cannon_count.tres", "res://tech_tree/upgrades/cannon_count_2.tres", "res://tech_tree/upgrades/cannon_damage.tres", "res://tech_tree/upgrades/cannon_damage_2.tres", "res://tech_tree/upgrades/cannon_damage_3.tres", "res://tech_tree/upgrades/cannon_firerate.tres", "res://tech_tree/upgrades/cannon_firerate_2.tres", "res://tech_tree/upgrades/cannon_firerate_3.tres", "res://tech_tree/upgrades/cannon_penetration.tres", "res://tech_tree/upgrades/cannon_penetration_2.tres", "res://tech_tree/upgrades/cannon_penetration_3.tres", "res://tech_tree/upgrades/cannon_range.tres", "res://tech_tree/upgrades/cannon_unlock.tres", "res://tech_tree/upgrades/explosive_orcs_chance.tres", "res://tech_tree/upgrades/fire_tick_damage.tres", "res://tech_tree/upgrades/fire_tick_rate.tres", "res://tech_tree/upgrades/flamethrower_count.tres", "res://tech_tree/upgrades/flamethrower_fire_duration.tres", "res://tech_tree/upgrades/flamethrower_range.tres", "res://tech_tree/upgrades/flamethrower_unlock.tres", "res://tech_tree/upgrades/golden_orcs.tres", "res://tech_tree/upgrades/golden_orcs_chance.tres", "res://tech_tree/upgrades/golden_orcs_money.tres", "res://tech_tree/upgrades/gunner_count.tres", "res://tech_tree/upgrades/gunner_count_2.tres", "res://tech_tree/upgrades/gunner_count_3.tres", "res://tech_tree/upgrades/gunner_damage.tres", "res://tech_tree/upgrades/gunner_damage_2.tres", "res://tech_tree/upgrades/gunner_firerate.tres", "res://tech_tree/upgrades/gunner_firerate_2.tres", "res://tech_tree/upgrades/gunner_firerate_3.tres", "res://tech_tree/upgrades/gunner_firerate_4.tres", "res://tech_tree/upgrades/gunner_penetration.tres", "res://tech_tree/upgrades/gunner_range.tres", "res://tech_tree/upgrades/gunner_unlock.tres", "res://tech_tree/upgrades/marks_bonus.tres", "res://tech_tree/upgrades/marks_percentage.tres", "res://tech_tree/upgrades/missile_clickhold.tres", "res://tech_tree/upgrades/missile_cooldown.tres", "res://tech_tree/upgrades/missile_cooldown_2.tres", "res://tech_tree/upgrades/missile_damage.tres", "res://tech_tree/upgrades/missile_damage_2.tres", "res://tech_tree/upgrades/missile_damage_3.tres", "res://tech_tree/upgrades/missile_radius.tres", "res://tech_tree/upgrades/missile_radius_2.tres", "res://tech_tree/upgrades/mortar_count.tres", "res://tech_tree/upgrades/mortar_count_2.tres", "res://tech_tree/upgrades/mortar_explosion_damage.tres", "res://tech_tree/upgrades/mortar_explosion_damage_2.tres", "res://tech_tree/upgrades/mortar_explosion_radius.tres", "res://tech_tree/upgrades/mortar_firerate.tres", "res://tech_tree/upgrades/mortar_fragment_count.tres", "res://tech_tree/upgrades/mortar_fragment_damage.tres", "res://tech_tree/upgrades/mortar_fragment_penetration.tres", "res://tech_tree/upgrades/mortar_unlock.tres", "res://tech_tree/upgrades/strafing_run_bullet_count.tres", "res://tech_tree/upgrades/strafing_run_damage.tres", "res://tech_tree/upgrades/strafing_run_radius.tres", "res://tech_tree/upgrades/strafing_run_unlock.tres", "res://tech_tree/upgrades/strafing_run_width.tres", "res://tech_tree/upgrades/laser_unlock.tres", "res://tech_tree/upgrades/nuke_unlock.tres", "res://tech_tree/upgrades/headhunter.tres", "res://tech_tree/upgrades/dmg_stats.tres", "res://tech_tree/upgrades/cannon_big_boy.tres", "res://tech_tree/hud/currency_ui/currency_ui.tscn", "res://tech_tree/upgrades/strafing_run_damage_2.tres", "res://tech_tree/upgrades/tesla_coil_unlock.tres", "res://tech_tree/upgrades/tesla_coil_count.tres", "res://tech_tree/upgrades/tesla_coil_damage.tres", "res://tech_tree/upgrades/tesla_coil_firerate.tres", "res://tech_tree/upgrades/tesla_coil_range.tres", "res://menu/save_slot_selection/new_game_dialog.tscn", "res://menu/save_slot_selection/save_slot.tscn", "res://menu/save_slot_selection/save_slot_selection.tscn", "res://menu/save_slot_selection/save_slot.gd", "res://menu/save_slot_selection/new_game_dialog.gd", "res://tech_tree/upgrades/cannon_count_3.tres", "res://tech_tree/upgrades/explosive_orcs_damage.tres", "res://tech_tree/upgrades/explosive_orcs_radius.tres", "res://tech_tree/upgrades/explosive_orcs_unlock.tres", "res://tech_tree/upgrades/fire_damage_buff.tres", "res://tech_tree/upgrades/fire_damage_buff_2.tres", "res://tech_tree/upgrades/fire_free_penetration.tres", "res://tech_tree/upgrades/fire_free_penetration_2.tres", "res://tech_tree/upgrades/flamethrower_count_2.tres", "res://tech_tree/upgrades/flamethrower_count_3.tres", "res://tech_tree/upgrades/golden_orcs_chance_2.tres", "res://tech_tree/upgrades/grenade_launcher_count.tres", "res://tech_tree/upgrades/grenade_launcher_count_2.tres", "res://tech_tree/upgrades/grenade_launcher_damage_buff.tres", "res://tech_tree/upgrades/grenade_launcher_damage_buff_2.tres", "res://tech_tree/upgrades/grenade_launcher_explosion_damage.tres", "res://tech_tree/upgrades/grenade_launcher_explosion_damage_2.tres", "res://tech_tree/upgrades/grenade_launcher_explosion_radius.tres", "res://tech_tree/upgrades/grenade_launcher_explosive.tres", "res://tech_tree/upgrades/grenade_launcher_lifetime.tres", "res://tech_tree/upgrades/grenade_launcher_radius.tres", "res://tech_tree/upgrades/grenade_launcher_slow_duration.tres", "res://tech_tree/upgrades/grenade_launcher_slow_strength.tres", "res://tech_tree/upgrades/grenade_launcher_slow_strength_2.tres", "res://tech_tree/upgrades/grenade_launcher_unlock.tres", "res://tech_tree/upgrades/grenade_launcher_volley.tres", "res://tech_tree/upgrades/gunner_count_4.tres", "res://tech_tree/upgrades/gunner_damage_3.tres", "res://tech_tree/upgrades/gunner_penetration_2.tres", "res://tech_tree/upgrades/missile_damage_4.tres", "res://tech_tree/upgrades/missile_shrapnel_count.tres", "res://tech_tree/upgrades/missile_shrapnel_count_2.tres", "res://tech_tree/upgrades/missile_shrapnel_damage.tres", "res://tech_tree/upgrades/missile_shrapnel_penetration.tres", "res://tech_tree/upgrades/missile_shrapnel_slow_duration.tres", "res://tech_tree/upgrades/missile_shrapnel_slow_strength.tres", "res://tech_tree/upgrades/mortar_count_3.tres", "res://tech_tree/upgrades/mortar_fragment_count_2.tres", "res://tech_tree/upgrades/nuke_count.tres", "res://tech_tree/upgrades/nuke_damage.tres", "res://tech_tree/upgrades/nuke_radius.tres", "res://tech_tree/upgrades/strafing_run_count.tres", "res://tech_tree/upgrades/tesla_coil_chaining.tres", "res://tech_tree/upgrades/tesla_coil_chaining_2.tres", "res://tech_tree/upgrades/tesla_coil_confusion.tres", "res://tech_tree/upgrades/tesla_coil_count_2.tres", "res://tech_tree/upgrades/tesla_coil_count_3.tres", "res://tech_tree/upgrades/tesla_coil_damage_2.tres", "res://tech_tree/upgrades/tesla_coil_damage_3.tres", "res://tech_tree/upgrades/tesla_coil_firerate_2.tres", "res://tech_tree/upgrades/tesla_coil_shock_duration.tres", "res://tech_tree/upgrades/marks_bonus_2.tres", "res://menu/save_slot_selection/save_slot_selection.gd", "res://tech_tree/hud/level_panel.gd", "res://tech_tree/upgrades/cryo_beam_duration.tres", "res://tech_tree/upgrades/cryo_beam_duration_2.tres", "res://tech_tree/upgrades/cryo_beam_fuel.tres", "res://tech_tree/upgrades/cryo_beam_fuel_2.tres", "res://tech_tree/upgrades/cryo_beam_radius.tres", "res://tech_tree/upgrades/cryo_beam_radius_2.tres", "res://tech_tree/upgrades/cryo_beam_unlock.tres", "res://tech_tree/upgrades/laser_bounces.tres", "res://tech_tree/upgrades/laser_bounces_2.tres", "res://tech_tree/upgrades/laser_count.tres", "res://tech_tree/upgrades/laser_count_2.tres", "res://tech_tree/upgrades/laser_count_3.tres", "res://tech_tree/upgrades/laser_damage.tres", "res://tech_tree/upgrades/laser_damage_2.tres", "res://tech_tree/upgrades/laser_damage_3.tres", "res://tech_tree/upgrades/laser_firerate.tres", "res://tech_tree/upgrades/laser_firerate_2.tres", "res://tech_tree/upgrades/laser_range.tres", "res://tech_tree/upgrades/laser_range_2.tres", "res://globals/game_manager.gd", "res://tech_tree/upgrades/buy_pink.tres", "res://tech_tree/upgrades/cryo_beam_damage.tres", "res://tech_tree/upgrades/cryo_beam_damage_2.tres", "res://tech_tree/upgrades/cryo_beam_damage_3.tres", "res://tech_tree/upgrades/laser_damage_4.tres", "res://tech_tree/upgrades/laser_range_3.tres", "res://tech_tree/upgrades/marks_bonus_4.tres")
+
+[layer_names]
+
+2d_physics/layer_1="WorldColliders"
+2d_physics/layer_2="BuildArea"
+2d_physics/layer_3="Target"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=3
+viewport/hdr_2d=true
+environment/defaults/default_clear_color=Color(0.01773239, 0.017732393, 0.017732384, 1)
+
+[steam]
+
+multiplayer_peer/max_channels=4
+initialization/app_id=0
+initialization/initialize_on_startup=false
+initialization/embed_callbacks=false

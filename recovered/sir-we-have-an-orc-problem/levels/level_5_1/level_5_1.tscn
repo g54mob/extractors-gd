@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://vsxl4hg32f48"]
+
+[ext_resource type="Script" uid="uid://cndx1k1ahgq2o" path="res://levels/level_editor.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b505a3wjvxil2" path="res://levels/level_5_1/level_5_1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dm7c8cgg0gvwu" path="res://levels/sprite_sheet_ice.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://4g6jbn282gwp" path="res://levels/world/world_sprite.tscn" id="4"]
+[ext_resource type="Shader" uid="uid://bspg5qe86bqmq" path="res://levels/world/world_sprite.gdshader" id="5"]
+[ext_resource type="PackedScene" uid="uid://c2ndxtrws0rmq" path="res://levels/world/flow_preview_sprite.tscn" id="6"]
+[ext_resource type="Script" uid="uid://dvu6s3qsajlbx" path="res://levels/enemy_spawner_editor.gd" id="7"]
+[ext_resource type="Script" uid="uid://ppioriml83lu" path="res://levels/enemy_spawn_wave.gd" id="8"]
+
+[sub_resource type="Gradient" id="Gradient_8po3f"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r433p"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wp5fx"]
+width = 4
+height = 4
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_r433p")
+color_ramp = SubResource("Gradient_8po3f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhxy0"]
+resource_local_to_scene = true
+shader = ExtResource("5")
+shader_parameter/world_size = Vector2(2048, 1024)
+shader_parameter/sdf_scale = 8.0
+shader_parameter/sim_time = 10.0
+shader_parameter/wall_tiles_count = null
+shader_parameter/ground_tiles_count = null
+shader_parameter/sdf_nearest = null
+shader_parameter/sdf_linear = null
+shader_parameter/sprite_sheet_tex = ExtResource("3")
+shader_parameter/corpses_tex = SubResource("NoiseTexture2D_wp5fx")
+shader_parameter/fire_tex = null
+shader_parameter/flow_tex = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brddj"]
+size = Vector2(40, 160)
+
+[sub_resource type="Resource" id="Resource_brddj"]
+script = ExtResource("8")
+amount = 60000
+duration = 120.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssd7"]
+size = Vector2(40, 120)
+
+[sub_resource type="Resource" id="Resource_8jbay"]
+script = ExtResource("8")
+amount = 60000
+duration = 120.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[node name="Level" type="Node2D" unique_id=521181180]
+script = ExtResource("1")
+map_texture = ExtResource("2")
+sprite_sheet_texture = ExtResource("3")
+enemy_health_buff = 39.063
+level_bonus_marks = 1525
+
+[node name="WorldSprite" parent="." unique_id=382021119 instance=ExtResource("4")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_uhxy0")
+
+[node name="FlowPreviewSprite" parent="." unique_id=37115047 instance=ExtResource("6")]
+unique_name_in_owner = true
+visible = false
+texture_filter = 2
+instance_shader_parameters/world_size = Vector2(2048, 1024)
+texture = null
+
+[node name="EnemySpawners" type="Node2D" parent="." unique_id=305657055]
+unique_name_in_owner = true
+
+[node name="EnemySpawnerEditor" type="Node2D" parent="EnemySpawners" unique_id=1092630679]
+position = Vector2(-62, 161)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_brddj")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor2" type="Node2D" parent="EnemySpawners" unique_id=1905874982]
+position = Vector2(-58, 884)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_1ssd7")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[node name="WorldCollision" type="Node2D" parent="." unique_id=2084365103]
+unique_name_in_owner = true
+visible = false

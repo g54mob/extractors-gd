@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://b1obsx1rw6t1w"]
+
+[ext_resource type="Texture2D" uid="uid://bsbjtxhvad1th" path="res://levels/level_6_1/level_6_1.png" id="1"]
+[ext_resource type="Script" uid="uid://c4bfcwceu8wcv" path="res://levels/level_data.gd" id="2"]
+[ext_resource type="Script" uid="uid://bu0wxbqwbk7rp" path="res://levels/enemy_spawner_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://ppioriml83lu" path="res://levels/enemy_spawn_wave.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://gv0m1wqrtx7f" path="res://levels/sprite_sheet_stone.png" id="5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssd7"]
+size = Vector2(40, 1536)
+
+[sub_resource type="Resource" id="Resource_8jbay"]
+script = ExtResource("4")
+amount = 35000
+duration = 90.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="Resource" id="Resource_ritn7"]
+script = ExtResource("3")
+position = Vector2(-30, 768)
+shape = SubResource("RectangleShape2D_1ssd7")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[sub_resource type="Resource" id="Resource_ppn2b"]
+script = ExtResource("3")
+position = Vector2(1563, 766)
+shape = SubResource("RectangleShape2D_1ssd7")
+initial_velocity = Vector2(-50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1tln"]
+size = Vector2(1536, 40)
+
+[sub_resource type="Resource" id="Resource_sbb28"]
+script = ExtResource("3")
+position = Vector2(771, -26)
+shape = SubResource("RectangleShape2D_k1tln")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_8jbay")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8tpl"]
+size = Vector2(1536, 40)
+
+[sub_resource type="Resource" id="Resource_ane4i"]
+script = ExtResource("3")
+position = Vector2(767, 1561)
+shape = SubResource("RectangleShape2D_l8tpl")
+initial_velocity = Vector2(0, -50)
+waves = [SubResource("Resource_8jbay")]
+
+[resource]
+script = ExtResource("2")
+map_texture = ExtResource("1")
+world_size = Vector2(1536, 1536)
+spawners = [SubResource("Resource_ritn7"), SubResource("Resource_ppn2b"), SubResource("Resource_sbb28"), SubResource("Resource_ane4i")]
+sprite_sheet_texture = ExtResource("5")
+wall_tiles_count = 2
+ground_tiles_count = 2
+enemy_health_buff = 97.656
+level_bonus_marks = 6300

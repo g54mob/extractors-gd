@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://d0es13ftaktrv"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"strafing_run_count"
+name = "More Runs"
+icon = null
+description = "+{x} strafing run use"
+value = 1.0
+value_display_type = 1
+max_level = 2
+cost = 120
+cost_change = 3.5

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cxihlp4kchcq2"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"tesla_coil_damage_3"
+name = "Tesla Coil Damage"
+icon = null
+description = "+{x} damage"
+value = 2.0
+max_level = 8
+cost = 1500
+cost_change = 1.6

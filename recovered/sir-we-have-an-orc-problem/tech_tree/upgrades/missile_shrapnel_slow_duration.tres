@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://bita442gbyfa6"]
+
+[ext_resource type="Resource" uid="uid://lbch7elphm0b" path="res://tech_tree/upgrades/missile_shrapnel_slow_strength.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"missile_shrapnel_slow_duration"
+name = "Shrapnel Slow Duration"
+icon = null
+description = "+{x} seconds"
+value = 0.3
+max_level = 5
+cost = 55
+cost_change = 2.1
+children = [ExtResource("1")]

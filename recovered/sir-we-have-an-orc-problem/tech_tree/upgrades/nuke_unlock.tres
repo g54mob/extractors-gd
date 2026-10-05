@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cde3n7o8o4k1d"]
+
+[ext_resource type="Resource" uid="uid://uvy3ejc2j6ko" path="res://tech_tree/upgrades/nuke_count.tres" id="1"]
+[ext_resource type="Resource" uid="uid://dyavdkk3qdalc" path="res://tech_tree/upgrades/nuke_radius.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"nuke_unlock"
+name = "Nuke"
+icon = null
+description = "Active ability: Drop a nuclear bomb. Can be used once per battle."
+currency = 2
+children = [ExtResource("1"), ExtResource("2")]

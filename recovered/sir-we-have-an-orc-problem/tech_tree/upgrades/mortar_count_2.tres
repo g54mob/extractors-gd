@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://c6v8gdmr6j5a"]
+
+[ext_resource type="Resource" uid="uid://dr2kn443dq5t2" path="res://tech_tree/upgrades/mortar_count_3.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"mortar_count_2"
+name = "More Mortars"
+icon = null
+description = "+{x} Mortar tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost = 60
+cost_change = 2.1
+children = [ExtResource("1")]

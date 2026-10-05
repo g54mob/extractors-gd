@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://byhsibl083cud"]
+
+[ext_resource type="Script" uid="uid://cxnvxtwgnev75" path="res://tech_tree/hud/currency_ui/currency_ui.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cnisv507y4rc6" path="res://tech_tree/hud/upgrade_mark.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://baj6eqp3h53pa" path="res://tech_tree/hud/level_finished_mark.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c0gl6t565bca5" path="res://tech_tree/hud/all_killed_mark.png" id="4"]
+
+[node name="CurrencyUI" type="VBoxContainer" unique_id=237652426]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1")
+
+[node name="UpgradesMarkHBox" type="HBoxContainer" parent="." unique_id=1672924635]
+layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "Earn this resource by killing orcs."
+
+[node name="TextureRect" type="TextureRect" parent="UpgradesMarkHBox" unique_id=1749683554]
+layout_mode = 2
+texture = ExtResource("2")
+
+[node name="UpgradeMarksLabel" type="Label" parent="UpgradesMarkHBox" unique_id=1788322507]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+text = "99"
+
+[node name="LevelFinishedMarksHBox" type="HBoxContainer" parent="." unique_id=60666059]
+layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "Earn this resource by surviving the level."
+
+[node name="TextureRect" type="TextureRect" parent="LevelFinishedMarksHBox" unique_id=1380517648]
+layout_mode = 2
+texture = ExtResource("3")
+
+[node name="LevelFinishedMarksLabel" type="Label" parent="LevelFinishedMarksHBox" unique_id=1270763733]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+text = "99"
+
+[node name="AllKilledMarksHBox" type="HBoxContainer" parent="." unique_id=2004707092]
+layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "Earn this resource by killing all orcs in the level."
+
+[node name="TextureRect" type="TextureRect" parent="AllKilledMarksHBox" unique_id=1225758189]
+layout_mode = 2
+texture = ExtResource("4")
+
+[node name="AllKilledMarksLabel" type="Label" parent="AllKilledMarksHBox" unique_id=955182999]
+unique_name_in_owner = true
+auto_translate_mode = 2
+layout_mode = 2
+text = "99"

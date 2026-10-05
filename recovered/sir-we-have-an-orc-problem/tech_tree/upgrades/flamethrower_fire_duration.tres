@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://b0ymecaifmlvg"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"flamethrower_fire_duration"
+name = "Burn Duration"
+icon = null
+description = "+{x} seconds"
+value = 0.5
+max_level = 5
+cost = 15
+cost_change = 2.2

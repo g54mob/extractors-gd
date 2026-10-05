@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cs1q7xvewlwx5"]
+
+[ext_resource type="Texture2D" uid="uid://1qp4s87d4dpp" path="res://addons/renderdoc_launcher/res/renderdoc_logo.png" id="1"]
+
+[node name="Control" type="Control" unique_id=227550808]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1096918135]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1478390220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer" unique_id=700332683]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="RenderDocButton" type="TextureButton" parent="Panel/HBoxContainer" unique_id=1186119386]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("1")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="OptionButton" type="OptionButton" parent="Panel/HBoxContainer" unique_id=874030148]
+layout_mode = 2
+size_flags_horizontal = 8
+tooltip_text = "Choose which scene RenderDoc should launch with"
+toggle_mode = false
+flat = true
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1028173030]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(500, 600)
+ok_button_text = "Open"
+file_mode = 0
+access = 2

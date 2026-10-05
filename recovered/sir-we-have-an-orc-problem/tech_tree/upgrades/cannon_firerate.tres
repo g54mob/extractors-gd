@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://deftfds3y800p"]
+
+[ext_resource type="Resource" uid="uid://b614cubsy30bf" path="res://tech_tree/upgrades/cannon_penetration.tres" id="1"]
+[ext_resource type="Resource" uid="uid://bd626e4nnk25r" path="res://tech_tree/upgrades/cannon_damage.tres" id="2"]
+[ext_resource type="Resource" uid="uid://c5mo6mlo2sqqo" path="res://tech_tree/upgrades/cannon_count.tres" id="3"]
+[ext_resource type="Resource" uid="uid://4exvc1e7t5pa" path="res://tech_tree/upgrades/cannon_big_boy.tres" id="4"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="5"]
+
+[resource]
+script = ExtResource("5")
+id = &"cannon_firerate"
+name = "Cannon Firerate"
+icon = null
+description = "+{x} shots / second"
+value = 0.1
+max_level = 5
+cost = 9
+cost_change = 1.75
+children = [ExtResource("1"), ExtResource("2"), ExtResource("3"), ExtResource("4")]

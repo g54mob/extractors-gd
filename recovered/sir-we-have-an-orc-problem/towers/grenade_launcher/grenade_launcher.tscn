@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://t128o5bmn6xs"]
+
+[ext_resource type="Script" uid="uid://cn08uxajvin7o" path="res://towers/grenade_launcher/grenade_launcher.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cnhpn4earcml8" path="res://towers/move_indicator.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://v78k55ho2l1h" path="res://towers/target.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c64etuyt7icci" path="res://towers/minigun_robot/minigun_robot_base.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bj7j58ki6ds55" path="res://towers/grenade_launcher/grenade_launcher.png" id="5"]
+[ext_resource type="SpriteFrames" uid="uid://jpek4qvagtag" path="res://towers/grenade_launcher/grenade_launcher_muzzle_flash.tres" id="6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fpkif"]
+radius = 12.0
+
+[sub_resource type="Gradient" id="Gradient_d1nf6"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rmpwf"]
+gradient = SubResource("Gradient_d1nf6")
+width = 16
+height = 4
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjajn"]
+
+[node name="GrenadeLauncher" type="Node2D" unique_id=1707147116 node_paths=PackedStringArray("rotatable", "spawn_pos_base", "target")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1")
+rotatable = NodePath("Rotatable")
+spawn_pos_base = NodePath("Rotatable/SpawnPosMarker2D")
+target = NodePath("Target")
+
+[node name="MoveIndicatorSprite" type="Sprite2D" parent="." unique_id=1522166381]
+visible = false
+texture = ExtResource("2")
+
+[node name="Target" type="Area2D" parent="." unique_id=1488944272]
+position = Vector2(68, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target" unique_id=1219210442]
+shape = SubResource("CircleShape2D_fpkif")
+
+[node name="Sprite2D" type="Sprite2D" parent="Target" unique_id=780288750]
+texture = ExtResource("3")
+
+[node name="MoveIndicatorSprite" type="Sprite2D" parent="Target" unique_id=1851231299]
+visible = false
+texture = ExtResource("2")
+
+[node name="TargetPreview" type="Line2D" parent="." unique_id=1972325245]
+unique_name_in_owner = true
+texture_filter = 2
+closed = true
+width = 2.0
+
+[node name="TowerBaseSprite" type="Sprite2D" parent="." unique_id=1993926398]
+visible = false
+modulate = Color(0.8103765, 0, 0.15520975, 1)
+texture = ExtResource("4")
+
+[node name="Rotatable" type="Node2D" parent="." unique_id=218672470]
+
+[node name="TowerSprite" type="Sprite2D" parent="Rotatable" unique_id=1593412286]
+texture = ExtResource("5")
+
+[node name="SpawnPosMarker2D" type="Marker2D" parent="Rotatable" unique_id=542076194]
+position = Vector2(12, 0)
+
+[node name="MuzzleFlashAnimatedSprite" type="AnimatedSprite2D" parent="Rotatable/SpawnPosMarker2D" unique_id=760445585]
+unique_name_in_owner = true
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+position = Vector2(3, 0)
+sprite_frames = ExtResource("6")
+
+[node name="TargetPreviewLine" type="Line2D" parent="Rotatable/SpawnPosMarker2D" unique_id=1942262850]
+unique_name_in_owner = true
+texture_filter = 1
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 50, 0)
+width = 2.0
+texture = SubResource("GradientTexture2D_rmpwf")
+texture_mode = 1
+
+[node name="BuildArea" type="Area2D" parent="." unique_id=1052647891]
+unique_name_in_owner = true
+disable_mode = 2
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildArea" unique_id=1153947857]
+shape = SubResource("CircleShape2D_hjajn")

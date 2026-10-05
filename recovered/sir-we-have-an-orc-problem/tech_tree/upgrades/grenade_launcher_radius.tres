@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dm3664f8c2gns"]
+
+[ext_resource type="Resource" uid="uid://duky6sy1skgdy" path="res://tech_tree/upgrades/grenade_launcher_volley.tres" id="1"]
+[ext_resource type="Resource" uid="uid://cjf0t60605nxg" path="res://tech_tree/upgrades/grenade_launcher_count.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"grenade_launcher_radius"
+name = "Grenade Effect Radius"
+icon = null
+description = "+{x} meter"
+value = 2.0
+max_level = 5
+cost = 9
+cost_change = 3.1
+children = [ExtResource("1"), ExtResource("2")]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://b1u7hp4iclge3"
+path="res://.godot/imported/build_laser_grid.glsl-c5134368f12bdc666fccf72dd03f3287.res"
+
+[deps]
+
+source_file="res://shaders/rigidbody/build_laser_grid.glsl"
+dest_files=["res://.godot/imported/build_laser_grid.glsl-c5134368f12bdc666fccf72dd03f3287.res"]
+
+[params]
+

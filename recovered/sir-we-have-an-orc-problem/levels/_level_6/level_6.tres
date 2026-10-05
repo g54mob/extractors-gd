@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bq3n7vclt7nls"]
+
+[ext_resource type="Texture2D" uid="uid://by75oh6skg3gq" path="res://levels/_level_6/level_6.png" id="1"]
+[ext_resource type="Script" uid="uid://c4bfcwceu8wcv" path="res://levels/level_data.gd" id="2"]
+[ext_resource type="Script" uid="uid://bu0wxbqwbk7rp" path="res://levels/enemy_spawner_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://ppioriml83lu" path="res://levels/enemy_spawn_wave.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bl1ibtsfrx702" path="res://levels/sprite_sheet_grass.png" id="5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmx7q"]
+size = Vector2(40, 200)
+
+[sub_resource type="Resource" id="Resource_brddj"]
+script = ExtResource("4")
+amount = 1048576
+duration = 120.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="Resource" id="Resource_rli0y"]
+script = ExtResource("3")
+position = Vector2(30, 753)
+shape = SubResource("RectangleShape2D_nmx7q")
+initial_velocity = Vector2(100, 0)
+waves = [SubResource("Resource_brddj")]
+
+[resource]
+script = ExtResource("2")
+map_texture = ExtResource("1")
+world_size = Vector2(4096, 1024)
+spawners = [SubResource("Resource_rli0y")]
+sprite_sheet_texture = ExtResource("5")

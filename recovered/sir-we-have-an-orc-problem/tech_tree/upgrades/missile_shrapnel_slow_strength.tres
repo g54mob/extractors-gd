@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://lbch7elphm0b"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"missile_shrapnel_slow_strength"
+name = "Shrapnel Slow Strength"
+icon = null
+description = "+{x}% slow strength"
+value = 5.0
+value_display_type = 1
+max_level = 6
+cost = 58
+cost_change = 2.1

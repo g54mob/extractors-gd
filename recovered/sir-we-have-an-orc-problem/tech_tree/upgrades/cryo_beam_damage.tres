@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dv2qrl57dceqy"]
+
+[ext_resource type="Resource" uid="uid://bw0afr1akrgd1" path="res://tech_tree/upgrades/cryo_beam_damage_2.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"cryo_beam_damage"
+name = "Cryo Beam Damage"
+icon = null
+description = "Enemies take {x} damage upon unfreezing."
+value = 5.0
+currency = 2
+children = [ExtResource("1")]

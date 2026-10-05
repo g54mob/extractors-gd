@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://p3oob28fl6oc"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"gunner_count_2"
+name = "More Gunners"
+icon = null
+description = "+{x} Gunner tower"
+value = 1.0
+value_display_type = 1
+max_level = 4
+cost = 6
+cost_change = 1.9

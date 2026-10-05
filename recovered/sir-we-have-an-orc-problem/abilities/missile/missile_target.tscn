@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://crk1dkx3jujkl"]
+
+[ext_resource type="Texture2D" uid="uid://v78k55ho2l1h" path="res://towers/target.png" id="1"]
+
+[node name="MissileTarget" type="Sprite2D" unique_id=1343861002]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1")

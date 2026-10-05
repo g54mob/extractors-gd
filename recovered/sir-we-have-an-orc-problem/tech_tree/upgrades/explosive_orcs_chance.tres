@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://r1xbhx7235rs"]
+
+[ext_resource type="Resource" uid="uid://bfiukhnqxgfhe" path="res://tech_tree/upgrades/explosive_orcs_radius.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"explosive_orcs_chance"
+name = "Explosive Orcs Chance"
+icon = null
+description = "+{x}% chance"
+value = 0.4
+max_level = 10
+cost = 75
+children = [ExtResource("1")]

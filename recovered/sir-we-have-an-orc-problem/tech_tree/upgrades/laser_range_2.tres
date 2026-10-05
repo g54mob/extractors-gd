@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://b0fj0p7ufx3u2"]
+
+[ext_resource type="Resource" uid="uid://fs5oke0o4ok1" path="res://tech_tree/upgrades/laser_range_3.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"laser_range_2"
+name = "Laser Range"
+icon = null
+description = "+{x} meter"
+value = 30.0
+value_display_type = 1
+max_level = 5
+cost = 128
+cost_change = 1.8
+children = [ExtResource("1")]

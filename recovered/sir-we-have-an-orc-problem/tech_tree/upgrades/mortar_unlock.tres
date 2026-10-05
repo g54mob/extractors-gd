@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dvf4cpm50u383"]
+
+[ext_resource type="Resource" uid="uid://crs8n45ssj7v3" path="res://tech_tree/upgrades/mortar_explosion_damage.tres" id="1"]
+[ext_resource type="Resource" uid="uid://c78rwmnjbq4do" path="res://tech_tree/upgrades/mortar_explosion_radius.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"mortar_unlock"
+name = "Mortar"
+icon = null
+description = "Launches explosive shells that deal heavy area damage to all enemy orcs within the blast radius."
+currency = 1
+cost_change = 0.0
+children = [ExtResource("1"), ExtResource("2")]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://4nbtjb5r8w6w"]
+
+[ext_resource type="Resource" uid="uid://2cfs0qsj0cct" path="res://tech_tree/upgrades/explosive_orcs_damage.tres" id="1"]
+[ext_resource type="Resource" uid="uid://r1xbhx7235rs" path="res://tech_tree/upgrades/explosive_orcs_chance.tres" id="2"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="3"]
+
+[resource]
+script = ExtResource("3")
+id = &"explosive_orcs_unlock"
+name = "Explosive Orcs"
+icon = null
+description = "Adds a {x}% chance that orcs carry explosives which detonate upon death and damage nearby orcs."
+value = 1.0
+currency = 2
+cost_change = 0.0
+children = [ExtResource("1"), ExtResource("2")]

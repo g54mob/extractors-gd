@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://dpupquo0y3tso"]
+
+[ext_resource type="Resource" uid="uid://dddmefcayakp0" path="res://tech_tree/upgrades/laser_damage.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"laser_firerate"
+name = "Laser Firerate"
+icon = null
+description = "+{x} shots / second"
+value = 0.2
+max_level = 3
+cost = 9
+cost_change = 1.8
+children = [ExtResource("1")]

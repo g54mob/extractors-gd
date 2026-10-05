@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cevmb3eidlokk"]
+
+[ext_resource type="Script" uid="uid://b5ofdjyu67gw" path="res://menu/quit_popup.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dpxoxotkqqljy" path="res://menu/background_blur.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cjeiijjraijqg" path="res://menu/stelau.jpg" id="3"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_w73vw"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_sjmae"]
+events = [SubResource("InputEventKey_w73vw")]
+
+[node name="QuitPopup" type="Control" unique_id=618624435]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="BackgroundBlur" parent="." unique_id=1947588915 instance=ExtResource("2")]
+layout_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1061898609]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=88291439]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1061583774]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=102676295]
+texture_filter = 4
+layout_mode = 2
+texture = ExtResource("3")
+stretch_mode = 5
+
+[node name="Spacing" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=190314310]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2008468254]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+text = "Yep, that's us: Laurin and Stephan.
+
+If you had fun, please don't forget to wishlist. It helps us so much and you won't miss the release once we launch the full game!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacing2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=564845943]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1704144721]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2056626930]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+shortcut = SubResource("Shortcut_sjmae")
+text = "Back"
+
+[node name="WishlistButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=279412000]
+modulate = Color(0.27300704, 0.7007043, 3.85046e-07, 1)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 24
+text = "Wishlist"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1864710085]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/WishlistButton" to="." method="_on_wishlist_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

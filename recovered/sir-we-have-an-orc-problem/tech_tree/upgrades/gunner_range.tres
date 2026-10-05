@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://s23r58abcsu0"]
+
+[ext_resource type="Resource" uid="uid://buwhqehhaopeh" path="res://tech_tree/upgrades/gunner_penetration.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"gunner_range"
+name = "Gunner Range"
+icon = null
+description = "+{x} meter"
+value = 20.0
+value_display_type = 1
+max_level = 10
+cost = 15
+children = [ExtResource("1")]

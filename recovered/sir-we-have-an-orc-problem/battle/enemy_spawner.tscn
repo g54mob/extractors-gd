@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cl18tryn2uxlg"]
+
+[ext_resource type="Script" uid="uid://dkgakk6unq21d" path="res://battle/enemy_spawner.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://i7ygpu6cvydg" path="res://battle/spawner_indicator.png" id="2"]
+[ext_resource type="Script" uid="uid://b3uspgu15hjcg" path="res://battle/spawner_indicator_sprite.gd" id="3"]
+
+[node name="EnemySpawner" type="Node2D" unique_id=1647289342]
+script = ExtResource("1")
+
+[node name="SpawnerIndicatorSprite" type="Sprite2D" parent="." unique_id=1778026843]
+unique_name_in_owner = true
+process_mode = 3
+texture = ExtResource("2")
+script = ExtResource("3")

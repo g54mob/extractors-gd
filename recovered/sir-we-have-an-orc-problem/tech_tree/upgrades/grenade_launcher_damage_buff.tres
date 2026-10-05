@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://hqwon3nfuaoc"]
+
+[ext_resource type="Resource" uid="uid://07m0yml2iisp" path="res://tech_tree/upgrades/grenade_launcher_damage_buff_2.tres" id="1"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="2"]
+
+[resource]
+script = ExtResource("2")
+id = &"grenade_launcher_damage_buff"
+name = "Corrosive Fumes"
+icon = null
+description = "Increase all damage to slowed orcs by {x}%."
+value = 5.0
+value_display_type = 1
+currency = 2
+children = [ExtResource("1")]

@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://4nhyvpb2jxje"]
+
+[ext_resource type="Texture2D" uid="uid://cp15xwaum4pcy" path="res://levels/level_3_1/level_3_1.png" id="1"]
+[ext_resource type="Script" uid="uid://c4bfcwceu8wcv" path="res://levels/level_data.gd" id="2"]
+[ext_resource type="Script" uid="uid://bu0wxbqwbk7rp" path="res://levels/enemy_spawner_data.gd" id="3"]
+[ext_resource type="Script" uid="uid://ppioriml83lu" path="res://levels/enemy_spawn_wave.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bl1ibtsfrx702" path="res://levels/sprite_sheet_grass.png" id="5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2rvl"]
+size = Vector2(20, 100)
+
+[sub_resource type="Resource" id="Resource_8jbay"]
+script = ExtResource("4")
+amount = 4000
+duration = 60.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="Resource" id="Resource_kqvdd"]
+script = ExtResource("3")
+position = Vector2(-15, 291)
+shape = SubResource("RectangleShape2D_e2rvl")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_8jbay")]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpg41"]
+size = Vector2(160, 20)
+
+[sub_resource type="Resource" id="Resource_ppfxb"]
+script = ExtResource("3")
+position = Vector2(504, -20)
+shape = SubResource("RectangleShape2D_rpg41")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_8jbay")]
+
+[resource]
+script = ExtResource("2")
+map_texture = ExtResource("1")
+world_size = Vector2(1024, 1024)
+spawners = [SubResource("Resource_kqvdd"), SubResource("Resource_ppfxb")]
+sprite_sheet_texture = ExtResource("5")
+enemy_health_buff = 6.25
+level_bonus_marks = 175

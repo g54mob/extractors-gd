@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://dlkksnw2opatp"]
+
+[ext_resource type="Script" uid="uid://cndx1k1ahgq2o" path="res://levels/level_editor.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b7y400hh2ea2x" path="res://levels/level_3_2/level_3_2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bj6d5yjb6otpl" path="res://levels/sprite_sheet_lava.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://4g6jbn282gwp" path="res://levels/world/world_sprite.tscn" id="4"]
+[ext_resource type="Shader" uid="uid://bspg5qe86bqmq" path="res://levels/world/world_sprite.gdshader" id="5"]
+[ext_resource type="PackedScene" uid="uid://c2ndxtrws0rmq" path="res://levels/world/flow_preview_sprite.tscn" id="6"]
+[ext_resource type="Script" uid="uid://dvu6s3qsajlbx" path="res://levels/enemy_spawner_editor.gd" id="7"]
+[ext_resource type="Script" uid="uid://ppioriml83lu" path="res://levels/enemy_spawn_wave.gd" id="8"]
+
+[sub_resource type="Gradient" id="Gradient_8po3f"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r433p"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wp5fx"]
+width = 4
+height = 4
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_r433p")
+color_ramp = SubResource("Gradient_8po3f")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0tyur"]
+resource_local_to_scene = true
+shader = ExtResource("5")
+shader_parameter/world_size = Vector2(1024, 1024)
+shader_parameter/sdf_scale = 8.0
+shader_parameter/sim_time = 10.0
+shader_parameter/wall_tiles_count = 2
+shader_parameter/ground_tiles_count = 3
+shader_parameter/sdf_nearest = null
+shader_parameter/sdf_linear = null
+shader_parameter/sprite_sheet_tex = ExtResource("3")
+shader_parameter/corpses_tex = SubResource("NoiseTexture2D_wp5fx")
+shader_parameter/fire_tex = null
+shader_parameter/flow_tex = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhjof"]
+size = Vector2(20, 30)
+
+[sub_resource type="Resource" id="Resource_brddj"]
+script = ExtResource("8")
+amount = 800
+duration = 30.0
+metadata/_custom_type_script = "uid://ppioriml83lu"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mle8q"]
+size = Vector2(30, 20)
+
+[node name="Level" type="Node2D" unique_id=521181180]
+script = ExtResource("1")
+map_texture = ExtResource("2")
+sprite_sheet_texture = ExtResource("3")
+enemy_health_buff = 10.938
+level_bonus_marks = 360
+marks_upon_survival = 1500
+
+[node name="WorldSprite" parent="." unique_id=382021119 instance=ExtResource("4")]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0tyur")
+
+[node name="FlowPreviewSprite" parent="." unique_id=37115047 instance=ExtResource("6")]
+unique_name_in_owner = true
+visible = false
+texture_filter = 2
+instance_shader_parameters/world_size = Vector2(1024, 1024)
+texture = null
+
+[node name="EnemySpawners" type="Node2D" parent="." unique_id=305657055]
+unique_name_in_owner = true
+
+[node name="EnemySpawnerEditor" type="Node2D" parent="EnemySpawners" unique_id=1510781699]
+position = Vector2(-20, 80)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor2" type="Node2D" parent="EnemySpawners" unique_id=1608987386]
+position = Vector2(-20, 144)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor3" type="Node2D" parent="EnemySpawners" unique_id=1242868155]
+position = Vector2(-20, 335)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor4" type="Node2D" parent="EnemySpawners" unique_id=1539225397]
+position = Vector2(-20, 465)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor5" type="Node2D" parent="EnemySpawners" unique_id=1784220577]
+position = Vector2(-20, 528)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor6" type="Node2D" parent="EnemySpawners" unique_id=1765611932]
+position = Vector2(-20, 593)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor7" type="Node2D" parent="EnemySpawners" unique_id=1752219702]
+position = Vector2(-20, 719)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor8" type="Node2D" parent="EnemySpawners" unique_id=468311391]
+position = Vector2(-20, 783)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor9" type="Node2D" parent="EnemySpawners" unique_id=639315406]
+position = Vector2(-20, 913)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_bhjof")
+initial_velocity = Vector2(50, 0)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor10" type="Node2D" parent="EnemySpawners" unique_id=1003678314]
+position = Vector2(142, -20)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor11" type="Node2D" parent="EnemySpawners" unique_id=412158975]
+position = Vector2(207, -20)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor12" type="Node2D" parent="EnemySpawners" unique_id=1529704412]
+position = Vector2(527, -20)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor13" type="Node2D" parent="EnemySpawners" unique_id=456418542]
+position = Vector2(593, -20)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor14" type="Node2D" parent="EnemySpawners" unique_id=1756002214]
+position = Vector2(695, -20)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor15" type="Node2D" parent="EnemySpawners" unique_id=178099104]
+position = Vector2(848, -20)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[node name="EnemySpawnerEditor16" type="Node2D" parent="EnemySpawners" unique_id=1505237303]
+position = Vector2(975, -20)
+script = ExtResource("7")
+shape = SubResource("RectangleShape2D_mle8q")
+initial_velocity = Vector2(0, 50)
+waves = [SubResource("Resource_brddj")]
+
+[node name="WorldCollision" type="Node2D" parent="." unique_id=2084365103]
+unique_name_in_owner = true
+visible = false

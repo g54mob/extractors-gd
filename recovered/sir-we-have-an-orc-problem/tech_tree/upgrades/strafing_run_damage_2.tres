@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://b3ghbehjax8av"]
+
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"strafing_run_damage_2"
+name = "Strafing Run Damage"
+icon = null
+description = "+{x} damage"
+value = 10.0
+max_level = 6
+cost = 120
+cost_change = 1.95

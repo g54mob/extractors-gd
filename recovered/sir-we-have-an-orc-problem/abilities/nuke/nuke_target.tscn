@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://5wp5f61dgoo7"]
+
+[ext_resource type="Texture2D" uid="uid://c6g6d500bqc3c" path="res://abilities/nuke/nuke_target.png" id="1"]
+
+[sub_resource type="Animation" id="Animation_k13y4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d2o0b"]
+resource_name = "default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbbr4"]
+_data = {
+&"RESET": SubResource("Animation_k13y4"),
+&"default": SubResource("Animation_d2o0b")
+}
+
+[node name="NukeTarget" type="Sprite2D" unique_id=1343861002]
+texture = ExtResource("1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=66533392]
+libraries/ = SubResource("AnimationLibrary_qbbr4")

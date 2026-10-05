@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://q076dcs1l0v2"]
+
+[ext_resource type="Resource" uid="uid://c0plkot14th3p" path="res://tech_tree/upgrades/gunner_firerate.tres" id="1"]
+[ext_resource type="Resource" uid="uid://bj0yhwn77bjxo" path="res://tech_tree/upgrades/cryo_beam_unlock.tres" id="2"]
+[ext_resource type="Resource" uid="uid://dvhnhpu5j8fvp" path="res://tech_tree/upgrades/buy_pink.tres" id="3"]
+[ext_resource type="Script" uid="uid://bfb3v25h0jac6" path="res://tech_tree/upgrades/upgrade_data.gd" id="4"]
+
+[resource]
+script = ExtResource("4")
+id = &"gunner_count"
+name = "More Gunners"
+icon = null
+description = "+{x} Gunner tower"
+value = 1.0
+value_display_type = 1
+max_level = 3
+cost_change = 1.59
+children = [ExtResource("1"), ExtResource("2"), ExtResource("3")]
